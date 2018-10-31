@@ -65,8 +65,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1868.0, 792.0]
-	ZoomFactor		[2.864313725490196]
-	Offset			[250.11226725082147, 119.23110624315446]
+	ZoomFactor		[2.8301336190977833]
+	Offset			[244.92042459611167, 103.21818524096385]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -100,7 +100,7 @@ Model {
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
   LastModifiedDate	  "Tue Oct 30 20:57:36 2018"
-  RTWModifiedTimeStamp	  462837762
+  RTWModifiedTimeStamp	  462833768
   ModelVersionFormat	  "1.%<AutoIncrement:22>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
@@ -1041,13 +1041,17 @@ Model {
       Floating		      off
     }
     Block {
-      BlockType		      Step
-      Time		      "1"
-      Before		      "0"
-      After		      "1"
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
       SampleTime	      "-1"
       VectorParams1D	      on
-      ZeroCross		      on
     }
     Block {
       BlockType		      SubSystem
@@ -1120,9 +1124,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "286"
+    ZoomFactor		    "283"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "35"
+    SIDHighWatermark	    "33"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1170,7 +1174,7 @@ Model {
       }
       System {
 	Name			"Cargo ship"
-	Location		[-7, -7, 1288, 688]
+	Location		[83, 52, 1532, 1196]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1696,32 +1700,32 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
-      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','10000'),extmgr.Configuration('Visu"
-      "als','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','46.38278','MaxYLimReal','1108.34636','YLabel"
-      "Real','','MinYLimMag','46.38278','MaxYLimMag','1108.34636','LegendVisibility','Off','XGrid',true,'YGrid',true,'P"
-      "lotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'"
-      "ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;"
-      "0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 "
-      "1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChan"
-      "nelNames',{{}},'NumLines',1,'LineNames',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDe"
-      "faults',struct('MinYLimReal','46.38278','MaxYLimReal','1108.34636','YLabelReal','','MinYLimMag','46.38278','MaxY"
-      "LimMag','1108.34636','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0]"
-      ",'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0."
-      "0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
-      "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215"
-      "6863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames"
-      "',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configur"
-      "ation('Tools','Measurements',true,'Version','2016b')),'Version','2016b','Location',[1 71.6666666666667 1281 679]"
-      ")"
+      "LoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'Serial"
+      "izedDisplays',{struct('MinYLimReal','-2.69771','MaxYLimReal','70.69771','YLabelReal','','MinYLimMag','0.00000','"
+      "MaxYLimMag','70.69771','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 "
+      "0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;"
+      "0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 "
+      "0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392"
+      "156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNam"
+      "es',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-2.697"
+      "71','MaxYLimReal','70.69771','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','70.69771','LegendVisibility','"
+      "off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
+      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0."
+      "411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745"
+      "09803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePrope"
+      "rtiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1"
+      ")),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Versio"
+      "n','2016b')),'Version','2016b','Location',[1 71.6666666666667 1281 679])"
       NumInputPorts	      "1"
     }
     Block {
-      BlockType		      Step
-      Name		      "Step"
-      SID		      "34"
-      Position		      [255, 195, 285, 225]
-      ZOrder		      4
-      Time		      "0"
+      BlockType		      Sin
+      Name		      "Sine Wave"
+      SID		      "32"
+      Ports		      [0, 1]
+      Position		      [260, 195, 290, 225]
+      ZOrder		      2
+      Frequency		      "0.005"
       SampleTime	      "0"
     }
     Block {
@@ -1729,9 +1733,9 @@ Model {
       Name		      "To File"
       SID		      "33"
       Ports		      [1]
-      Position		      [620, 175, 680, 205]
+      Position		      [620, 205, 680, 235]
       ZOrder		      3
-      Filename		      "5d_step_boat.mat"
+      Filename		      "5c_005.mat"
     }
     Line {
       ZOrder		      1
@@ -1748,28 +1752,29 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      10
-      SrcBlock		      "Step"
-      SrcPort		      1
-      DstBlock		      "Cargo ship"
-      DstPort		      1
-    }
-    Line {
       ZOrder		      3
       SrcBlock		      "Cargo ship"
       SrcPort		      1
-      Points		      [100, 0]
+      Points		      [100, 0; 0, -1]
       Branch {
-	ZOrder			17
+	ZOrder			7
+	Points			[48, 0; 0, 31]
 	DstBlock		"To File"
 	DstPort			1
       }
       Branch {
-	ZOrder			13
-	Points			[0, -40]
+	ZOrder			6
+	Points			[0, -39]
 	DstBlock		"Scope"
 	DstPort			1
       }
+    }
+    Line {
+      ZOrder		      5
+      SrcBlock		      "Sine Wave"
+      SrcPort		      1
+      DstBlock		      "Cargo ship"
+      DstPort		      1
     }
   }
 }
