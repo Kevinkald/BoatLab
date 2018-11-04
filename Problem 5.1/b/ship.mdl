@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.23"
+    ComputedModelVersion    "1.24"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -65,8 +65,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1868.0, 792.0]
-	ZoomFactor		[2.0]
-	Offset			[3.1725082146769523, 86.756699525374216]
+	ZoomFactor		[1.816915422885572]
+	Offset			[2.2946330777655817, 39.698795180722868]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -99,9 +99,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 04 14:10:42 2018"
-  RTWModifiedTimeStamp	  463241305
-  ModelVersionFormat	  "1.%<AutoIncrement:23>"
+  LastModifiedDate	  "Sun Nov 04 17:11:06 2018"
+  RTWModifiedTimeStamp	  463252193
+  ModelVersionFormat	  "1.%<AutoIncrement:24>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -205,7 +205,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "6000"
+	  StopTime		  "500"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -1128,9 +1128,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "200"
+    ZoomFactor		    "182"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "40"
+    SIDHighWatermark	    "44"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1171,7 +1171,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "on"
+	    Value		    "off"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -1678,6 +1678,90 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Limited PD Controller"
+      SID		      "42"
+      Ports		      [1, 1]
+      Position		      [150, 180, 230, 240]
+      ZOrder		      -24
+      BackgroundColor	      "cyan"
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Limited PD Controller"
+	Location		[-7, -7, 1288, 688]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"386"
+	Block {
+	  BlockType		  Inport
+	  Name			  "e [deg]"
+	  SID			  "43"
+	  Position		  [20, 33, 50, 47]
+	  ZOrder		  12
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "K_d"
+	  SID			  "41"
+	  Position		  [95, 25, 125, 55]
+	  ZOrder		  11
+	  Gain			  "Kd"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Transfer Fcn"
+	  SID			  "40"
+	  Position		  [140, 22, 200, 58]
+	  ZOrder		  10
+	  Numerator		  "[Td 1]"
+	  Denominator		  "[Tf 1]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "delta [deg]"
+	  SID			  "44"
+	  Position		  [305, 33, 335, 47]
+	  ZOrder		  13
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  26
+	  SrcBlock		  "Transfer Fcn"
+	  SrcPort		  1
+	  DstBlock		  "delta [deg]"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  23
+	  SrcBlock		  "K_d"
+	  SrcPort		  1
+	  DstBlock		  "Transfer Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "e [deg]"
+	  SrcPort		  1
+	  DstBlock		  "K_d"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
       BlockType		      Reference
       Name		      "North-East"
       SID		      "29"
@@ -1717,22 +1801,23 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
-      "LoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'Serial"
-      "izedDisplays',{struct('MinYLimReal','23512.24864','MaxYLimReal','47393.34213','YLabelReal','','MinYLimMag','2351"
-      "2.24864','MaxYLimMag','47393.34213','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axe"
-      "sColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666"
-      "666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831"
-      "372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509803921568"
-      "6 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLine"
-      "s',1,'LineNames',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLim"
-      "Real','23512.24864','MaxYLimReal','47393.34213','YLabelReal','','MinYLimMag','23512.24864','MaxYLimMag','47393.3"
-      "4213','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor"
-      "',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921568"
-      "6 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921568"
-      "6;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','"
-      "%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowC"
-      "ontent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','"
-      "Measurements',true,'Version','2016b')),'Version','2016b','Location',[1 71.6666666666667 1281 679])"
+      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','10000'),extmgr.Configuration('Visu"
+      "als','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-5.19826','MaxYLimReal','42.13814','YLabelRe"
+      "al','','MinYLimMag','0.00000','MaxYLimMag','42.13814','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMa"
+      "gPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Color"
+      "Order',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392"
+      "156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1"
+      " 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNa"
+      "mes',{{}},'NumLines',1,'LineNames',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefault"
+      "s',struct('MinYLimReal','-5.19826','MaxYLimReal','42.13814','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag',"
+      "'42.13814','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTick"
+      "Color',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039"
+      "215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039"
+      "215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
+      "le','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'"
+      "ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr"
+      ".Configuration('Tools','Measurements',true,'Version','2016b')),'Version','2016b','Location',[1 71.6666666666667 "
+      "1281 679])"
       NumInputPorts	      "1"
     }
     Block {
@@ -1772,15 +1857,6 @@ Model {
       Position		      [620, 205, 680, 235]
       ZOrder		      3
       Filename		      "5c_005.mat"
-    }
-    Block {
-      BlockType		      TransferFcn
-      Name		      "Transfer Fcn"
-      SID		      "40"
-      Position		      [170, 192, 230, 228]
-      ZOrder		      10
-      Numerator		      "[T*K*Kd K*Kd]"
-      Denominator	      "[Tf*T T+Tf 1 0]"
     }
     Line {
       ZOrder		      1
@@ -1843,15 +1919,15 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      22
+      ZOrder		      25
       SrcBlock		      "Sum"
       SrcPort		      1
-      DstBlock		      "Transfer Fcn"
+      DstBlock		      "Limited PD Controller"
       DstPort		      1
     }
     Line {
-      ZOrder		      21
-      SrcBlock		      "Transfer Fcn"
+      ZOrder		      26
+      SrcBlock		      "Limited PD Controller"
       SrcPort		      1
       DstBlock		      "Cargo ship"
       DstPort		      1
