@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.29"
+    ComputedModelVersion    "1.27"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -69,7 +69,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1882.0, 875.0]
 	ZoomFactor		[2.5397260273972604]
-	Offset			[-40.512405609492987, 51.987324703344086]
+	Offset			[-40.512405609492987, 35.237324703344086]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -103,9 +103,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "kevinkk"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 07 11:35:55 2018"
-  RTWModifiedTimeStamp	  463491351
-  ModelVersionFormat	  "1.%<AutoIncrement:29>"
+  LastModifiedDate	  "Wed Nov 07 11:34:47 2018"
+  RTWModifiedTimeStamp	  463488457
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1203,7 +1203,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "off"
+	    Value		    "on"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -1739,12 +1739,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"570"
+	ZoomFactor		"514"
 	Block {
 	  BlockType		  Inport
 	  Name			  "e [deg]"
 	  SID			  "43"
-	  Position		  [20, 33, 50, 47]
+	  Position		  [-15, 33, 15, 47]
 	  ZOrder		  12
 	  IconDisplay		  "Port number"
 	}
@@ -1752,7 +1752,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Kpd"
 	  SID			  "41"
-	  Position		  [85, 25, 115, 55]
+	  Position		  [55, 25, 85, 55]
 	  ZOrder		  11
 	  Gain			  "Kpd"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -1761,11 +1761,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Saturate
-	  Name			  "Max rudder angle"
+	  Name			  "Rudder constraint"
 	  SID			  "46"
 	  Ports			  [1, 1]
-	  Position		  [240, 25, 270, 55]
-	  ZOrder		  15
+	  Position		  [220, 25, 250, 55]
+	  ZOrder		  14
 	  InputPortMap		  "u0"
 	  UpperLimit		  "45"
 	  LowerLimit		  "-45"
@@ -1774,7 +1774,7 @@ Model {
 	  BlockType		  TransferFcn
 	  Name			  "Transfer fcn"
 	  SID			  "40"
-	  Position		  [140, 22, 200, 58]
+	  Position		  [115, 22, 175, 58]
 	  ZOrder		  10
 	  Numerator		  "[Td 1]"
 	  Denominator		  "[Tf 1]"
@@ -1803,16 +1803,16 @@ Model {
 	}
 	Line {
 	  ZOrder		  29
-	  SrcBlock		  "Max rudder angle"
+	  SrcBlock		  "Transfer fcn"
 	  SrcPort		  1
-	  DstBlock		  "delta [deg]"
+	  DstBlock		  "Rudder constraint"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  30
-	  SrcBlock		  "Transfer fcn"
+	  SrcBlock		  "Rudder constraint"
 	  SrcPort		  1
-	  DstBlock		  "Max rudder angle"
+	  DstBlock		  "delta [deg]"
 	  DstPort		  1
 	}
       }
@@ -1852,7 +1852,7 @@ Model {
       Name		      "Saturation"
       SID		      "37"
       Ports		      [1, 1]
-      Position		      [175, 140, 205, 170]
+      Position		      [175, 125, 205, 155]
       ZOrder		      7
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1923,7 +1923,7 @@ Model {
       Ports		      [1]
       Position		      [635, 260, 695, 290]
       ZOrder		      3
-      Filename		      "5_3_b.mat"
+      Filename		      "5_3_d.mat"
     }
     Line {
       ZOrder		      1
@@ -1961,7 +1961,7 @@ Model {
       }
       Branch {
 	ZOrder			13
-	Points			[0, -35]
+	Points			[0, -50]
 	DstBlock		"Saturation"
 	DstPort			1
       }
@@ -1975,8 +1975,7 @@ Model {
       Points		      [60, 0]
       Branch {
 	ZOrder			34
-	Labels			[2, 1]
-	Points			[0, 61; 496, 0; 0, -36]
+	Points			[0, 25]
 	DstBlock		"Mux"
 	DstPort			2
       }
@@ -2002,28 +2001,28 @@ Model {
       DstPort		      1
     }
     Line {
+      ZOrder		      26
+      SrcBlock		      "Limited PD Controller"
+      SrcPort		      1
+      Points		      [21, 0]
+      Branch {
+	ZOrder			42
+	DstBlock		"Cargo ship"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			36
+	Points			[0, 75]
+	DstBlock		"Mux"
+	DstPort			3
+      }
+    }
+    Line {
       ZOrder		      30
       SrcBlock		      "Mux"
       SrcPort		      1
       DstBlock		      "To File"
       DstPort		      1
-    }
-    Line {
-      ZOrder		      26
-      SrcBlock		      "Limited PD Controller"
-      SrcPort		      1
-      Points		      [10, 0]
-      Branch {
-	ZOrder			48
-	Points			[0, 75]
-	DstBlock		"Mux"
-	DstPort			3
-      }
-      Branch {
-	ZOrder			47
-	DstBlock		"Cargo ship"
-	DstPort			1
-      }
     }
   }
 }

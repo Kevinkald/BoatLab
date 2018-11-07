@@ -1,4 +1,4 @@
-filename = '5_3_b.mat';
+filename = '5_3_d.mat';
 m = matfile(filename);
 filedata = m.ans;
 
@@ -19,7 +19,7 @@ legend('\psi(t)','\psi_r(t)');
 
 subplot(1,2,2);
 plot(time,rudder,'r');
-xlim([0, 150]);
+xlim([0, 500]);
 xlabel('time t [s]');
 ylabel('Angle [deg]');
 legend('\delta(t)');

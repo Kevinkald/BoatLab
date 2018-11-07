@@ -1,8 +1,0 @@
-%Implementation of the open loop transfer function
-s = tf('s');
-K = 0.1561; omega_c = 0.1; Tf = 1/omega_c;
-Kd = 1;
-H_0 = (K*Kd)/(s*(1+Tf*s));
-
-%
-margin(H_0);
