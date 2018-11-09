@@ -1,9 +1,12 @@
 %function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
-function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
+function [ xhat, xi, b ] = Kalman( xi_meas, delta,  y)
 %KALMAN Kalmanfilters input 
-%   Detailed explanation goes here
+%   Det er ikke denne funksjonen som brukes.
+%   Den som brukes heter "MATLAB Function", og bruker ikke
+%   persistent-systemet, men forer bare tilbake de a priori verdiene. Jeg
+%   vet ikke hva som er best, men "MATLAB Function funker noenlunde.
 
-persistent  init_flag A B C E x P Q R
+persistent  init_flag A B C E x  Q R  P
 
 % Initialize
 if isempty(init_flag) 
@@ -39,8 +42,8 @@ if isempty(init_flag)
     x = x0_;
     P = P0_;
 else
-    P = P_;
-    x = x_;
+    %P = P_;
+    %x = x_;
 end
 
  
@@ -48,9 +51,11 @@ L = P*C.'*inv(C*P*C.' + R);
 
 xhat =  x + L * (y - C*x);
 
+x = xhat;
+
 P = (eye(5)- L*C) * P *(eye(5)-L*C).' + L*R*L.';
 
-x_ = A* x + B* 
+%x_ = A* x + B* 
 
 end
 

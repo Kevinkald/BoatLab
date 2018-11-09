@@ -1,12 +1,12 @@
 Model {
   Name			  "ship"
-  Version		  9.0
+  Version		  8.9
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.31"
+    ComputedModelVersion    "1.28"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -16,19 +16,6 @@ Model {
     HasTerminateEvent	    0
     IsExportFunctionModel   0
     NumParameterArguments   0
-    NumExternalFileReferences 2
-    ExternalFileReference {
-      Reference		      "simulink/Sources/Band-Limited\nWhite Noise"
-      Path		      "ship/Cargo ship/Measurement noise"
-      SID		      "91"
-      Type		      "LIBRARY_BLOCK"
-    }
-    ExternalFileReference {
-      Reference		      "simulink/Sinks/XY Graph"
-      Path		      "ship/North-East"
-      SID		      "116"
-      Type		      "LIBRARY_BLOCK"
-    }
     OrderedModelArguments   1
   }
   LogicAnalyzerGraphicalSettings ""
@@ -36,7 +23,6 @@ Model {
   LogicAnalyzerSignalOrdering ""
   DiagnosticSuppressor	  "on"
   SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
-  CustomCodeFunctionData  ""
   SLCCPlugin		  "on"
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -57,7 +43,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [8.0, 8.0, 1936.0, 1056.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -82,8 +68,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1882.0, 875.0]
-	ZoomFactor		[1.3501983311754628]
-	Offset			[-352.64558648655236, 14.631152937500815]
+	ZoomFactor		[2.3659217877094973]
+	Offset			[44.769185360094468, 2.0826446280991888]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -106,8 +92,8 @@ Model {
       "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAeAAAADpAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAMr/////wAAAAAAAAAA/"
+      "////wEAAANa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   HideAutomaticNames	  on
@@ -115,11 +101,12 @@ Model {
   Creator		  "markh"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Flemmen"
+  LastModifiedBy	  "kevinkk"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 09 10:52:35 2018"
-  RTWModifiedTimeStamp	  463661299
-  ModelVersionFormat	  "1.%<AutoIncrement:31>"
+  LastModifiedDate	  "Wed Nov 07 17:42:46 2018"
+  RTWModifiedTimeStamp	  463511676
+  ModelVersionFormat	  "1.%<AutoIncrement:28>"
+  ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -147,7 +134,6 @@ Model {
   BlockNameDataTip	  off
   BlockParametersDataTip  off
   BlockDescriptionStringDataTip	off
-  BlockVariantConditionDataTip off
   ToolBar		  on
   StatusBar		  on
   BrowserShowLibraryLinks off
@@ -214,7 +200,7 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      8
-      Version		      "1.17.1"
+      Version		      "1.17.0"
       DisabledProps	      []
       Description	      ""
       Array {
@@ -222,7 +208,7 @@ Model {
 	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  9
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
@@ -230,6 +216,7 @@ Model {
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
 	  ZcThreshold		  "auto"
 	  ConsecutiveZCsStepRelTol "10*128*eps"
@@ -241,6 +228,7 @@ Model {
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
 	  EnableMultiTasking	  on
+	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
 	  Solver		  "ode45"
 	  SolverName		  "ode45"
@@ -257,11 +245,10 @@ Model {
 	  SampleTimeConstraint	  "Unconstrained"
 	  InsertRTBMode		  "Whenever possible"
 	  SampleTimeProperty	  []
-	  DecoupledContinuousIntegration off
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  10
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  Decimation		  "1"
@@ -302,7 +289,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  11
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -360,11 +347,10 @@ Model {
 	  OptimizeBlockOrder	  "off"
 	  OptimizeDataStoreBuffers on
 	  BusAssignmentInplaceUpdate on
-	  DifferentSizesBufferReuse off
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  12
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    1
@@ -403,7 +389,6 @@ Model {
 	  MultiTaskRateTransMsg	  "error"
 	  SingleTaskRateTransMsg  "none"
 	  TasksWithSamePriorityMsg "warning"
-	  ExportedTasksRateTransMsg "none"
 	  SigSpecEnsureSampleTimeMsg "warning"
 	  CheckMatrixSingularityMsg "none"
 	  IntegerOverflowMsg	  "warning"
@@ -445,7 +430,6 @@ Model {
 	  StateNameClashWarn	  "warning"
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
-	  ChecksumConsistencyForSSReuse	"none"
 	  InitInArrayFormatMsg	  "warning"
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
@@ -472,14 +456,11 @@ Model {
 	  AllowedUnitSystems	  "all"
 	  UnitsInconsistencyMsg	  "warning"
 	  AllowAutomaticUnitConversions	on
-	  RCSCRenamedMsg	  "warning"
-	  RCSCObservableMsg	  "warning"
-	  ForceCombineOutputUpdateInSim	off
 	  UnitDatabase		  ""
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  13
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  ProdBitPerChar	  8
@@ -527,7 +508,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  14
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
@@ -546,7 +527,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  15
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  ""
 	  SimCustomSourceCode	  ""
@@ -576,7 +557,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  16
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    13
@@ -624,7 +605,6 @@ Model {
 	  CustomLibrary		  ""
 	  CustomDefine		  ""
 	  CustomLAPACKCallback	  ""
-	  CustomFFTCallback	  ""
 	  CustomInitializer	  ""
 	  CustomTerminator	  ""
 	  Toolchain		  "Automatically locate an installed toolchain"
@@ -660,7 +640,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      17
-	      Version		      "1.17.1"
+	      Version		      "1.17.0"
 	      Array {
 		Type			"Cell"
 		Dimension		27
@@ -700,16 +680,18 @@ Model {
 	      CommentStyle	      "Auto"
 	      IgnoreCustomStorageClasses on
 	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
 	      MaxIdLength	      31
 	      PreserveName	      off
 	      PreserveNameWithParent  off
 	      ShowEliminatedStatement off
 	      OperatorAnnotations     off
+	      IncAutoGenComments      off
 	      SimulinkDataObjDesc     off
 	      SFDataObjDesc	      off
 	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
 	      MangleLength	      1
-	      SharedChecksumLength    8
 	      CustomSymbolStrGlobalVar "$R$N$M"
 	      CustomSymbolStrType     "$N$R$M_T"
 	      CustomSymbolStrField    "$N$M"
@@ -733,7 +715,6 @@ Model {
 	      InsertBlockDesc	      off
 	      InsertPolySpaceComments off
 	      SimulinkBlockComments   on
-	      StateflowObjectComments on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
 	      InternalIdentifierFile  ""
@@ -746,7 +727,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      18
-	      Version		      "1.17.1"
+	      Version		      "1.17.0"
 	      Array {
 		Type			"Cell"
 		Dimension		15
@@ -791,6 +772,7 @@ Model {
 	      CombineOutputUpdateFcns off
 	      CombineSignalStateStructs	off
 	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
 	      IncludeFileDelimiter    "Auto"
 	      ERTCustomFileBanners    off
 	      SupportAbsoluteTime     on
@@ -820,9 +802,6 @@ Model {
 	      CoderGroups	      []
 	      AccessMethods	      []
 	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
-	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
-	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
-	      ArrayLayout	      "Column-major"
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -844,7 +823,7 @@ Model {
 	}
 	SlCovCC.ConfigComp {
 	  $ObjectID		  19
-	  Version		  "1.17.1"
+	  Version		  "1.17.0"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -930,12 +909,7 @@ Model {
     FontSize		    10
     FontWeight		    "normal"
     FontAngle		    "normal"
-    MarkupType		    "model"
     UseDisplayTextAsClickCallback off
-    AnnotationType	    "note_annotation"
-    FixedHeight		    off
-    FixedWidth		    off
-    Interpreter		    "off"
   }
   LineDefaults {
     FontName		    "Helvetica"
@@ -1051,7 +1025,7 @@ Model {
     }
     Block {
       BlockType		      Memory
-      InitialCondition	      "0"
+      X0		      "0"
       InheritSampleTime	      off
       LinearizeMemory	      off
       LinearizeAsDelay	      off
@@ -1085,9 +1059,6 @@ Model {
       OutputWhenDisabled      "held"
       InitialOutput	      "[]"
       MustResolveToSignalObject	off
-      OutputWhenUnConnected   off
-      OutputWhenUnconnectedValue "0"
-      VectorParamsAs1DForOutWhenUnconnected off
     }
     Block {
       BlockType		      S-Function
@@ -1151,12 +1122,10 @@ Model {
       MaskHideContents	      off
       SFBlockType	      "NONE"
       GeneratePreprocessorConditionals off
-      AllowZeroVariantControls off
       PropagateVariantConditions off
       TreatAsGroupedWhenPropagatingVariantConditions on
       ContentPreviewEnabled   off
       IsWebBlock	      off
-      IsObserver	      off
     }
     Block {
       BlockType		      Sum
@@ -1193,14 +1162,10 @@ Model {
       ContinuousStateAttributes	"''"
       Realization	      "auto"
     }
-    Block {
-      BlockType		      ZeroOrderHold
-      SampleTime	      "1"
-    }
   }
   System {
     Name		    "ship"
-    Location		    [8, 8, 1944, 1064]
+    Location		    [-8, -8, 1928, 1048]
     Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1213,9 +1178,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "135"
+    ZoomFactor		    "237"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "133"
+    SIDHighWatermark	    "122"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1260,10 +1225,6 @@ Model {
 	  }
 	  PropName		  "Parameters"
 	}
-      }
-      Port {
-	PortNumber		1
-	Name			"Xi(Measured)"
       }
       System {
 	Name			"Cargo ship"
@@ -1381,7 +1342,7 @@ Model {
 	  Ports			  [0, 1]
 	  Position		  [500, 45, 530, 75]
 	  ZOrder		  -10
-	  LibraryVersion	  "1.401"
+	  LibraryVersion	  "1.391"
 	  SourceBlock		  "simulink/Sources/Band-Limited\nWhite Noise"
 	  SourceType		  "Band-Limited White Noise."
 	  SourceProductName	  "Simulink"
@@ -1756,6 +1717,8 @@ Model {
 	  Name			  "Degrees to rad"
 	  Position		  [146, 195, 214, 209]
 	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
 	  ZOrder		  -1
 	}
 	Annotation {
@@ -1763,23 +1726,10 @@ Model {
 	  Name			  "Rad to deg"
 	  Position		  [447, 213, 497, 227]
 	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
 	  ZOrder		  -2
 	}
-      }
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "123"
-      Ports		      [1, 5]
-      Position		      [285, 351, 290, 459]
-      ZOrder		      36
-      ShowName		      off
-      Outputs		      "5"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		3
-	Name			"Xi(Estimated)"
       }
     }
     Block {
@@ -1787,15 +1737,11 @@ Model {
       Name		      "Limited PD Controller"
       SID		      "109"
       Ports		      [1, 1]
-      Position		      [195, 240, 290, 300]
+      Position		      [270, 240, 365, 300]
       ZOrder		      26
       BackgroundColor	      "cyan"
       RequestExecContextInheritance off
       Variant		      off
-      Port {
-	PortNumber		1
-	Name			"Delta(The rudder angle)"
-      }
       System {
 	Name			"Limited PD Controller"
 	Location		[-8, -8, 1928, 1048]
@@ -1894,12 +1840,11 @@ Model {
       Name		      "MATLAB Function"
       SID		      "37"
       Ports		      [5, 2]
-      Position		      [75, 368, 190, 482]
+      Position		      [365, 8, 480, 122]
       ZOrder		      16
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
-      SystemSampleTime	      "10"
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       Variant		      off
@@ -1919,7 +1864,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"29"
+	SIDHighWatermark	"26"
 	Block {
 	  BlockType		  Inport
 	  Name			  "xi_meas"
@@ -1967,24 +1912,24 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
-	  SID			  "37::28"
+	  SID			  "37::20"
 	  Ports			  [1, 1]
 	  Position		  [270, 230, 320, 270]
-	  ZOrder		  19
+	  ZOrder		  11
 	  Outputs		  "1"
 	}
 	Block {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
-	  SID			  "37::27"
+	  SID			  "37::19"
 	  Tag			  "Stateflow S-Function ship 1"
 	  Ports			  [5, 3]
-	  Position		  [180, 100, 230, 220]
-	  ZOrder		  18
+	  Position		  [180, 105, 230, 225]
+	  ZOrder		  10
 	  FunctionName		  "sf_sfun"
 	  PortCounts		  "[5 3]"
 	  SFunctionDeploymentMode off
-	  EnableBusSupport	  on
+	  EnableBusSupport	  off
 	  SFcnIsStateOwnerBlock	  off
 	  Port {
 	    PortNumber		    2
@@ -1998,9 +1943,9 @@ Model {
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
-	  SID			  "37::29"
+	  SID			  "37::21"
 	  Position		  [460, 241, 480, 259]
-	  ZOrder		  20
+	  ZOrder		  12
 	}
 	Block {
 	  BlockType		  Outport
@@ -2020,35 +1965,35 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  40
+	  ZOrder		  31
 	  SrcBlock		  "xi_meas"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  41
+	  ZOrder		  32
 	  SrcBlock		  "delta"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  42
+	  ZOrder		  33
 	  SrcBlock		  "P_"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  43
+	  ZOrder		  34
 	  SrcBlock		  "x_"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  4
 	}
 	Line {
-	  ZOrder		  44
+	  ZOrder		  35
 	  SrcBlock		  "y"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -2056,7 +2001,7 @@ Model {
 	}
 	Line {
 	  Name			  "P"
-	  ZOrder		  45
+	  ZOrder		  36
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -2065,7 +2010,7 @@ Model {
 	}
 	Line {
 	  Name			  "xhat"
-	  ZOrder		  46
+	  ZOrder		  37
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  3
@@ -2073,17 +2018,16 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  47
+	  ZOrder		  38
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  48
+	  ZOrder		  39
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
-	  Points		  [20, 0]
 	  DstBlock		  " Demux "
 	  DstPort		  1
 	}
@@ -2097,23 +2041,6 @@ Model {
       ZOrder		      35
     }
     Block {
-      BlockType		      Memory
-      Name		      "Memory1"
-      SID		      "131"
-      Position		      [215, 440, 245, 470]
-      ZOrder		      44
-      InitialCondition	      "[0;0;0;0;0]"
-    }
-    Block {
-      BlockType		      Memory
-      Name		      "Memory2"
-      SID		      "132"
-      Position		      [65, 550, 95, 580]
-      ZOrder		      45
-      BlockMirror	      on
-      InitialCondition	      "P0_"
-    }
-    Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "115"
@@ -2125,24 +2052,13 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "124"
-      Ports		      [2, 1]
-      Position		      [415, 396, 420, 434]
-      ZOrder		      37
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
       BlockType		      Reference
       Name		      "North-East"
       SID		      "116"
       Ports		      [2]
       Position		      [605, 258, 635, 302]
       ZOrder		      28
-      LibraryVersion	      "1.401"
+      LibraryVersion	      "1.391"
       SourceBlock	      "simulink/Sinks/XY Graph"
       SourceType	      "XY scope."
       SourceProductName	      "Simulink"
@@ -2166,10 +2082,6 @@ Model {
       InputPortMap	      "u0"
       UpperLimit	      "35"
       LowerLimit	      "-35"
-      Port {
-	PortNumber		1
-	Name			"Xi(The heading)"
-      }
     }
     Block {
       BlockType		      Scope
@@ -2201,39 +2113,10 @@ Model {
       NumInputPorts	      "1"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "127"
-      Ports		      [1]
-      Position		      [450, 399, 480, 431]
-      ZOrder		      40
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
-      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','10000','DataLoggingVariableName','"
-      "ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-5.47"
-      "834','MaxYLimReal','44.64159','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','44.64159','LegendVisibility',"
-      "'On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
-      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0."
-      "411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745"
-      "09803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePrope"
-      "rtiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Xi(Estimated)','Xi(Measured)'}},'Sho"
-      "wContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-5.47834','MaxYLimReal','44.64159"
-      "','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','44.64159','LegendVisibility','On','XGrid',true,'YGrid',tr"
-      "ue,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862745098039"
-      "22],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607843137"
-      "2549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529411"
-      "7647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefine"
-      "dChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Too"
-      "ls','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b"
-      "')),'Version','2017b','Location',[254 272 1883 1060],'VisibleAtModelOpen','on','OpenAtMdlStart',true)"
-      NumInputPorts	      "1"
-    }
-    Block {
       BlockType		      Step
       Name		      "Step"
       SID		      "119"
-      Position		      [-40, 320, -10, 350]
+      Position		      [60, 320, 90, 350]
       ZOrder		      31
       After		      "35"
       SampleTime	      "0"
@@ -2247,7 +2130,7 @@ Model {
       Name		      "Sum"
       SID		      "120"
       Ports		      [2, 1]
-      Position		      [35, 260, 55, 280]
+      Position		      [135, 260, 155, 280]
       ZOrder		      32
       ShowName		      off
       IconShape		      "round"
@@ -2264,22 +2147,6 @@ Model {
       Position		      [765, 320, 825, 350]
       ZOrder		      30
       Filename		      "5_3_d.mat"
-    }
-    Block {
-      BlockType		      ZeroOrderHold
-      Name		      "Zero-Order\nHold"
-      SID		      "128"
-      Position		      [-115, 410, -80, 440]
-      ZOrder		      41
-      SampleTime	      "10"
-    }
-    Block {
-      BlockType		      ZeroOrderHold
-      Name		      "Zero-Order\nHold1"
-      SID		      "129"
-      Position		      [-115, 370, -80, 400]
-      ZOrder		      42
-      SampleTime	      "20"
     }
     Line {
       ZOrder		      45
@@ -2303,52 +2170,29 @@ Model {
       DstPort		      2
     }
     Line {
-      Name		      "Delta(The rudder angle)"
       ZOrder		      50
       SrcBlock		      "Limited PD Controller"
       SrcPort		      1
-      Points		      [13, 0]
+      Points		      [21, 0]
       Branch {
-	ZOrder			94
-	Labels			[2, 1]
-	Points			[0, 382; -433, 0; 0, -227]
-	DstBlock		"Zero-Order\nHold"
+	ZOrder			49
+	DstBlock		"Cargo ship"
 	DstPort			1
       }
       Branch {
-	ZOrder			93
-	Points			[83, 0]
-	Branch {
-	  ZOrder		  49
-	  DstBlock		  "Cargo ship"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  48
-	  Points		  [0, 75]
-	  DstBlock		  "Mux"
-	  DstPort		  3
-	}
+	ZOrder			48
+	Points			[0, 75]
+	DstBlock		"Mux"
+	DstPort			3
       }
     }
     Line {
-      Name		      "Xi(The heading)"
       ZOrder		      51
       SrcBlock		      "Saturation"
       SrcPort		      1
-      Points		      [-255, 0]
-      Branch {
-	ZOrder			91
-	Labels			[2, 1]
-	Points			[-175, 0]
-	DstBlock		"Zero-Order\nHold1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			90
-	DstBlock		"Sum"
-	DstPort			1
-      }
+      Points		      [-155, 0]
+      DstBlock		      "Sum"
+      DstPort		      1
     }
     Line {
       Name		      "psi_r"
@@ -2369,7 +2213,6 @@ Model {
       }
     }
     Line {
-      Name		      "Xi(Measured)"
       ZOrder		      59
       SrcBlock		      "Cargo ship"
       SrcPort		      1
@@ -2391,19 +2234,9 @@ Model {
       }
       Branch {
 	ZOrder			55
-	Points			[0, -50; -204, 0]
-	Branch {
-	  ZOrder		  86
-	  Labels		  [1, 1]
-	  Points		  [0, 225]
-	  DstBlock		  "Mux1"
-	  DstPort		  2
-	}
-	Branch {
-	  ZOrder		  85
-	  DstBlock		  "Saturation"
-	  DstPort		  1
-	}
+	Points			[0, -50]
+	DstBlock		"Saturation"
+	DstPort			1
       }
     }
     Line {
@@ -2413,93 +2246,11 @@ Model {
       DstBlock		      "North-East"
       DstPort		      1
     }
-    Line {
-      ZOrder		      72
-      SrcBlock		      "MATLAB Function"
-      SrcPort		      2
-      DstBlock		      "Memory1"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Xi(Estimated)"
-      ZOrder		      84
-      Labels		      [1, 1]
-      SrcBlock		      "Demux"
-      SrcPort		      3
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      87
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "Scope1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      88
-      SrcBlock		      "Zero-Order\nHold"
-      SrcPort		      1
-      Points		      [27, 0; 0, -20]
-      DstBlock		      "MATLAB Function"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      89
-      SrcBlock		      "Zero-Order\nHold1"
-      SrcPort		      1
-      Points		      [36, 0]
-      Branch {
-	ZOrder			134
-	Points			[0, 80]
-	DstBlock		"MATLAB Function"
-	DstPort			5
-      }
-      Branch {
-	ZOrder			133
-	DstBlock		"MATLAB Function"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      95
-      SrcBlock		      "MATLAB Function"
-      SrcPort		      1
-      Points		      [9, 0; 0, 165]
-      DstBlock		      "Memory2"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      130
-      SrcBlock		      "Memory2"
-      SrcPort		      1
-      Points		      [-75, 0; 0, -140]
-      DstBlock		      "MATLAB Function"
-      DstPort		      3
-    }
-    Line {
-      ZOrder		      97
-      SrcBlock		      "Memory1"
-      SrcPort		      1
-      Points		      [11, 0]
-      Branch {
-	ZOrder			101
-	Points			[0, -50]
-	DstBlock		"Demux"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			76
-	Points			[0, 62; -270, 0; 0, -72]
-	DstBlock		"MATLAB Function"
-	DstPort			4
-      }
-    }
   }
 }
 #Finite State Machines
 #
-#   Stateflow 80000012
+#   Stateflow 80000011
 #
 #
 Stateflow {
@@ -2508,7 +2259,7 @@ Stateflow {
     name		    "ship"
     created		    "07-Nov-2018 15:54:16"
     isLibrary		    0
-    sfVersion		    80000012
+    sfVersion		    80000011
     firstTarget		    14
   }
   chart {
@@ -2520,6 +2271,9 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -2546,24 +2300,18 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "%function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)\nfunction [ P, xhat ] = Kalman( xi_me"
-      "as, delta, P_, x_ , y)\n%KALMAN Kalmanfilters input \n%   Detailed explanation goes here\n\npersistent  init_fla"
-      "g A B C E x  Q R % P\n\n% Initialize\nif isempty(init_flag) \n    init_flag = 1 ;\n    \n    Q = [[30    0      "
-      " ]\n         [0     10*10^-6]];\n\n    P0_ =  [[1      0      0      0     0        ]\n            [0      0.013"
-      "  0      0     0        ]\n            [0      0      pi^2   0     0        ]\n            [0      0      0     "
-      " 1     0        ]\n            [0      0      0      0     2.5*10^-3]];\n        \n    x0_ = [0 0 0 0 0]';\n    "
-      "\n    A = [[0.996926739262672    0.100626789614164       0       0                    0                       ]\n"
-      "        [-0.061582920038110    1.011537233905485       0       0                    0                       ]\n "
-      "       [0                     0                       1       0.099931008253684    -1.076961159999087e-05  ]\n  "
-      "      [0                     0                       0       0.998620482470742    -2.153426863171962e-04  ]\n   "
-      "     [0                     0                       0       0                    1                       ]];\n  "
-      "  \n    B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E ="
-      " [[2.048850967535938*10^-5   4.105548994630666*10^-4     0                          0                           "
-      " 0                   ]\n        [ 0                         0                           -3.590283471015735*10^-7"
-      "   -1.076961159999087*10^-5     0.100000000000000]]';\n    \n    % The variance of the measurement noise divided"
-      " by the samilping time T = 0.1\n    R = 0.345587*10^-5/0.1; \n    \n    x = x0_;\n    P = P0_;\nelse\n    P = P_"
-      ";\n    x = x_;\nend\n\n \nL = P*C.'*inv(C*P*C.' + R);\n\nxhat =  x + L * (y - C*x);\n\nP = (eye(5)- L*C) * P *(e"
-      "ye(5)-L*C).' + L*R*L.';\n\n%x_ = A* x + B* \n\nend\n\n"
+      script		      "function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)\n%KALMAN Kalmanfilters input \n%   Det"
+      "ailed explanation goes here\n\npersistent  init_flag A B C E x P Q R\n\nif isempty(init_flag) % Initialize\n    "
+      "init_flag = 1 ;\n    \n    \n    Q = [30, 0;\n          0,10e-6];\n\n    P0_ =  [1,      0,    0, 0,  0;\n      "
+      "      0,  0.013,    0, 0,  0;\n            0,      0, pi^2, 0,  0;\n            0,      0,    0, 1,  0;\n       "
+      "     0,      0,    0, 0,2.5e-3];\n        \n    x0_ = [0;0;0;0;0];\n    \n    A = [[0         1                 "
+      "  0       0       0       ]\n        [-omega_0^2 2*lambda*omega_0    0       0       0       ]\n        [0      "
+      "    0                   0       1       0       ]\n        [0          0                   0       -1/T    -K/T "
+      "   ]\n        [0          0                   0       0       0       ]];\n    \n    B = [0 0 0 K/T 0]';\n    \n"
+      "    C = [0,1,1,0,0];\n    \n    E = [[0 K_w 0 0 0]\n        [ 0 0   0 0 1]]';\n    \n    R = 0.345587e-5/0.1; % "
+      "The variance of the measurement noise divided by the samilping time T = 0.1\n    \n    x = x0_\n    P = P0_\nels"
+      "e\n    P = P_;\n    x = x_;\nend\n\n \nL = P*C.'*inv(C*P*C.' + R);\n\nxhat =  x + L * (y - C*x);\n\nP = (eye(5)-"
+      " L*C) * P *(eye(5)-L*C).' + L*R*L.';\n\n\n\n\nacc_sum = acc_sum + i n ;\n\n\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
