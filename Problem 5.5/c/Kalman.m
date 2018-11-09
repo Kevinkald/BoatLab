@@ -1,7 +1,8 @@
 %function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
-function [ xhat, xi, b ] = Kalman( xi_meas, delta,  y)
+function [ xhat, xi, b ] = Kalman( xi_meas, delta,  y, u)
 %KALMAN Kalmanfilters input 
-%   Det er ikke denne funksjonen som brukes.
+%   Det er ikke denne funksjonen som brukes, men den er bygge på samme
+%   prinsippet.
 %   Den som brukes heter "MATLAB Function", og bruker ikke
 %   persistent-systemet, men forer bare tilbake de a priori verdiene. Jeg
 %   vet ikke hva som er best, men "MATLAB Function funker noenlunde.
@@ -51,11 +52,46 @@ L = P*C.'*inv(C*P*C.' + R);
 
 xhat =  x + L * (y - C*x);
 
-x = xhat;
+
 
 P = (eye(5)- L*C) * P *(eye(5)-L*C).' + L*R*L.';
 
-%x_ = A* x + B* 
-
+% Neste itterasjons variable
+x = A*xhat+B*u;
+P = A*P*A.';  % Her skulle forstyrrelsens korvariansmatrise vært, men den har vi ikke, så jeg antar den er 0.
 end
+
+
+% Den utgaven som tar vare på variablene gjennom ytre løkker:
+% Personlig tror jeg det er bedre å bruke "Persistent"
+%function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
+function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
+%KALMAN Kalmanfilters input 
+%   Dette er ikke den versjonen som brukes. Den tar vare på variablene fra gang
+%   til gang ved å ha de i en ytre løkke i loopen.
+
+% Fixed variables
+C = [0 1 1 0 0];
+    % The variance of the measurement noise divided by the samilping time T = 0.1
+    R = 0.345587*10^-5/0.1; 
+
+% Changing variables
+P = P_;
+x = x_;
+
+
+
+L = P*C.'*inv(C*P*C.' + R);
+
+xhat =  x + L * (y - C*x);
+
+P = (eye(5)- L*C) * P *(eye(5)-L*C).' + L*R*L.';
+
+
+% Neste itterasjons variable
+xhat = A*xhat+B*u;
+P = A*P*A.';  % Her skulle forstyrrelsens korvariansmatrise vært, men den har vi ikke, så jeg antar den er 0.
+end
+
+
 
