@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.50"
+    ComputedModelVersion    "1.51"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -82,7 +82,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1864.0, 794.0]
 	ZoomFactor		[1.2148480513884201]
-	Offset			[-185.50844995241863, 138.34855927081159]
+	Offset			[-185.50844995241863, 138.34855927081156]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 10 17:15:12 2018"
-  RTWModifiedTimeStamp	  463770904
-  ModelVersionFormat	  "1.%<AutoIncrement:50>"
+  LastModifiedDate	  "Sat Nov 10 22:48:24 2018"
+  RTWModifiedTimeStamp	  463790453
+  ModelVersionFormat	  "1.%<AutoIncrement:51>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -2538,15 +2538,14 @@ Stateflow {
       " 0];\n    \n    E = [[2.048850967535938*10^-5   4.105548994630666*10^-4     0                          0        "
       "                    0                   ]\n        [ 0                         0                           -3.59"
       "0283471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000]]';\n    \n    % The variance of the measur"
-      "ement noise divided by the samilping time T = 0.1\n    R = 0.345587*10^-5/0.1; \n    \n    X_hat = X_0;\n    \n "
-      "   X_ = X_0;\n    P_ = P_0;\nelse\n    %Kode som kjøres etter at KF er initialisert\n    \n    %Omgjøring av inp"
-      "ut [deg] til [rad]\n    y = y.*(pi/180);\n    u = u.*(pi/180);\n    \n    % [1] Computing the kalman gain L\n   "
-      " L = P_*C'*inv(C*P_*C' + R);\n    \n    % [2] Updating the estimate with the measurement y\n    X_hat = X_ + L *"
-      " (y - C*X_);\n    \n    % [3] Updating the error covariance matrix P\n    %This formula holds for both optimal a"
-      "nd suboptimal gain L\n    P = (eye(5)- L*C) * P_ *(eye(5)-L*C)' + L*R*L';\n    \n    %This formula only holds fo"
-      "r optimal chosen kalman gain L\n    %P = (eye(5)-L*C)*P_;\n    \n    % [4] Projecting ahead\n    X_ = A*X_hat + "
-      "B*u;\n    P_ = A*P*A' + Q;\nend\n\n% Returneres estimert psi og estimert b\npsi = X_hat(3);\nb = X_hat(5);\n\nen"
-      "d"
+      "ement noise divided by the samilping time T = 0.1\n    R = 0.345587*10^-5/0.1; \n    \n    X_ = X_0;\n    P_ = P"
+      "_0;\nend\n    \n%Kode som kjøres etter at KF er initialisert\n\n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/"
+      "180);\nu = u.*(pi/180);\n    \n% [1] Computing the kalman gain L\nL = P_*C'*inv(C*P_*C' + R);\n    \n% [2] Updat"
+      "ing the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Updating the error covariance"
+      " matrix P\n%This formula holds for both optimal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C)' + L"
+      "*R*L';\n    \n%This formula only holds for optimal chosen kalman gain L\n%P = (eye(5)-L*C)*P_;\n    \n% [4] Proj"
+      "ecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A' + Q;\n\n% Returneres estimert psi og estimert b\npsi = X_hat(3);\n"
+      "b = X_hat(5);\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
