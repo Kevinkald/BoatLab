@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.42"
+    ComputedModelVersion    "1.43"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -81,8 +81,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1864.0, 794.0]
-	ZoomFactor		[1.137007489300063]
-	Offset			[-254.73489855679145, 123.21383801160775]
+	ZoomFactor		[1.1542954267492209]
+	Offset			[-238.55048581796666, 126.75038987482796]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 10 16:04:25 2018"
-  RTWModifiedTimeStamp	  463766663
-  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  LastModifiedDate	  "Sat Nov 10 16:20:47 2018"
+  RTWModifiedTimeStamp	  463767647
+  ModelVersionFormat	  "1.%<AutoIncrement:43>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -230,7 +230,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "150"
+	  StopTime		  "100"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -917,8 +917,8 @@ Model {
       }
       Name		      "Configuration"
       ExtraOptions	      ""
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 430, 285, 1490, 915 ]
+      CurrentDlgPage	      "Simulation Target"
+      ConfigPrmDlgPosition    [ 71, 71, 1131, 651 ]
     }
     PropName		    "ConfigurationSets"
   }
@@ -1242,7 +1242,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "114"
+    ZoomFactor		    "115"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "143"
     Block {
@@ -1277,7 +1277,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "current"
 	    Prompt		    "current"
-	    Value		    "off"
+	    Value		    "on"
 	  }
 	  Object {
 	    $ObjectID		    24
@@ -1803,7 +1803,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain2"
       SID		      "142"
-      Position		      [380, 400, 440, 440]
+      Position		      [380, 380, 440, 420]
       ZOrder		      56
       Gain		      "180/pi"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -2209,15 +2209,15 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
       "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','10000','DataLoggingVariableName','"
-      "ScopeData2'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-22.9"
-      "1702','MaxYLimReal','201.5898','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','201.5898','LegendVisibility'"
+      "ScopeData2'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-11.5"
+      "8139','MaxYLimReal','99.56916','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','99.56916','LegendVisibility'"
       ",'On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68"
       "6274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0"
       ".411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274"
       "509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProp"
       "ertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Xi(Measured)','Gain2'}},'ShowConten"
-      "t',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-22.91702','MaxYLimReal','201.5898','YLa"
-      "belReal','','MinYLimMag','0.00000','MaxYLimMag','201.5898','LegendVisibility','On','XGrid',true,'YGrid',true,'Pl"
+      "t',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-11.58139','MaxYLimReal','99.56916','YLa"
+      "belReal','','MinYLimMag','0.00000','MaxYLimMag','99.56916','LegendVisibility','On','XGrid',true,'YGrid',true,'Pl"
       "otMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'C"
       "olorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0"
       ".392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1"
@@ -2269,7 +2269,7 @@ Model {
       Name		      "Zero-Order\nHold"
       SID		      "128"
       Position		      [-45, 440, -10, 470]
-      ZOrder		      41
+      ZOrder		      58
       SampleTime	      "Ts"
     }
     Block {
@@ -2277,7 +2277,7 @@ Model {
       Name		      "Zero-Order\nHold1"
       SID		      "129"
       Position		      [-45, 385, -10, 415]
-      ZOrder		      42
+      ZOrder		      59
       SampleTime	      "Ts"
     }
     Line {
@@ -2308,8 +2308,8 @@ Model {
       SrcPort		      1
       Points		      [37, 0]
       Branch {
-	ZOrder			180
-	Points			[0, 258; -501, 0; 0, -73]
+	ZOrder			190
+	Points			[0, 258; -491, 0; 0, -73]
 	DstBlock		"Zero-Order\nHold"
 	DstPort			1
       }
@@ -2337,15 +2337,15 @@ Model {
       SrcPort		      1
       Points		      [-255, 0]
       Branch {
-	ZOrder			179
-	Labels			[2, 1]
-	Points			[-220, 0; 0, 200]
-	DstBlock		"Zero-Order\nHold1"
+	ZOrder			188
+	DstBlock		"Sum"
 	DstPort			1
       }
       Branch {
-	ZOrder			90
-	DstBlock		"Sum"
+	ZOrder			187
+	Labels			[2, 1]
+	Points			[-204, 0; 0, 200]
+	DstBlock		"Zero-Order\nHold1"
 	DstPort			1
       }
     }
@@ -2410,20 +2410,6 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      144
-      SrcBlock		      "Zero-Order\nHold1"
-      SrcPort		      1
-      DstBlock		      "MATLAB Function"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      145
-      SrcBlock		      "Zero-Order\nHold"
-      SrcPort		      1
-      DstBlock		      "MATLAB Function"
-      DstPort		      2
-    }
-    Line {
       ZOrder		      150
       SrcBlock		      "Mux1"
       SrcPort		      1
@@ -2433,10 +2419,9 @@ Model {
     Line {
       Name		      "psi_hat"
       ZOrder		      151
-      Labels		      [2, 1]
+      Labels		      [1, 1]
       SrcBlock		      "MATLAB Function"
       SrcPort		      1
-      Points		      [61, 0; 0, 20]
       DstBlock		      "Gain2"
       DstPort		      1
     }
@@ -2454,7 +2439,22 @@ Model {
       ZOrder		      178
       SrcBlock		      "Gain2"
       SrcPort		      1
+      Points		      [60, 0; 0, 20]
       DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      191
+      SrcBlock		      "Zero-Order\nHold1"
+      SrcPort		      1
+      DstBlock		      "MATLAB Function"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      192
+      SrcBlock		      "Zero-Order\nHold"
+      SrcPort		      1
+      DstBlock		      "MATLAB Function"
       DstPort		      2
     }
   }
@@ -2491,7 +2491,7 @@ Stateflow {
     chartFileNumber	    1
     disableImplicitCasting  1
     eml {
-      name		      "kalman"
+      name		      "Kalman"
     }
     firstData		    4
     firstTransition	    9
@@ -2512,7 +2512,7 @@ Stateflow {
     eml {
       isEML		      1
       script		      "% Input: måling y, pådrag u\n% Output: kalman filter: Estimert psi uten støy og rudder bias b\nfu"
-      "nction [psi, b] = kalman(y, u)\n\npersistent  init_flag A B C E X_ Q R P_\n\n% Initialize\nif isempty(init_flag)"
+      "nction [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ Q R P_\n\n% Initialize\nif isempty(init_flag)"
       "\n    \n    init_flag = 1 ;\n     \n    Q =  [[30      0        0      0     0  ]\n          [0      10*10^-6  0"
       "      0     0  ]\n          [0      0         0      0     0  ]\n          [0      0         0      0     0  ]\n"
       "          [0      0         0      0     0  ]];\n\n    P_0 =  [[1      0      0      0     0        ]\n         "
