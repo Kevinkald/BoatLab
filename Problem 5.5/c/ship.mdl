@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.51"
+    ComputedModelVersion    "1.54"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -81,8 +81,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1864.0, 794.0]
-	ZoomFactor		[1.2148480513884201]
-	Offset			[-185.50844995241863, 138.34855927081156]
+	ZoomFactor		[1.214900550037799]
+	Offset			[-185.50795197061245, 150.1446719562515]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 10 22:48:24 2018"
-  RTWModifiedTimeStamp	  463790453
-  ModelVersionFormat	  "1.%<AutoIncrement:51>"
+  LastModifiedDate	  "Sun Nov 11 17:10:04 2018"
+  RTWModifiedTimeStamp	  463856168
+  ModelVersionFormat	  "1.%<AutoIncrement:54>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1081,6 +1081,15 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Memory
+      InitialCondition	      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -1244,7 +1253,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "121"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "147"
+    SIDHighWatermark	    "152"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1804,7 +1813,7 @@ Model {
       Name		      "Limited PD Controller"
       SID		      "109"
       Ports		      [1, 1]
-      Position		      [195, 240, 290, 300]
+      Position		      [160, 240, 255, 300]
       ZOrder		      26
       BackgroundColor	      "cyan"
       RequestExecContextInheritance off
@@ -1912,8 +1921,9 @@ Model {
       Name		      "MATLAB Function2"
       SID		      "147"
       Ports		      [2, 2]
-      Position		      [60, 374, 195, 481]
+      Position		      [-40, 374, 95, 481]
       ZOrder		      63
+      BackgroundColor	      "orange"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
@@ -2070,6 +2080,20 @@ Model {
       }
     }
     Block {
+      BlockType		      Memory
+      Name		      "Memory"
+      SID		      "151"
+      Position		      [160, 385, 190, 415]
+      ZOrder		      69
+    }
+    Block {
+      BlockType		      Memory
+      Name		      "Memory1"
+      SID		      "152"
+      Position		      [160, 440, 190, 470]
+      ZOrder		      70
+    }
+    Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "115"
@@ -2168,22 +2192,22 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
       "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','10000','DataLoggingVariableName','"
-      "ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.00"
-      "021','MaxYLimReal','0.00002','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.00021','LegendVisibility','O"
-      "ff','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6862"
-      "74509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4"
-      "11764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27450"
-      "9803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProper"
-      "tiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'rudder b'}},'ShowContent',true,'Place"
-      "ment',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.00021','MaxYLimReal','0.00002','YLabelReal','','Min"
-      "YLimMag','0.00000','MaxYLimMag','0.00021','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',fals"
-      "e,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 "
-      "0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098"
-      " 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509803"
-      "9215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'N"
-      "umLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',"
-      "true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b',"
-      "'Location',[1 71.6666666666667 1281 679])"
+      "ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','2.719"
+      "53','MaxYLimReal','2.99608','YLabelReal','','MinYLimMag','2.71953','MaxYLimMag','2.99608','LegendVisibility','Of"
+      "f','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627"
+      "4509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41"
+      "1764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509"
+      "803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropert"
+      "iesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'psi_hat1'}},'ShowContent',true,'Placem"
+      "ent',1)},'DisplayPropertyDefaults',struct('MinYLimReal','2.71953','MaxYLimReal','2.99608','YLabelReal','','MinYL"
+      "imMag','2.71953','MaxYLimMag','2.99608','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,"
+      "'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0."
+      "0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0"
+      ".831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392"
+      "15686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'Num"
+      "Lines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',tr"
+      "ue,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b','L"
+      "ocation',[1 71.6666666666667 1281 679])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2198,22 +2222,22 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
       "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','30000','DataLoggingVariableName','"
-      "ScopeData2'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-10.3"
-      "3522','MaxYLimReal','87.96965','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','87.96965','LegendVisibility'"
-      ",'On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68"
-      "6274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0"
-      ".411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274"
-      "509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProp"
-      "ertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'psi_mes','psi_hat','psi_r'}},'ShowC"
-      "ontent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-10.33522','MaxYLimReal','87.96965'"
-      ",'YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','87.96965','LegendVisibility','On','XGrid',true,'YGrid',tru"
-      "e,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980392"
-      "2],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372"
-      "549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117"
-      "647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefined"
-      "ChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tool"
-      "s','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b'"
-      ")),'Version','2018b','Location',[1 71.6666666666667 1281 679])"
+      "ScopeData2'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-8.58"
+      "303','MaxYLimReal','34.287','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','34.287','LegendVisibility','On'"
+      ",'XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6862745"
+      "09803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4117"
+      "64705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27450980"
+      "3921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertie"
+      "sCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'psi_mes','psi_hat','psi_r'}},'ShowConten"
+      "t',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-8.58303','MaxYLimReal','34.287','YLabel"
+      "Real','','MinYLimMag','0.00000','MaxYLimMag','34.287','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMag"
+      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
+      "rder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921"
+      "56862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 "
+      "0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNam"
+      "es',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot N"
+      "avigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Versio"
+      "n','2018b','Location',[1 71.6666666666667 1281 679])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2245,6 +2269,20 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      SID		      "150"
+      Ports		      [2, 1]
+      Position		      [305, 260, 325, 280]
+      ZOrder		      68
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      ToFile
       Name		      "To File"
       SID		      "121"
@@ -2257,7 +2295,7 @@ Model {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold"
       SID		      "128"
-      Position		      [-45, 440, -10, 470]
+      Position		      [-110, 440, -75, 470]
       ZOrder		      58
       SampleTime	      "Ts"
     }
@@ -2265,7 +2303,7 @@ Model {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold1"
       SID		      "129"
-      Position		      [-45, 385, -10, 415]
+      Position		      [-110, 385, -75, 415]
       ZOrder		      59
       SampleTime	      "Ts"
     }
@@ -2273,8 +2311,19 @@ Model {
       BlockType		      Gain
       Name		      "psi_hat"
       SID		      "142"
-      Position		      [380, 380, 440, 420]
+      Position		      [235, 380, 295, 420]
       ZOrder		      56
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "psi_hat1"
+      SID		      "148"
+      Position		      [235, 435, 295, 475]
+      ZOrder		      64
       Gain		      "180/pi"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -2300,35 +2349,6 @@ Model {
       SrcPort		      3
       DstBlock		      "North-East"
       DstPort		      2
-    }
-    Line {
-      Name		      "Delta(The rudder angle)"
-      ZOrder		      50
-      SrcBlock		      "Limited PD Controller"
-      SrcPort		      1
-      Points		      [37, 0]
-      Branch {
-	ZOrder			190
-	Points			[0, 258; -491, 0; 0, -73]
-	DstBlock		"Zero-Order\nHold"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			174
-	Points			[59, 0]
-	Branch {
-	  ZOrder		  49
-	  DstBlock		  "Cargo ship"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  48
-	  Labels		  [0, 0]
-	  Points		  [0, 75]
-	  DstBlock		  "Mux"
-	  DstPort		  3
-	}
-      }
     }
     Line {
       Name		      "psi"
@@ -2433,7 +2453,7 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "MATLAB Function2"
       SrcPort		      1
-      DstBlock		      "psi_hat"
+      DstBlock		      "Memory"
       DstPort		      1
     }
     Line {
@@ -2442,15 +2462,14 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "MATLAB Function2"
       SrcPort		      2
-      Points		      [291, 0; 0, 20]
-      DstBlock		      "Scope1"
+      DstBlock		      "Memory1"
       DstPort		      1
     }
     Line {
       ZOrder		      178
       SrcBlock		      "psi_hat"
       SrcPort		      1
-      Points		      [60, 0; 0, 10]
+      Points		      [205, 0; 0, 10]
       DstBlock		      "Mux1"
       DstPort		      2
     }
@@ -2467,6 +2486,64 @@ Model {
       SrcPort		      1
       DstBlock		      "MATLAB Function2"
       DstPort		      2
+    }
+    Line {
+      ZOrder		      218
+      SrcBlock		      "psi_hat1"
+      SrcPort		      1
+      Points		      [335, 0]
+      DstBlock		      "Scope1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      246
+      SrcBlock		      "Memory"
+      SrcPort		      1
+      DstBlock		      "psi_hat"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      247
+      SrcBlock		      "Memory1"
+      SrcPort		      1
+      DstBlock		      "psi_hat1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Delta(The rudder angle)"
+      ZOrder		      248
+      Labels		      [0, 0]
+      SrcBlock		      "Limited PD Controller"
+      SrcPort		      1
+      DstBlock		      "Sum2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      252
+      SrcBlock		      "Sum2"
+      SrcPort		      1
+      Points		      [19, 0]
+      Branch {
+	ZOrder			256
+	Points			[0, 282; -508, 0; 0, -97]
+	DstBlock		"Zero-Order\nHold"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			255
+	Points			[31, 0]
+	Branch {
+	  ZOrder		  254
+	  Points		  [0, 75]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Branch {
+	  ZOrder		  253
+	  DstBlock		  "Cargo ship"
+	  DstPort		  1
+	}
+      }
     }
   }
 }
@@ -2524,28 +2601,34 @@ Stateflow {
       isEML		      1
       script		      "% Input: måling y, pådrag u\n% Output: kalman filter: Estimert psi uten støy og rudder bias b\nfu"
       "nction [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ Q R P_\n% Initialize\nif isempty(init_flag)\n"
-      "    \n    init_flag = 1 ;\n     \n    Q =  [[30      0        0      0     0  ]\n          [0      10*10^-6  0  "
-      "    0     0  ]\n          [0      0         0      0     0  ]\n          [0      0         0      0     0  ]\n  "
-      "        [0      0         0      0     0  ]];\n\n    P_0 =  [[1      0      0      0     0        ]\n           "
-      " [0      0.013  0      0     0        ]\n            [0      0      pi^2   0     0        ]\n            [0     "
-      " 0      0      1     0        ]\n            [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 "
-      "0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164       0       0                    0           "
-      "            ]\n        [-0.061582920038110    1.011537233905485       0       0                    0            "
-      "           ]\n        [0                     0                       1       0.099931008253684    -1.07696115999"
-      "9087*10^-5  ]\n        [0                     0                       0       0.998620482470742    -2.1534268631"
-      "71962*10^-4  ]\n        [0                     0                       0       0                    1           "
-      "            ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0"
-      " 0];\n    \n    E = [[2.048850967535938*10^-5   4.105548994630666*10^-4     0                          0        "
-      "                    0                   ]\n        [ 0                         0                           -3.59"
-      "0283471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000]]';\n    \n    % The variance of the measur"
-      "ement noise divided by the samilping time T = 0.1\n    R = 0.345587*10^-5/0.1; \n    \n    X_ = X_0;\n    P_ = P"
-      "_0;\nend\n    \n%Kode som kjøres etter at KF er initialisert\n\n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/"
-      "180);\nu = u.*(pi/180);\n    \n% [1] Computing the kalman gain L\nL = P_*C'*inv(C*P_*C' + R);\n    \n% [2] Updat"
-      "ing the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Updating the error covariance"
-      " matrix P\n%This formula holds for both optimal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C)' + L"
-      "*R*L';\n    \n%This formula only holds for optimal chosen kalman gain L\n%P = (eye(5)-L*C)*P_;\n    \n% [4] Proj"
-      "ecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A' + Q;\n\n% Returneres estimert psi og estimert b\npsi = X_hat(3);\n"
-      "b = X_hat(5);\n\nend"
+      "    \n    init_flag = 1 ;\n     \n    Q = [[4.423947854842564e-12    6.654648527341863e-11        0         0   "
+      "      0]\n         [6.654648527341863e-11    1.330944357393798e-09         0         0         0]\n         [0  "
+      "       0         2.320046463925274e-17         5.799226700732895e-16         -3.590283471015737e-12]\n         ["
+      "0         0         5.799226700732893e-16         1.546282599125258e-14   -1.076961159999087e-10]\n         [0  "
+      "       0         -3.590283471015736e-12         -1.076961159999087e-10         1.000000000000000e-06]];\n    \n "
+      "   %The Q_d with given Q matrix (Q11 = 30)\n    Q = [1.68080996498622e-07,2.52832988209693e-06,0,0,0;\n        2"
+      ".52832988209693e-06,5.05671543189852e-05,0,0,0;\n        0,0,2.32004646392527e-17,5.79922670073290e-16,-3.590283"
+      "47101574e-12;\n        0,0,5.79922670073289e-16,1.54628259912526e-14,-1.07696115999909e-10;\n        0,0,-3.5902"
+      "8347101574e-12,-1.07696115999909e-10,1.00000000000000e-06];\n    P_0 =  [[1      0      0      0     0        ]\n"
+      "            [0      0.013  0      0     0        ]\n            [0      0      pi^2   0     0        ]\n        "
+      "    [0      0      0      1     0        ]\n            [0      0      0      0     2.5*10^-3]];\n        \n    "
+      "X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164       0       0                    0"
+      "                       ]\n        [-0.061582920038110    1.011537233905485       0       0                    0 "
+      "                      ]\n        [0                     0                       1       0.099931008253684    -1."
+      "076961159999087*10^-5  ]\n        [0                     0                       0       0.998620482470742    -2"
+      ".153426863171962*10^-4  ]\n        [0                     0                       0       0                    1"
+      "                       ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C"
+      " = [0 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.105548994630666*10^-4     0                        "
+      "  0                            0                   ]\n        [ 0                         0                     "
+      "      -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000]]';\n    \n    % The variance of"
+      " the measurement noise divided by the samilping time T = 0.1\n    R = 0.345587*10^-5/0.1; \n    \n    X_ = X_0;\n"
+      "    P_ = P_0;\nend\n    \n%Kode som kjøres etter at KF er initialisert\n\n%Omgjøring av input [deg] til [rad]\ny"
+      " = y.*(pi/180);\nu = u.*(pi/180);\n    \n% [1] Computing the kalman gain L\nL = P_*C'*inv(C*P_*C' + R);\n    \n%"
+      " [2] Updating the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Updating the error "
+      "covariance matrix P\n%This formula holds for both optimal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)"
+      "-L*C)' + L*R*L';\n    \n%This formula only holds for optimal chosen kalman gain L\n%P = (eye(5)-L*C)*P_;\n    \n"
+      "% [4] Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A' + Q;\n\n% Returneres estimert psi og estimert b\npsi = "
+      "X_hat(3);\nb = X_hat(5);\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
