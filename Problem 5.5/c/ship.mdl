@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.47"
+    ComputedModelVersion    "1.50"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -83,7 +83,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1864.0, 839.0]
 	ZoomFactor		[1.223941851006324]
-	Offset			[-208.86032690724477, 106.2383686356132]
+	Offset			[-208.86032690724477, 170.41977394346878]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -117,9 +117,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jan F"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 11 13:43:46 2018"
-  RTWModifiedTimeStamp	  463844611
-  ModelVersionFormat	  "1.%<AutoIncrement:47>"
+  LastModifiedDate	  "Sun Nov 11 13:52:55 2018"
+  RTWModifiedTimeStamp	  463845173
+  ModelVersionFormat	  "1.%<AutoIncrement:50>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1050,6 +1050,15 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Memory
+      InitialCondition	      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -1206,7 +1215,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "122"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "157"
+    SIDHighWatermark	    "159"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1773,7 +1782,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain2"
       SID		      "151"
-      Position		      [215, 415, 265, 445]
+      Position		      [265, 420, 315, 450]
       ZOrder		      53
       Gain		      "180/pi"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1886,6 +1895,20 @@ Model {
 	  DstPort		  1
 	}
       }
+    }
+    Block {
+      BlockType		      Memory
+      Name		      "Memory"
+      SID		      "158"
+      Position		      [210, 380, 240, 410]
+      ZOrder		      60
+    }
+    Block {
+      BlockType		      Memory
+      Name		      "Memory1"
+      SID		      "159"
+      Position		      [210, 430, 240, 460]
+      ZOrder		      61
     }
     Block {
       BlockType		      Mux
@@ -2006,7 +2029,7 @@ Model {
       Name		      "Sum1"
       SID		      "157"
       Ports		      [2, 1]
-      Position		      [280, 250, 300, 270]
+      Position		      [315, 250, 335, 270]
       ZOrder		      59
       ShowName		      off
       IconShape		      "round"
@@ -2312,7 +2335,7 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      1
-      DstBlock		      "Gain1"
+      DstBlock		      "Memory"
       DstPort		      1
     }
     Line {
@@ -2341,10 +2364,11 @@ Model {
     Line {
       Name		      "Bias"
       ZOrder		      160
-      Labels		      [1, 0]
+      Labels		      [3, 0]
       SrcBlock		      "kalman\n"
       SrcPort		      2
-      DstBlock		      "Gain2"
+      Points		      [20, 0; 0, 15]
+      DstBlock		      "Memory1"
       DstPort		      1
     }
     Line {
@@ -2359,7 +2383,7 @@ Model {
       ZOrder		      193
       SrcBlock		      "Sum1"
       SrcPort		      1
-      Points		      [38, 0; 0, 10]
+      Points		      [3, 0; 0, 10]
       Branch {
 	ZOrder			199
 	Points			[0, 214; -487, 0; 0, -59]
@@ -2376,7 +2400,7 @@ Model {
       ZOrder		      197
       SrcBlock		      "Gain2"
       SrcPort		      1
-      Points		      [20, 0]
+      Points		      [5, 0]
       DstBlock		      "Sum1"
       DstPort		      2
     }
@@ -2388,6 +2412,21 @@ Model {
       SrcPort		      1
       Points		      [15, 0; 0, -10]
       DstBlock		      "Sum1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      203
+      SrcBlock		      "Memory"
+      SrcPort		      1
+      DstBlock		      "Gain1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      204
+      SrcBlock		      "Memory1"
+      SrcPort		      1
+      Points		      [5, 0; 0, 2]
+      DstBlock		      "Gain2"
       DstPort		      1
     }
   }
@@ -2446,8 +2485,8 @@ Stateflow {
       isEML		      1
       script		      "% Input: måling y, pådrag u\n% Output: kalman filter: Estimert psi uten støy og rudder bias b\nfu"
       "nction [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ Q R P_ \n\n% Initialize\nif isempty(init_flag"
-      ")\n    \n    init_flag = 1 ;\n     \n    Q =  [[30      0        0      0     0  ]\n          [0      10*10^-6  "
-      "0      0     0  ]\n          [0      0         0      0     0  ]\n          [0      0         0      0     0  ]\n"
+      ")\n    \n    init_flag = 1 ;\n     \n    Q =  [[1      0        0      0     0  ]\n          [0      10*10^-6  0"
+      "      0     0  ]\n          [0      0         0      0     0  ]\n          [0      0         0      0     0  ]\n"
       "          [0      0         0      0     0  ]];\n\n    P_0 =  [[1      0      0      0     0        ]\n         "
       "   [0      0.013  0      0     0        ]\n            [0      0      pi^2   0     0        ]\n            [0   "
       "   0      0      1     0        ]\n            [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 "
