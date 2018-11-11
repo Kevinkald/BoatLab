@@ -1,33 +1,33 @@
-%function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
-function [ xhat, xi, b ] = Kalman( xi_meas, delta,  y, u)
-%KALMAN Kalmanfilters input 
-%   Det er ikke denne funksjonen som brukes, men den er bygge på samme
-%   prinsippet.
-%   Den som brukes heter "MATLAB Function", og bruker ikke
-%   persistent-systemet, men forer bare tilbake de a priori verdiene. Jeg
-%   vet ikke hva som er best, men "MATLAB Function funker noenlunde.
 
-persistent  init_flag A B C E x  Q R  P
+% Input: måling y, pådrag u
+% Output: kalman filter: Estimert psi uten støy og rudder bias b
+function [psi, b] = Kalman(y, u)
+
+persistent  init_flag A B C E X_ Q R P_
 
 % Initialize
-if isempty(init_flag) 
-    init_flag = 1 ;
+if isempty(init_flag)
     
-    Q = [[30    0       ]
-         [0     10*10^-6]];
+    init_flag = 1 ;
+     
+    Q =  [[30      0        0      0     0  ]
+          [0      10*10^-6  0      0     0  ]
+          [0      0         0      0     0  ]
+          [0      0         0      0     0  ]
+          [0      0         0      0     0  ]];
 
-    P0_ =  [[1      0      0      0     0        ]
+    P_0 =  [[1      0      0      0     0        ]
             [0      0.013  0      0     0        ]
             [0      0      pi^2   0     0        ]
             [0      0      0      1     0        ]
             [0      0      0      0     2.5*10^-3]];
         
-    x0_ = [0 0 0 0 0]';
+    X_0 = [0 0 0 0 0]';
     
     A = [[0.996926739262672    0.100626789614164       0       0                    0                       ]
         [-0.061582920038110    1.011537233905485       0       0                    0                       ]
-        [0                     0                       1       0.099931008253684    -1.076961159999087e-05  ]
-        [0                     0                       0       0.998620482470742    -2.153426863171962e-04  ]
+        [0                     0                       1       0.099931008253684    -1.076961159999087*10^-5  ]
+        [0                     0                       0       0.998620482470742    -2.153426863171962*10^-4  ]
         [0                     0                       0       0                    1                       ]];
     
     B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';
@@ -40,58 +40,35 @@ if isempty(init_flag)
     % The variance of the measurement noise divided by the samilping time T = 0.1
     R = 0.345587*10^-5/0.1; 
     
-    x = x0_;
-    P = P0_;
+    X_hat = X_0;
+    
+    X_ = X_0;
+    P_ = P_0;
 else
-    %P = P_;
-    %x = x_;
+    %Kode som kjøres etter at KF er initialisert
+    
+    %Omgjøring av input [deg] til [rad]
+    y = y.*(pi/180);
+    u = u.*(pi/180);
+    
+    % [1] Computing the kalman gain L
+    L = P_*C.'*inv(C*P_*C.' + R);
+    
+    % [2] Updating the estimate with the measurement y
+    X_hat = X_ + L * (y - C*X_);
+    
+    % [3] Updating the error covariance matrix P
+    %This formula holds for both optimal and suboptimal gain L
+    P = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';
+    %P = (eye(5)-L*C)*P_;
+    
+    % [4] Projecting ahead
+    X_ = A*X_hat + B*u;
+    P_ = A*P*A.' + Q;
 end
 
- 
-L = P*C.'*inv(C*P*C.' + R);
+% Returneres estimert psi og estimert b
+psi = X_hat(3);
+b = X_hat(5);
 
-xhat =  x + L * (y - C*x);
-
-
-
-P = (eye(5)- L*C) * P *(eye(5)-L*C).' + L*R*L.';
-
-% Neste itterasjons variable
-x = A*xhat+B*u;
-P = A*P*A.';  % Her skulle forstyrrelsens korvariansmatrise vært, men den har vi ikke, så jeg antar den er 0.
 end
-
-
-% Den utgaven som tar vare på variablene gjennom ytre løkker:
-% Personlig tror jeg det er bedre å bruke "Persistent"
-%function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
-function [ P, xhat ] = Kalman( xi_meas, delta, P_, x_ , y)
-%KALMAN Kalmanfilters input 
-%   Dette er ikke den versjonen som brukes. Den tar vare på variablene fra gang
-%   til gang ved å ha de i en ytre løkke i loopen.
-
-% Fixed variables
-C = [0 1 1 0 0];
-    % The variance of the measurement noise divided by the samilping time T = 0.1
-    R = 0.345587*10^-5/0.1; 
-
-% Changing variables
-P = P_;
-x = x_;
-
-
-
-L = P*C.'*inv(C*P*C.' + R);
-
-xhat =  x + L * (y - C*x);
-
-P = (eye(5)- L*C) * P *(eye(5)-L*C).' + L*R*L.';
-
-
-% Neste itterasjons variable
-xhat = A*xhat+B*u;
-P = A*P*A.';  % Her skulle forstyrrelsens korvariansmatrise vært, men den har vi ikke, så jeg antar den er 0.
-end
-
-
-
