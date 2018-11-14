@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.54"
+    ComputedModelVersion    "1.55"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 11 17:10:04 2018"
-  RTWModifiedTimeStamp	  463856168
-  ModelVersionFormat	  "1.%<AutoIncrement:54>"
+  LastModifiedDate	  "Tue Nov 13 12:32:02 2018"
+  RTWModifiedTimeStamp	  463857351
+  ModelVersionFormat	  "1.%<AutoIncrement:55>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -2469,7 +2469,7 @@ Model {
       ZOrder		      178
       SrcBlock		      "psi_hat"
       SrcPort		      1
-      Points		      [205, 0; 0, 10]
+      Points		      [83, 0; 0, 10]
       DstBlock		      "Mux1"
       DstPort		      2
     }
