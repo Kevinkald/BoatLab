@@ -1,6 +1,6 @@
 
-% Input: måling y, pådrag u
-% Output: kalman filter: Estimert psi uten støy og rudder bias b
+% Input: mÃ¥ling y, pÃ¥drag u
+% Output: kalman filter: Estimert psi uten stÃ¸y og rudder bias b
 function [psi, b] = Kalman(y, u)
 
 persistent  init_flag A B C E X_ Q R P_
@@ -10,11 +10,8 @@ if isempty(init_flag)
     
     init_flag = 1 ;
      
-    Q =  [[30      0        0      0     0  ]
-          [0      10*10^-6  0      0     0  ]
-          [0      0         0      0     0  ]
-          [0      0         0      0     0  ]
-          [0      0         0      0     0  ]];
+    Q =  [[30      0      ]
+          [0      10^-6]];
 
     P_0 =  [[1      0      0      0     0        ]
             [0      0.013  0      0     0        ]
@@ -44,10 +41,10 @@ if isempty(init_flag)
     
     X_ = X_0;
     P_ = P_0;
-else
-    %Kode som kjøres etter at KF er initialisert
+end
+    %Kode som kjÃ¸res etter at KF er initialisert
     
-    %Omgjøring av input [deg] til [rad]
+    %OmgjÃ¸ring av input [deg] til [rad]
     y = y.*(pi/180);
     u = u.*(pi/180);
     
@@ -64,7 +61,7 @@ else
     
     % [4] Projecting ahead
     X_ = A*X_hat + B*u;
-    P_ = A*P*A.' + Q;
+    P_ = A*P*A.' + E*Q*E';
 end
 
 % Returneres estimert psi og estimert b
