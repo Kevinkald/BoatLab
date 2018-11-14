@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.64"
+    ComputedModelVersion    "1.65"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -82,8 +82,8 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
-	  ZoomFactor		  [1.379293117694057]
-	  Offset		  [-95.069648913713991, 157.91009725631866]
+	  ZoomFactor		  [1.4710963769789316]
+	  Offset		  [-39.516711630240479, 187.56578842948556]
 	}
 	Object {
 	  $ObjectID		  6
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 14 13:18:53 2018"
-  RTWModifiedTimeStamp	  464102291
-  ModelVersionFormat	  "1.%<AutoIncrement:64>"
+  LastModifiedDate	  "Wed Nov 14 16:51:23 2018"
+  RTWModifiedTimeStamp	  464103725
+  ModelVersionFormat	  "1.%<AutoIncrement:65>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1155,10 +1155,6 @@ Model {
       RndMeth		      "Floor"
     }
     Block {
-      BlockType		      Scope
-      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
-    }
-    Block {
       BlockType		      Step
       Time		      "1"
       Before		      "0"
@@ -1263,9 +1259,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "138"
+    ZoomFactor		    "147"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "161"
+    SIDHighWatermark	    "163"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1305,7 +1301,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "off"
+	    Value		    "on"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -1825,7 +1821,7 @@ Model {
       Name		      "Limited PD Controller"
       SID		      "109"
       Ports		      [1, 1]
-      Position		      [145, 240, 240, 300]
+      Position		      [105, 240, 200, 300]
       ZOrder		      26
       BackgroundColor	      "cyan"
       RequestExecContextInheritance off
@@ -1928,8 +1924,10 @@ Model {
       BlockType		      Memory
       Name		      "Memory"
       SID		      "158"
-      Position		      [210, 380, 240, 410]
+      Position		      [105, 395, 135, 425]
       ZOrder		      60
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       Port {
 	PortNumber		1
 	Name			"psi_est"
@@ -1939,28 +1937,20 @@ Model {
       BlockType		      Memory
       Name		      "Memory1"
       SID		      "159"
-      Position		      [210, 435, 240, 465]
+      Position		      [65, 450, 95, 480]
       ZOrder		      61
+      BlockMirror	      on
+      NamePlacement	      "alternate"
     }
     Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "115"
-      Ports		      [4, 1]
-      Position		      [685, 316, 690, 354]
+      Ports		      [5, 1]
+      Position		      [695, 305, 700, 385]
       ZOrder		      34
       ShowName		      off
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "124"
-      Ports		      [3, 1]
-      Position		      [605, 406, 610, 444]
-      ZOrder		      37
-      ShowName		      off
-      Inputs		      "3"
+      Inputs		      "5"
       DisplayOption	      "bar"
     }
     Block {
@@ -1983,80 +1973,10 @@ Model {
       st		      "-1"
     }
     Block {
-      BlockType		      Saturate
-      Name		      "Saturation"
-      SID		      "117"
-      Ports		      [1, 1]
-      Position		      [305, 185, 335, 215]
-      ZOrder		      33
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      InputPortMap	      "u0"
-      UpperLimit	      "35"
-      LowerLimit	      "-35"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope"
-      SID		      "160"
-      Ports		      [1]
-      Position		      [690, 469, 720, 501]
-      ZOrder		      62
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-2.32873','MaxYLimReal','15.73254','YLabelReal','','MinYLimMa"
-      "g','0.00000','MaxYLimMag','15.73254','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
-      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
-      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
-      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
-      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
-      "es',1,'LineNames',{{'Memory1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal"
-      "','-2.32873','MaxYLimReal','15.73254','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','15.73254','LegendVisi"
-      "bility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803"
-      "922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.41176470588235"
-      "3 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019"
-      "608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('To"
-      "ols','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','201"
-      "8b')"
-      NumInputPorts	      "1"
-      Floating		      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "127"
-      Ports		      [1]
-      Position		      [690, 409, 720, 441]
-      ZOrder		      40
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
-      "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','100000','DataLoggingVariableName',"
-      "'ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-11."
-      "44619','MaxYLimReal','34.60513','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','34.60513','LegendVisibility"
-      "','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6"
-      "86274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 "
-      "0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
-      "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePro"
-      "pertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'psi_m','psi_est','psi_r'}},'ShowCo"
-      "ntent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-11.44619','MaxYLimReal','34.60513',"
-      "'YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','34.60513','LegendVisibility','On','XGrid',true,'YGrid',true"
-      ",'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922"
-      "],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784313725"
-      "49;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352941176"
-      "47 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedC"
-      "hannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools"
-      "','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')"
-      "),'Version','2018b','Location',[1 71.6666666666667 1281 679])"
-      NumInputPorts	      "1"
-      Floating		      off
-    }
-    Block {
       BlockType		      Step
       Name		      "Step"
       SID		      "119"
-      Position		      [-40, 320, -10, 350]
+      Position		      [-30, 255, 0, 285]
       ZOrder		      31
       After		      "30"
       SampleTime	      "0"
@@ -2074,7 +1994,7 @@ Model {
       ZOrder		      32
       ShowName		      off
       IconShape		      "round"
-      Inputs		      "-|+"
+      Inputs		      "|+-"
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -2084,7 +2004,7 @@ Model {
       Name		      "Sum1"
       SID		      "161"
       Ports		      [2, 1]
-      Position		      [310, 260, 330, 280]
+      Position		      [240, 260, 260, 280]
       ZOrder		      63
       ShowName		      off
       IconShape		      "round"
@@ -2100,22 +2020,26 @@ Model {
       Ports		      [1]
       Position		      [735, 320, 795, 350]
       ZOrder		      30
-      Filename		      "5_5_d.mat"
+      Filename		      "5_5_e.mat"
     }
     Block {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold"
       SID		      "128"
-      Position		      [-45, 435, -10, 465]
+      Position		      [325, 450, 360, 480]
       ZOrder		      41
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       SampleTime	      "0.1"
     }
     Block {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold1"
       SID		      "129"
-      Position		      [-45, 380, -10, 410]
+      Position		      [325, 395, 360, 425]
       ZOrder		      42
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       SampleTime	      "0.1"
     }
     Block {
@@ -2123,9 +2047,11 @@ Model {
       Name		      "kalman\n"
       SID		      "149"
       Ports		      [2, 2]
-      Position		      [50, 366, 160, 479]
+      Position		      [180, 381, 290, 494]
       ZOrder		      51
+      BlockMirror	      on
       BackgroundColor	      "orange"
+      NamePlacement	      "alternate"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
@@ -2280,6 +2206,7 @@ Model {
       ZOrder		      45
       SrcBlock		      "Mux"
       SrcPort		      1
+      Points		      [2, 0; 0, -10]
       DstBlock		      "To File"
       DstPort		      1
     }
@@ -2298,80 +2225,23 @@ Model {
       DstPort		      2
     }
     Line {
-      ZOrder		      51
-      SrcBlock		      "Saturation"
-      SrcPort		      1
-      Points		      [-255, 0]
-      Branch {
-	ZOrder			91
-	Points			[-130, 0; 0, 195]
-	DstBlock		"Zero-Order\nHold1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			90
-	DstBlock		"Sum"
-	DstPort			1
-      }
-    }
-    Line {
-      Name		      "psi_r"
-      ZOrder		      54
-      Labels		      [-1, 0]
-      SrcBlock		      "Step"
-      SrcPort		      1
-      Points		      [50, 0]
-      Branch {
-	ZOrder			64
-	DstBlock		"Sum"
-	DstPort			2
-      }
-      Branch {
-	ZOrder			63
-	Points			[475, 0]
-	Branch {
-	  ZOrder		  173
-	  Labels		  [2, 1]
-	  Points		  [0, 100]
-	  DstBlock		  "Mux1"
-	  DstPort		  3
-	}
-	Branch {
-	  ZOrder		  172
-	  Points		  [150, 0]
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-      }
-    }
-    Line {
       Name		      "psi_m"
       ZOrder		      59
       Labels		      [-1, 0]
       SrcBlock		      "Cargo ship"
       SrcPort		      1
-      Points		      [34, 0]
+      Points		      [44, 0]
       Branch {
-	ZOrder			175
-	Points			[0, 165]
-	DstBlock		"Mux1"
+	ZOrder			245
+	Points			[0, 160]
+	DstBlock		"Zero-Order\nHold1"
 	DstPort			1
       }
       Branch {
-	ZOrder			174
-	Points			[10, 0]
-	Branch {
-	  ZOrder		  58
-	  Points		  [94, 0; 0, 70]
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  55
-	  Points		  [0, -50]
-	  DstBlock		  "Saturation"
-	  DstPort		  1
-	}
+	ZOrder			58
+	Points			[94, 0; 0, 65]
+	DstBlock		"Mux"
+	DstPort			1
       }
     }
     Line {
@@ -2386,13 +2256,6 @@ Model {
       SrcBlock		      "kalman\n"
       SrcPort		      1
       DstBlock		      "Memory"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      87
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "Scope1"
       DstPort		      1
     }
     Line {
@@ -2419,43 +2282,6 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "psi_est"
-      ZOrder		      225
-      Labels		      [1, 0]
-      SrcBlock		      "Memory"
-      SrcPort		      1
-      Points		      [345, 0]
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      204
-      SrcBlock		      "Memory1"
-      SrcPort		      1
-      Points		      [75, 0]
-      Branch {
-	ZOrder			229
-	DstBlock		"Sum1"
-	DstPort			2
-      }
-      Branch {
-	ZOrder			228
-	Points			[227, 0]
-	Branch {
-	  ZOrder		  227
-	  Points		  [0, 35]
-	  DstBlock		  "Scope"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  224
-	  Points		  [0, -100]
-	  DstBlock		  "Mux"
-	  DstPort		  4
-	}
-      }
-    }
-    Line {
       ZOrder		      211
       SrcBlock		      "Limited PD Controller"
       SrcPort		      1
@@ -2466,27 +2292,83 @@ Model {
       ZOrder		      212
       SrcBlock		      "Sum1"
       SrcPort		      1
-      Points		      [41, 0]
+      Points		      [135, 0]
       Branch {
-	ZOrder			214
-	Points			[0, 247; -461, 0; 0, -67]
-	DstBlock		"Zero-Order\nHold"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			213
-	Points			[24, 0]
+	ZOrder			247
+	Points			[0, 90]
 	Branch {
-	  ZOrder		  222
-	  Points		  [0, 70]
-	  DstBlock		  "Mux"
-	  DstPort		  3
-	}
-	Branch {
-	  ZOrder		  221
-	  DstBlock		  "Cargo ship"
+	  ZOrder		  260
+	  Points		  [0, 105]
+	  DstBlock		  "Zero-Order\nHold"
 	  DstPort		  1
 	}
+	Branch {
+	  ZOrder		  256
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+      }
+      Branch {
+	ZOrder			221
+	DstBlock		"Cargo ship"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "psi_r"
+      ZOrder		      248
+      Labels		      [0, 0]
+      SrcBlock		      "Step"
+      SrcPort		      1
+      Points		      [14, 0]
+      Branch {
+	ZOrder			252
+	Labels			[-1, 0]
+	Points			[0, 56; 644, 0; 0, 4]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			251
+	DstBlock		"Sum"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "psi_est"
+      ZOrder		      249
+      Labels		      [0, 0]
+      SrcBlock		      "Memory"
+      SrcPort		      1
+      Points		      [-12, 0]
+      Branch {
+	ZOrder			254
+	Points			[0, -76; 339, 0; 0, 11]
+	DstBlock		"Mux"
+	DstPort			3
+      }
+      Branch {
+	ZOrder			253
+	Points			[-43, 0]
+	DstBlock		"Sum"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      250
+      SrcBlock		      "Memory1"
+      SrcPort		      1
+      Points		      [-6, 0; 0, -117; 196, 0; 0, -39]
+      Branch {
+	ZOrder			259
+	Points			[95, 0; 0, 66]
+	DstBlock		"Mux"
+	DstPort			5
+      }
+      Branch {
+	ZOrder			258
+	DstBlock		"Sum1"
+	DstPort			2
       }
     }
   }

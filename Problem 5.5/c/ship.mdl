@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.62"
+    ComputedModelVersion    "1.63"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -82,15 +82,15 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
-	  ZoomFactor		  [1.3796716283767456]
-	  Offset		  [-94.82526085947535, 157.74279412816341]
+	  ZoomFactor		  [1.3792928059059502]
+	  Offset		  [-95.069651208142375, 157.96537975962627]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "109"
-	  Extents		  [1864.0, 789.0]
+	  Extents		  [1920.0, 1080.0]
 	  ZoomFactor		  [3.3691753165608462]
 	  Offset		  [-20.397507032107541, -30.06064549602084]
 	}
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 14 12:56:09 2018"
-  RTWModifiedTimeStamp	  464100729
-  ModelVersionFormat	  "1.%<AutoIncrement:62>"
+  LastModifiedDate	  "Wed Nov 14 16:59:47 2018"
+  RTWModifiedTimeStamp	  464115549
+  ModelVersionFormat	  "1.%<AutoIncrement:63>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1312,7 +1312,7 @@ Model {
       }
       Port {
 	PortNumber		1
-	Name			"psi_m"
+	Name			"psi"
       }
       System {
 	Name			"Cargo ship"
@@ -1821,32 +1821,6 @@ Model {
       }
     }
     Block {
-      BlockType		      Gain
-      Name		      "Gain1"
-      SID		      "150"
-      Position		      [415, 380, 465, 410]
-      ZOrder		      52
-      Gain		      "180/pi"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-      Port {
-	PortNumber		1
-	Name			"psi_est"
-      }
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain2"
-      SID		      "151"
-      Position		      [415, 435, 465, 465]
-      ZOrder		      53
-      Gain		      "180/pi"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
       BlockType		      SubSystem
       Name		      "Limited PD Controller"
       SID		      "109"
@@ -1857,7 +1831,7 @@ Model {
       RequestExecContextInheritance off
       Port {
 	PortNumber		1
-	Name			"Delta(The rudder angle)"
+	Name			"delta"
       }
       System {
 	Name			"Limited PD Controller"
@@ -1960,6 +1934,10 @@ Model {
       SID		      "158"
       Position		      [210, 380, 240, 410]
       ZOrder		      60
+      Port {
+	PortNumber		1
+	Name			"psi_est"
+      }
     }
     Block {
       BlockType		      Memory
@@ -2014,7 +1992,7 @@ Model {
       Name		      "Saturation"
       SID		      "117"
       Ports		      [1, 1]
-      Position		      [305, 185, 335, 215]
+      Position		      [450, 185, 480, 215]
       ZOrder		      33
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -2314,7 +2292,7 @@ Model {
       ZOrder		      51
       SrcBlock		      "Saturation"
       SrcPort		      1
-      Points		      [-255, 0]
+      Points		      [-400, 0]
       Branch {
 	ZOrder			91
 	Points			[-130, 0; 0, 195]
@@ -2357,33 +2335,29 @@ Model {
       }
     }
     Line {
-      Name		      "psi_m"
+      Name		      "psi"
       ZOrder		      59
       Labels		      [-1, 0]
       SrcBlock		      "Cargo ship"
       SrcPort		      1
       Points		      [34, 0]
       Branch {
+	ZOrder			174
+	Points			[104, 0; 0, 75]
+	DstBlock		"Mux"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			55
+	Points			[0, -50]
+	DstBlock		"Saturation"
+	DstPort			1
+      }
+      Branch {
 	ZOrder			175
 	Points			[0, 165]
 	DstBlock		"Mux1"
 	DstPort			1
-      }
-      Branch {
-	ZOrder			174
-	Points			[10, 0]
-	Branch {
-	  ZOrder		  58
-	  Points		  [94, 0; 0, 75]
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  55
-	  Points		  [0, -50]
-	  DstBlock		  "Saturation"
-	  DstPort		  1
-	}
       }
     }
     Line {
@@ -2432,16 +2406,16 @@ Model {
     }
     Line {
       Name		      "psi_est"
-      ZOrder		      171
-      Labels		      [1, 1]
-      SrcBlock		      "Gain1"
+      ZOrder		      211
+      Labels		      [3, 0]
+      SrcBlock		      "Memory"
       SrcPort		      1
-      Points		      [37, 0; 0, 30]
+      Points		      [187, 0; 0, 30]
       DstBlock		      "Mux1"
       DstPort		      2
     }
     Line {
-      Name		      "Delta(The rudder angle)"
+      Name		      "delta"
       ZOrder		      205
       Labels		      [0, 0]
       SrcBlock		      "Limited PD Controller"
@@ -2460,24 +2434,10 @@ Model {
       }
     }
     Line {
-      ZOrder		      203
-      SrcBlock		      "Memory"
-      SrcPort		      1
-      DstBlock		      "Gain1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      204
+      ZOrder		      212
       SrcBlock		      "Memory1"
       SrcPort		      1
-      DstBlock		      "Gain2"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      207
-      SrcBlock		      "Gain2"
-      SrcPort		      1
-      Points		      [9, 0; 0, 35]
+      Points		      [112, 0; 0, 35]
       DstBlock		      "Scope"
       DstPort		      1
     }
@@ -2554,8 +2514,8 @@ Stateflow {
       "n gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_ + "
       "L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formula holds for both optimal and s"
       "uboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_hat "
-      "+ B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\npsi = X_hat(3);\nb = X_hat(5"
-      ");\nend\n"
+      "+ B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\npsi = X_hat(3).*(180/pi);\nb"
+      " = X_hat(5).*(180/pi);\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
