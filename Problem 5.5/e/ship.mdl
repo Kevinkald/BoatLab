@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.58"
+    ComputedModelVersion    "1.56"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -82,8 +82,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1864.0, 839.0]
-	ZoomFactor		[1.25]
-	Offset			[-204.78393477863165, 176.11991001189159]
+	ZoomFactor		[1.223941851006324]
+	Offset			[-208.86032690724477, 106.16424802186242]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -117,9 +117,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jan F"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 11 17:03:07 2018"
-  RTWModifiedTimeStamp	  463856585
-  ModelVersionFormat	  "1.%<AutoIncrement:58>"
+  LastModifiedDate	  "Sun Nov 11 15:30:07 2018"
+  RTWModifiedTimeStamp	  463851001
+  ModelVersionFormat	  "1.%<AutoIncrement:56>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1213,7 +1213,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "122"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "160"
     Block {
@@ -1256,7 +1256,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "on"
+	    Value		    "off"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -1771,7 +1771,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain1"
       SID		      "150"
-      Position		      [415, 380, 465, 410]
+      Position		      [285, 380, 335, 410]
       ZOrder		      52
       Gain		      "180/pi"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1805,7 +1805,7 @@ Model {
       }
       System {
 	Name			"Limited PD Controller"
-	Location		[-8, -8, 1928, 1048]
+	Location		[-7, -7, 1288, 688]
 	Open			off
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
@@ -1818,7 +1818,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"514"
+	ZoomFactor		"337"
 	Block {
 	  BlockType		  Inport
 	  Name			  "e [deg]"
@@ -1907,7 +1907,7 @@ Model {
       BlockType		      Memory
       Name		      "Memory1"
       SID		      "159"
-      Position		      [210, 430, 240, 460]
+      Position		      [210, 420, 240, 450]
       ZOrder		      61
     }
     Block {
@@ -1926,7 +1926,7 @@ Model {
       Name		      "Mux1"
       SID		      "124"
       Ports		      [3, 1]
-      Position		      [605, 406, 610, 444]
+      Position		      [605, 376, 610, 414]
       ZOrder		      37
       ShowName		      off
       Inputs		      "3"
@@ -1970,20 +1970,6 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope"
-      SID		      "160"
-      Ports		      [1]
-      Position		      [525, 459, 555, 491]
-      ZOrder		      62
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true)),"
-      "'Version','2017b')"
-      NumInputPorts	      "1"
-    }
-    Block {
-      BlockType		      Scope
       Name		      "Scope1"
       SID		      "127"
       Ports		      [1]
@@ -1993,22 +1979,22 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
       "LoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingMaxPoints','10000','DataLoggingVariableName','"
-      "ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-11.4"
-      "4619','MaxYLimReal','34.60513','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','34.60513','LegendVisibility'"
-      ",'On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68"
-      "6274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0"
-      ".411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274"
-      "509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProp"
-      "ertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'Xi(Measured)','Gain1','psi_r'}},'Sh"
-      "owContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-11.44619','MaxYLimReal','34.605"
-      "13','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','34.60513','LegendVisibility','On','XGrid',true,'YGrid',"
-      "true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980"
-      "3922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431"
-      "372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294"
-      "117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefi"
-      "nedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('T"
-      "ools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','201"
-      "7b')),'Version','2017b','Location',[1 71.6666666666667 1281 679],'OpenAtMdlStart',true)"
+      "ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-4.92"
+      "39','MaxYLimReal','39.43599','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','39.43599','LegendVisibility','"
+      "On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6862"
+      "74509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4"
+      "11764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27450"
+      "9803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProper"
+      "tiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'Xi(Measured)','Gain1','psi_r'}},'Show"
+      "Content',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-4.9239','MaxYLimReal','39.43599',"
+      "'YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','39.43599','LegendVisibility','On','XGrid',true,'YGrid',true"
+      ",'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922"
+      "],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784313725"
+      "49;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352941176"
+      "47 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedC"
+      "hannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools"
+      "','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')"
+      "),'Version','2017b','Location',[1 71.6666666666667 1281 679],'OpenAtMdlStart',true)"
       NumInputPorts	      "1"
     }
     Block {
@@ -2017,7 +2003,7 @@ Model {
       SID		      "119"
       Position		      [-40, 320, -10, 350]
       ZOrder		      31
-      After		      "30"
+      After		      "35"
       SampleTime	      "0"
       Port {
 	PortNumber		1
@@ -2039,6 +2025,20 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "157"
+      Ports		      [2, 1]
+      Position		      [350, 260, 370, 280]
+      ZOrder		      59
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      ToFile
       Name		      "To File"
       SID		      "121"
@@ -2051,7 +2051,7 @@ Model {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold"
       SID		      "128"
-      Position		      [-115, 410, -80, 440]
+      Position		      [-120, 420, -85, 450]
       ZOrder		      41
       SampleTime	      "0.1"
     }
@@ -2059,7 +2059,7 @@ Model {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold1"
       SID		      "129"
-      Position		      [-115, 370, -80, 400]
+      Position		      [-120, 380, -85, 410]
       ZOrder		      42
       SampleTime	      "0.1"
     }
@@ -2068,7 +2068,7 @@ Model {
       Name		      "kalman\n"
       SID		      "149"
       Ports		      [2, 2]
-      Position		      [80, 379, 160, 446]
+      Position		      [65, 373, 160, 457]
       ZOrder		      51
       BackgroundColor	      "orange"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -2248,21 +2248,12 @@ Model {
     Line {
       Name		      "Xi(The heading)"
       ZOrder		      51
+      Labels		      [2, 1]
       SrcBlock		      "Saturation"
       SrcPort		      1
-      Points		      [-255, 0]
-      Branch {
-	ZOrder			91
-	Labels			[2, 1]
-	Points			[-175, 0]
-	DstBlock		"Zero-Order\nHold1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			90
-	DstBlock		"Sum"
-	DstPort			1
-      }
+      Points		      [-429, 0; 0, 195]
+      DstBlock		      "Zero-Order\nHold1"
+      DstPort		      1
     }
     Line {
       Name		      "psi_r"
@@ -2281,7 +2272,7 @@ Model {
 	Points			[475, 0]
 	Branch {
 	  ZOrder		  173
-	  Points		  [0, 100]
+	  Points		  [0, 70]
 	  DstBlock		  "Mux1"
 	  DstPort		  3
 	}
@@ -2301,7 +2292,7 @@ Model {
       Points		      [34, 0]
       Branch {
 	ZOrder			175
-	Points			[0, 165]
+	Points			[0, 135]
 	DstBlock		"Mux1"
 	DstPort			1
       }
@@ -2342,6 +2333,7 @@ Model {
       ZOrder		      87
       SrcBlock		      "Mux1"
       SrcPort		      1
+      Points		      [35, 0; 0, 30]
       DstBlock		      "Scope1"
       DstPort		      1
     }
@@ -2349,7 +2341,6 @@ Model {
       ZOrder		      162
       SrcBlock		      "Zero-Order\nHold"
       SrcPort		      1
-      Points		      [141, 0; 0, 5]
       DstBlock		      "kalman\n"
       DstPort		      2
     }
@@ -2357,68 +2348,91 @@ Model {
       ZOrder		      163
       SrcBlock		      "Zero-Order\nHold1"
       SrcPort		      1
-      Points		      [80, 0; 0, 10]
       DstBlock		      "kalman\n"
       DstPort		      1
     }
     Line {
       Name		      "Bias"
       ZOrder		      160
-      Labels		      [3, 0]
+      Labels		      [1, 0]
       SrcBlock		      "kalman\n"
       SrcPort		      2
-      Points		      [20, 0; 0, 15]
       DstBlock		      "Memory1"
       DstPort		      1
     }
     Line {
-      ZOrder		      171
-      SrcBlock		      "Gain1"
+      ZOrder		      193
+      SrcBlock		      "Sum1"
       SrcPort		      1
-      Points		      [37, 0; 0, 30]
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      Name		      "Delta(The rudder angle)"
-      ZOrder		      205
-      Labels		      [0, 0]
-      SrcBlock		      "Limited PD Controller"
-      SrcPort		      1
-      Points		      [98, 0]
+      Points		      [7, 0]
       Branch {
 	ZOrder			199
-	Points			[0, 214; -487, 0; 0, -59]
+	Points			[0, 214; -526, 0; 0, -49]
 	DstBlock		"Zero-Order\nHold"
 	DstPort			1
       }
       Branch {
 	ZOrder			198
-	DstBlock		"Cargo ship"
-	DstPort			1
+	Points			[17, 0]
+	Branch {
+	  ZOrder		  207
+	  Points		  [0, 75]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Branch {
+	  ZOrder		  206
+	  DstBlock		  "Cargo ship"
+	  DstPort		  1
+	}
       }
     }
     Line {
-      ZOrder		      203
-      SrcBlock		      "Memory"
+      ZOrder		      197
+      SrcBlock		      "Gain2"
       SrcPort		      1
-      DstBlock		      "Gain1"
+      Points		      [40, 0]
+      DstBlock		      "Sum1"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Delta(The rudder angle)"
+      ZOrder		      192
+      Labels		      [-1, 0]
+      SrcBlock		      "Limited PD Controller"
+      SrcPort		      1
+      DstBlock		      "Sum1"
       DstPort		      1
     }
     Line {
       ZOrder		      204
       SrcBlock		      "Memory1"
       SrcPort		      1
-      Points		      [5, 0; 0, 2]
       DstBlock		      "Gain2"
       DstPort		      1
     }
     Line {
-      ZOrder		      207
-      SrcBlock		      "Gain2"
+      ZOrder		      218
+      SrcBlock		      "Gain1"
       SrcPort		      1
-      Points		      [114, 0; 0, 40]
-      DstBlock		      "Scope"
+      Points		      [66, 0]
+      Branch {
+	ZOrder			221
+	Points			[0, -30; -473, 0; 0, -137; 112, 0]
+	DstBlock		"Sum"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			220
+	DstBlock		"Mux1"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      219
+      SrcBlock		      "Memory"
+      SrcPort		      1
+      DstBlock		      "Gain1"
       DstPort		      1
     }
   }
@@ -2477,26 +2491,27 @@ Stateflow {
       isEML		      1
       script		      "% Input: måling y, pådrag u\n% Output: kalman filter: Estimert psi uten støy og rudder bias b\nfu"
       "nction [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ Q R P_ \n\n% Initialize\nif isempty(init_flag"
-      ")\n    \n    init_flag = 1 ;\n     \n    Q =  [30      0;\n          0      10*10^-6];\n          \n    P_0 =  ["
-      "[1      0      0      0     0        ]\n            [0      0.013  0      0     0        ]\n            [0      "
-      "0      pi^2   0     0        ]\n            [0      0      0      1     0        ]\n            [0      0      0"
-      "      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614"
-      "164       0       0                    0                       ]\n        [-0.061582920038110    1.0115372339054"
-      "85       0       0                    0                       ]\n        [0                     0               "
-      "        1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0                     0              "
-      "         0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0                     0             "
-      "          0       0                    1                       ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2"
-      ".153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.10554899463"
-      "0666*10^-4     0                          0                            0                   ]\n        [ 0       "
-      "                  0                           -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.10000000"
-      "0000000]]';\n    \n    % The variance of the measurement noise divided by the samilping time T = 0.1\n    R = 0."
-      "345587*10^-5/0.1; \n    \n    \n    X_ = X_0;\n    P_ = P_0;\nend\n\n%Kode som kjøres etter at KF er initialiser"
-      "t\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n    \n% [1] Computing the kalm"
-      "an gain L\nL = P_*C'*inv(C*P_*C' + R);\n  \n% [2] Updating the estimate with the measurement y\nX_hat = X_ + L *"
-      " (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n%This formula holds for both optimal and subop"
-      "timal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C)' + L*R*L';\n%P = (eye(5)-L*C)*P_;\n\nQd = (E*Q*E');\n\n% [4] "
-      "Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A' + Qd;\n\n% Returneres estimert psi og estimert b\npsi = X_hat"
-      "(3);\nb = X_hat(5);\n\nend"
+      ")\n    \n    init_flag = 1 ;\n     \n    Q =  [[0      0        0      0     0  ]\n          [0      30        0"
+      "      0     0  ]\n          [0      0         0      0     0  ]\n          [0      0         0      0     0  ]\n"
+      "          [0      0         0      0     10^-6  ]];\n\n    P_0 =  [[1      0      0      0     0        ]\n     "
+      "       [0      0.013  0      0     0        ]\n            [0      0      pi^2   0     0        ]\n            ["
+      "0      0      0      1     0        ]\n            [0      0      0      0     2.5*10^-3]];\n        \n    X_0 ="
+      " [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164       0       0                    0     "
+      "                  ]\n        [-0.061582920038110    1.011537233905485       0       0                    0      "
+      "                 ]\n        [0                     0                       1       0.099931008253684    -1.07696"
+      "1159999087*10^-5  ]\n        [0                     0                       0       0.998620482470742    -2.1534"
+      "26863171962*10^-4  ]\n        [0                     0                       0       0                    1     "
+      "                  ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0"
+      " 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.105548994630666*10^-4     0                          0  "
+      "                          0                   ]\n        [ 0                         0                          "
+      " -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000]]';\n    \n    % The variance of the "
+      "measurement noise divided by the samilping time T = 0.1\n    R = 0.345587*10^-5/0.1; \n    \n    \n    X_ = X_0;"
+      "\n    P_ = P_0;\nend\n\n%Kode som kjøres etter at KF er initialisert\n    \n%Omgjøring av input [deg] til [rad]\n"
+      "y = y.*(pi/180);\nu = u.*(pi/180);\n    \n% [1] Computing the kalman gain L\nL = P_*C'*inv(C*P_*C' + R);\n  \n% "
+      "[2] Updating the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Updating the error c"
+      "ovariance matrix P\n%This formula holds for both optimal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-"
+      "L*C)' + L*R*L';\n%P = (eye(5)-L*C)*P_;\n \n% [4] Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A' + Q;\n\n% Re"
+      "turneres estimert psi og estimert b\npsi = X_hat(3);\nb = X_hat(5);\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
