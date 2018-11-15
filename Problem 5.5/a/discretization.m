@@ -39,7 +39,7 @@ R_c = 0.345587*10^-5;
 R_d = R_c/Ts;
 
 %Loans method page 126
-% x_dot = F*x + G*u same as x_dot = A_c*x + B_c*u
+% x_dot = F*x + G*u same as x_dot = A_c*x + E_c*w
 %     z = H*x + v   same as y = C_c*x + v
 
 % [1] Forming A
