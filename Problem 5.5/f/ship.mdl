@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.65"
+    ComputedModelVersion    "1.69"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -83,7 +83,7 @@ Model {
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
 	  ZoomFactor		  [1.4710963769789316]
-	  Offset		  [-39.516711630240479, 187.56578842948556]
+	  Offset		  [-39.516711630240479, 187.56578842948559]
 	}
 	Object {
 	  $ObjectID		  6
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 14 16:51:23 2018"
-  RTWModifiedTimeStamp	  464103725
-  ModelVersionFormat	  "1.%<AutoIncrement:65>"
+  LastModifiedDate	  "Thu Nov 15 21:39:57 2018"
+  RTWModifiedTimeStamp	  464218774
+  ModelVersionFormat	  "1.%<AutoIncrement:69>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -242,7 +242,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "500"
+	  StopTime		  "1000"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -2020,7 +2020,7 @@ Model {
       Ports		      [1]
       Position		      [735, 320, 795, 350]
       ZOrder		      30
-      Filename		      "5_5_e.mat"
+      Filename		      "5_5_f_regular_method_correct_R.mat"
     }
     Block {
       BlockType		      ZeroOrderHold
@@ -2427,8 +2427,8 @@ Stateflow {
       isEML		      1
       script		      "% Input: måling y, pådrag u\n% Output: kalman filter: Estimert psi uten støy og rudder bias b\n"
       "function [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize\nif isempty(init_fla"
-      "g)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6]];\n    \n    R = 0.00"
-      "2033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0        ]\n"
+      "g)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6]];\n    \n    R = 0.02"
+      "033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0        ]\n"
       "            [0      0      pi^2   0     0        ]\n            [0      0      0      1     0        ]\n        "
       "    [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.9969267392626"
       "72    0.100626789614164       0       0                    0                         ]\n        [-0.061582920038"

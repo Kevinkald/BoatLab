@@ -16,13 +16,13 @@ plot(time,psi_r,'b');
 xlim([0, 500]);
 xlabel('time t [s]');
 ylabel('Angle [deg]');
-legend('\psi(t)','\psi_r(t)');
+legend('y(t)','\psi_r(t)');
 
 subplot(1,2,2);
 plot(time,rudder,'r');
 hold on;
 plot(time, rudder_bias, 'b');
-xlim([0, 500]);
+xlim([0, 150]);
 xlabel('time t [s]');
 ylabel('Angle [deg]');
-legend('\delta(t)', 'b(t)');
+legend('$\delta$(t)', '$\hat{b}$(t)','Interpreter', 'latex');

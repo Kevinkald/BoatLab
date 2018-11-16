@@ -13,6 +13,7 @@ plot(time,psi,'r');
 hold on;
 plot(time,psi_r,'b');
 xlim([0, 500]);
+ylim([-5,35]);
 xlabel('time t [s]');
 ylabel('Angle [deg]');
 legend('\psi(t)','\psi_r(t)');

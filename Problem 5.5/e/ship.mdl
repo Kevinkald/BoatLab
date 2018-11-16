@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.65"
+    ComputedModelVersion    "1.70"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -82,15 +82,15 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
-	  ZoomFactor		  [1.4710963769789316]
-	  Offset		  [-39.516711630240479, 187.56578842948556]
+	  ZoomFactor		  [1.4711111111111244]
+	  Offset		  [-39.516616314199268, 207.24027576172574]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "109"
-	  Extents		  [1920.0, 1080.0]
+	  Extents		  [1864.0, 789.0]
 	  ZoomFactor		  [3.3691753165608462]
 	  Offset		  [-20.397507032107541, -30.06064549602084]
 	}
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 14 16:51:23 2018"
-  RTWModifiedTimeStamp	  464103725
-  ModelVersionFormat	  "1.%<AutoIncrement:65>"
+  LastModifiedDate	  "Fri Nov 16 11:22:45 2018"
+  RTWModifiedTimeStamp	  464266039
+  ModelVersionFormat	  "1.%<AutoIncrement:70>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1261,7 +1261,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "147"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "163"
+    SIDHighWatermark	    "164"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1924,7 +1924,7 @@ Model {
       BlockType		      Memory
       Name		      "Memory"
       SID		      "158"
-      Position		      [105, 395, 135, 425]
+      Position		      [110, 390, 140, 420]
       ZOrder		      60
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1937,8 +1937,17 @@ Model {
       BlockType		      Memory
       Name		      "Memory1"
       SID		      "159"
-      Position		      [65, 450, 95, 480]
+      Position		      [110, 425, 140, 455]
       ZOrder		      61
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+    }
+    Block {
+      BlockType		      Memory
+      Name		      "Memory2"
+      SID		      "164"
+      Position		      [110, 460, 140, 490]
+      ZOrder		      64
       BlockMirror	      on
       NamePlacement	      "alternate"
     }
@@ -1946,11 +1955,11 @@ Model {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "115"
-      Ports		      [5, 1]
-      Position		      [695, 305, 700, 385]
+      Ports		      [6, 1]
+      Position		      [695, 307, 700, 388]
       ZOrder		      34
       ShowName		      off
-      Inputs		      "5"
+      Inputs		      "6"
       DisplayOption	      "bar"
     }
     Block {
@@ -2018,7 +2027,7 @@ Model {
       Name		      "To File"
       SID		      "121"
       Ports		      [1]
-      Position		      [735, 320, 795, 350]
+      Position		      [735, 330, 795, 360]
       ZOrder		      30
       Filename		      "5_5_e.mat"
     }
@@ -2026,7 +2035,7 @@ Model {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold"
       SID		      "128"
-      Position		      [325, 450, 360, 480]
+      Position		      [325, 455, 360, 485]
       ZOrder		      41
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -2036,7 +2045,7 @@ Model {
       BlockType		      ZeroOrderHold
       Name		      "Zero-Order\nHold1"
       SID		      "129"
-      Position		      [325, 395, 360, 425]
+      Position		      [325, 400, 360, 430]
       ZOrder		      42
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -2046,8 +2055,8 @@ Model {
       BlockType		      SubSystem
       Name		      "kalman\n"
       SID		      "149"
-      Ports		      [2, 2]
-      Position		      [180, 381, 290, 494]
+      Ports		      [2, 3]
+      Position		      [180, 383, 290, 497]
       ZOrder		      51
       BlockMirror	      on
       BackgroundColor	      "orange"
@@ -2080,7 +2089,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"26"
+	SIDHighWatermark	"27"
 	Block {
 	  BlockType		  Inport
 	  Name			  "y"
@@ -2103,7 +2112,7 @@ Model {
 	  Name			  " Demux "
 	  SID			  "149::25"
 	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
+	  Position		  [270, 245, 320, 285]
 	  ZOrder		  16
 	  Outputs		  "1"
 	}
@@ -2112,11 +2121,11 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "149::24"
 	  Tag			  "Stateflow S-Function ship 2"
-	  Ports			  [2, 3]
-	  Position		  [180, 100, 230, 180]
+	  Ports			  [2, 4]
+	  Position		  [180, 102, 230, 203]
 	  ZOrder		  15
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[2 3]"
+	  PortCounts		  "[2 4]"
 	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
 	  SFcnIsStateOwnerBlock	  off
@@ -2128,12 +2137,16 @@ Model {
 	    PortNumber		    3
 	    Name		    "b"
 	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "psi_w"
+	  }
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
 	  SID			  "149::26"
-	  Position		  [460, 241, 480, 259]
+	  Position		  [460, 256, 480, 274]
 	  ZOrder		  17
 	}
 	Block {
@@ -2153,16 +2166,24 @@ Model {
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "psi_w"
+	  SID			  "149::27"
+	  Position		  [460, 171, 480, 189]
+	  ZOrder		  18
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
 	Line {
-	  ZOrder		  26
+	  ZOrder		  32
 	  SrcBlock		  "y"
 	  SrcPort		  1
-	  Points		  [120, 0]
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  27
+	  ZOrder		  33
 	  SrcBlock		  "u"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -2170,7 +2191,7 @@ Model {
 	}
 	Line {
 	  Name			  "psi"
-	  ZOrder		  28
+	  ZOrder		  34
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -2179,7 +2200,7 @@ Model {
 	}
 	Line {
 	  Name			  "b"
-	  ZOrder		  29
+	  ZOrder		  35
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  3
@@ -2187,14 +2208,23 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  30
+	  Name			  "psi_w"
+	  ZOrder		  36
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "psi_w"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  37
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  31
+	  ZOrder		  38
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -2206,7 +2236,7 @@ Model {
       ZOrder		      45
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [2, 0; 0, -10]
+      Points		      [0, -5]
       DstBlock		      "To File"
       DstPort		      1
     }
@@ -2233,13 +2263,13 @@ Model {
       Points		      [44, 0]
       Branch {
 	ZOrder			245
-	Points			[0, 160]
+	Points			[0, 165]
 	DstBlock		"Zero-Order\nHold1"
 	DstPort			1
       }
       Branch {
 	ZOrder			58
-	Points			[94, 0; 0, 65]
+	Points			[94, 0; 0, 60]
 	DstBlock		"Mux"
 	DstPort			1
       }
@@ -2298,12 +2328,13 @@ Model {
 	Points			[0, 90]
 	Branch {
 	  ZOrder		  260
-	  Points		  [0, 105]
+	  Points		  [0, 110]
 	  DstBlock		  "Zero-Order\nHold"
 	  DstPort		  1
 	}
 	Branch {
 	  ZOrder		  256
+	  Points		  [280, 0]
 	  DstBlock		  "Mux"
 	  DstPort		  4
 	}
@@ -2324,7 +2355,7 @@ Model {
       Branch {
 	ZOrder			252
 	Labels			[-1, 0]
-	Points			[0, 56; 644, 0; 0, 4]
+	Points			[0, 56; 644, 0; 0, -1]
 	DstBlock		"Mux"
 	DstPort			2
       }
@@ -2340,28 +2371,28 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Memory"
       SrcPort		      1
-      Points		      [-12, 0]
+      Points		      [-17, 0]
       Branch {
-	ZOrder			254
-	Points			[0, -76; 339, 0; 0, 11]
-	DstBlock		"Mux"
-	DstPort			3
-      }
-      Branch {
-	ZOrder			253
-	Points			[-43, 0]
+	ZOrder			274
+	Points			[0, 5; -43, 0]
 	DstBlock		"Sum"
 	DstPort			2
+      }
+      Branch {
+	ZOrder			254
+	Points			[0, -71; 339, 0; 0, 6]
+	DstBlock		"Mux"
+	DstPort			3
       }
     }
     Line {
       ZOrder		      250
       SrcBlock		      "Memory1"
       SrcPort		      1
-      Points		      [-6, 0; 0, -117; 196, 0; 0, -39]
+      Points		      [-51, 0; 0, -92; 196, 0; 0, -39]
       Branch {
 	ZOrder			259
-	Points			[95, 0; 0, 66]
+	Points			[95, 0; 0, 61]
 	DstBlock		"Mux"
 	DstPort			5
       }
@@ -2370,6 +2401,21 @@ Model {
 	DstBlock		"Sum1"
 	DstPort			2
       }
+    }
+    Line {
+      ZOrder		      272
+      SrcBlock		      "kalman\n"
+      SrcPort		      3
+      DstBlock		      "Memory2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      273
+      SrcBlock		      "Memory2"
+      SrcPort		      1
+      Points		      [-9, 0; 0, 59; 372, 0; 0, -149]
+      DstBlock		      "Mux"
+      DstPort		      6
     }
   }
 }
@@ -2385,7 +2431,7 @@ Stateflow {
     created		    "07-Nov-2018 15:54:16"
     isLibrary		    0
     sfVersion		    80000014
-    firstTarget		    11
+    firstTarget		    12
   }
   chart {
     id			    2
@@ -2399,7 +2445,7 @@ Stateflow {
     visible		    1
     subviewS {
     }
-    ssIdHighWaterMark	    7
+    ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     chartFileNumber	    2
@@ -2408,8 +2454,8 @@ Stateflow {
       name		      "Kalman"
     }
     firstData		    4
-    firstTransition	    9
-    firstJunction	    8
+    firstTransition	    10
+    firstJunction	    9
   }
   state {
     id			    3
@@ -2426,26 +2472,26 @@ Stateflow {
     eml {
       isEML		      1
       script		      "% Input: mÃ¥ling y, pÃ¥drag u\n% Output: kalman filter: Estimert psi uten stÃ¸y og rudder bias b\n"
-      "function [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize\nif isempty(init_fla"
-      "g)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6]];\n    \n    R = 0.00"
-      "2033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0        ]\n"
-      "            [0      0      pi^2   0     0        ]\n            [0      0      0      1     0        ]\n        "
-      "    [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.9969267392626"
-      "72    0.100626789614164       0       0                    0                         ]\n        [-0.061582920038"
-      "110    1.011537233905485       0       0                    0                         ]\n        [0             "
-      "        0                       1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0            "
-      "         0                       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0           "
-      "          0                       0       0                    1                         ]];\n    \n    B = [0 0"
-      " 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.04885096753"
-      "5938*10^-5   4.105548994630666*10^-4     0                          0                            0              "
-      "     ]\n        [ 0                         0                           -3.590283471015735*10^-7   -1.0769611599"
-      "99087*10^-5     0.100000000000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter init a"
-      "v KF\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the kalma"
-      "n gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_ + "
-      "L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formula holds for both optimal and s"
-      "uboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_hat "
-      "+ B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også fra [rad]"
-      " til [deg]\npsi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\nend\n"
+      "function [psi, b, psi_w] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize\nif isempty(i"
+      "nit_flag)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6   ]];\n    \n  "
+      "  R = 0.02033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0 "
+      "       ]\n            [0      0      pi^2   0     0        ]\n            [0      0      0      1     0        ]"
+      "\n            [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996"
+      "926739262672    0.100626789614164       0       0                    0                         ]\n        [-0.06"
+      "1582920038110    1.011537233905485       0       0                    0                         ]\n        [0   "
+      "                  0                       1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0  "
+      "                   0                       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0 "
+      "                    0                       0       0                    1                         ]];\n    \n  "
+      "  B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.0"
+      "48850967535938*10^-5   4.105548994630666*10^-4     0                          0                            0    "
+      "               ]\n        [ 0                         0                           -3.590283471015735*10^-7   -1."
+      "076961159999087*10^-5     0.100000000000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres et"
+      "ter init av KF\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing"
+      " the kalman gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_h"
+      "at = X_ + L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formula holds for both opt"
+      "imal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ "
+      "= A*X_hat + B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også"
+      " fra [rad] til [deg]\npsi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\npsi_w = X_hat(2).*(180/pi);\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -2542,10 +2588,35 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 6 0]
+    linkNode		    [2 6 8]
+  }
+  data {
+    id			    8
+    ssIdNumber		    8
+    name		    "psi_w"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 7 0]
   }
   junction {
-    id			    8
+    id			    9
     position		    [23.5747 49.5747 7]
     chart		    2
     subviewer		    2
@@ -2554,7 +2625,7 @@ Stateflow {
     linkNode		    [2 0 0]
   }
   transition {
-    id			    9
+    id			    10
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -2562,7 +2633,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      8
+      id		      9
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -2578,13 +2649,13 @@ Stateflow {
     linkNode		    [2 0 0]
   }
   instance {
-    id			    10
+    id			    11
     machine		    1
     name		    "kalman\n"
     chart		    2
   }
   target {
-    id			    11
+    id			    12
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
