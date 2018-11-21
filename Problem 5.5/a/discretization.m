@@ -18,7 +18,7 @@ C_c = [0 1 1 0 0];
 E_c = [[0 K_w 0 0 0]
       [ 0 0   0 0 1]]';
 
-Q_c =   [[1      0      ]
+Q_c =   [[30      0      ]
          [0      10^-6   ]];
     
 %Discretization
@@ -38,7 +38,7 @@ R_d = R/Ts;
 [A_d2 E_d2] = c2d(A_c,E_c,Ts);
 
 Q_d1 = E_d2*Q_c*E_d2';
-%       Loans method to aquire Q_d, p126
+%       Loans method to aquire Q_k, p126
 %------------------------------------------------------------
 %       x_dot = F*x + G*u   same as     x_dot = A_c*x + E_c*w
 %       z = H*x + v         same as     y = C_c*x + v
@@ -51,4 +51,4 @@ B = expm(A*Ts);
 % [3] Transpose of lower-right of B to give Phi
 Phi = B(6:10,6:10)';
 % [4] Q_d is now found as
-Q_d2 = Phi * B(1:5,6:10);
+Q_k = Phi * B(1:5,6:10);

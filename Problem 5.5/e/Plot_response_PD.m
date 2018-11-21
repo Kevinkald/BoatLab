@@ -1,4 +1,4 @@
-filename = '5_5_e.mat';
+filename = '5_5_e_q_30.mat';
 m = matfile(filename);
 filedata = m.ans;
 
@@ -36,14 +36,12 @@ xlim([0, 500]);
 xlabel('time t [s]');
 ylabel('Angle [deg]');
 legend('$\delta$(t)', '$\hat{b}$(t)','Interpreter','Latex');
-close;
 
 figure;
-subplot(1,2,1);
 plot(time2, psi_w,'r');
 hold on;
 plot(time, psi_w_est, 'b');
 xlabel('time t [s]');
 ylabel('Angle [deg]');
 legend('$\psi_{w}$(t)', '$\hat{\psi}_{w}$(t)','Interpreter','Latex');
-xlim([0,500]);
+xlim([100,500]);

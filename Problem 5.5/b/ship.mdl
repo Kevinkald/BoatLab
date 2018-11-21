@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.29"
+    ComputedModelVersion    "1.30"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -80,7 +80,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1864.0, 789.0]
+	Extents			[1864.0, 794.0]
 	ZoomFactor		[2.5539616138419432]
 	Offset			[189.51832011721598, 78.022727916271549]
       }
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 15 13:12:27 2018"
-  RTWModifiedTimeStamp	  464179960
-  ModelVersionFormat	  "1.%<AutoIncrement:29>"
+  LastModifiedDate	  "Wed Nov 21 08:34:24 2018"
+  RTWModifiedTimeStamp	  464690010
+  ModelVersionFormat	  "1.%<AutoIncrement:30>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1261,7 +1261,7 @@ Model {
       }
       System {
 	Name			"Cargo ship"
-	Location		[-8, -8, 1928, 1048]
+	Location		[-7, -7, 1288, 688]
 	Open			off
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
@@ -1276,7 +1276,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"262"
+	ZoomFactor		"149"
 	Block {
 	  BlockType		  Inport
 	  Name			  "delta (deg)"
@@ -1377,14 +1377,14 @@ Model {
 	  Ports			  [0, 1]
 	  Position		  [500, 45, 530, 75]
 	  ZOrder		  -10
-	  LibraryVersion	  "1.391"
+	  LibraryVersion	  "1.444"
 	  SourceBlock		  "simulink/Sources/Band-Limited\nWhite Noise"
 	  SourceType		  "Band-Limited White Noise."
 	  SourceProductName	  "Simulink"
 	  SourceProductBaseCode	  "SL"
 	  ContentPreviewEnabled	  off
 	  Cov			  "[0.001]"
-	  Ts			  ".5"
+	  Ts			  ".1"
 	  seed			  "[23341]"
 	  VectorParams1D	  on
 	}
@@ -1846,7 +1846,7 @@ Model {
       "215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
       "le','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'"
       "ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr"
-      ".Configuration('Tools','Measurements',true,'Version','2016b')),'Version','2016b','Location',[1 71.6666666666667 "
+      ".Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b','Location',[1 71.6666666666667 "
       "1281 679])"
       NumInputPorts	      "1"
       Floating		      off
@@ -1881,7 +1881,6 @@ Model {
       Points		      [110, 0]
       Branch {
 	ZOrder			29
-	Points			[60, 0]
 	DstBlock		"Mux"
 	DstPort			1
       }

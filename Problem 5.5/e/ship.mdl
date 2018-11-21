@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.70"
+    ComputedModelVersion    "1.73"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -90,7 +90,7 @@ Model {
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "109"
-	  Extents		  [1864.0, 789.0]
+	  Extents		  [1920.0, 1080.0]
 	  ZoomFactor		  [3.3691753165608462]
 	  Offset		  [-20.397507032107541, -30.06064549602084]
 	}
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 16 11:22:45 2018"
-  RTWModifiedTimeStamp	  464266039
-  ModelVersionFormat	  "1.%<AutoIncrement:70>"
+  LastModifiedDate	  "Wed Nov 21 17:05:33 2018"
+  RTWModifiedTimeStamp	  464720714
+  ModelVersionFormat	  "1.%<AutoIncrement:73>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -242,7 +242,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "500"
+	  StopTime		  "1000"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -2472,26 +2472,29 @@ Stateflow {
     eml {
       isEML		      1
       script		      "% Input: mÃ¥ling y, pÃ¥drag u\n% Output: kalman filter: Estimert psi uten stÃ¸y og rudder bias b\n"
-      "function [psi, b, psi_w] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize\nif isempty(i"
-      "nit_flag)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6   ]];\n    \n  "
-      "  R = 0.02033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0 "
-      "       ]\n            [0      0      pi^2   0     0        ]\n            [0      0      0      1     0        ]"
-      "\n            [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996"
-      "926739262672    0.100626789614164       0       0                    0                         ]\n        [-0.06"
-      "1582920038110    1.011537233905485       0       0                    0                         ]\n        [0   "
-      "                  0                       1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0  "
-      "                   0                       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0 "
-      "                    0                       0       0                    1                         ]];\n    \n  "
-      "  B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.0"
-      "48850967535938*10^-5   4.105548994630666*10^-4     0                          0                            0    "
-      "               ]\n        [ 0                         0                           -3.590283471015735*10^-7   -1."
-      "076961159999087*10^-5     0.100000000000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres et"
-      "ter init av KF\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing"
-      " the kalman gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_h"
-      "at = X_ + L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formula holds for both opt"
-      "imal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ "
-      "= A*X_hat + B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også"
-      " fra [rad] til [deg]\npsi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\npsi_w = X_hat(2).*(180/pi);\nend\n"
+      "function [psi, b, psi_w] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q_k P_\n\n% Initialize\nif isempty"
+      "(init_flag)\n    \n    init_flag = 1;\n     \n    Q_k = [1.68080996498622e-07,2.52832988209693e-06,0,0,0;\n     "
+      "   2.52832988209693e-06,5.05671543189852e-05,0,0,0;\n        0,0,2.32004646392527e-18,5.79922670073289e-17,-3.59"
+      "028347101574e-13;\n        0,0,5.79922670073289e-17,1.54628259912526e-15,-1.07696115999909e-11;\n        0,0,-3."
+      "59028347101574e-13,-1.07696115999909e-11,1.00000000000000e-07];\n    \n    R = 0.00017326;\n\n    P_0 =  [[1    "
+      "  0      0      0     0        ]\n            [0      0.013  0      0     0        ]\n            [0      0     "
+      " pi^2   0     0        ]\n            [0      0      0      1     0        ]\n            [0      0      0      "
+      "0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164   "
+      "    0       0                    0                         ]\n        [-0.061582920038110    1.011537233905485  "
+      "     0       0                    0                         ]\n        [0                     0                 "
+      "      1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0                     0                "
+      "       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0                     0               "
+      "        0       0                    1                         ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2"
+      ".153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.10554899463"
+      "0666*10^-4     0                          0                            0                   ]\n        [ 0       "
+      "                  0                           -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.10000000"
+      "0000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter init av KF\n    \n%Omgjøring av "
+      "input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the kalman gain L\nL = P_*C.'*inv(C"
+      "*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% ["
+      "3] Updating the error covariance matrix P\n% This formula holds for both optimal and suboptimal gain L\nP = (eye"
+      "(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A.' + Q_k"
+      ";\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også fra [rad] til [deg]\npsi = X_hat(3).*("
+      "180/pi);\nb = X_hat(5).*(180/pi);\npsi_w = X_hat(2).*(180/pi);\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

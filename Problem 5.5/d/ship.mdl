@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.67"
+    ComputedModelVersion    "1.69"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -83,14 +83,14 @@ Model {
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
 	  ZoomFactor		  [1.3796714206273037]
-	  Offset		  [-94.82519608576365, 160.26969160121754]
+	  Offset		  [-94.82519608576365, 160.26969160121752]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "109"
-	  Extents		  [1864.0, 789.0]
+	  Extents		  [1920.0, 1080.0]
 	  ZoomFactor		  [3.3691753165608462]
 	  Offset		  [-20.397507032107541, -30.06064549602084]
 	}
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 15 22:32:39 2018"
-  RTWModifiedTimeStamp	  464221897
-  ModelVersionFormat	  "1.%<AutoIncrement:67>"
+  LastModifiedDate	  "Wed Nov 21 09:54:48 2018"
+  RTWModifiedTimeStamp	  464694692
+  ModelVersionFormat	  "1.%<AutoIncrement:69>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -2005,19 +2005,20 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-1.06735','MaxYLimReal','8.85557','YLabelReal','','MinYLimMag"
-      "','0.00000','MaxYLimMag','8.85557','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
-      "Color',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
-      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313"
-      "72549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
-      " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines"
-      "',1,'LineNames',{{'Memory1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal',"
-      "'-1.06735','MaxYLimReal','8.85557','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','8.85557','LegendVisibili"
-      "ty','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 "
-      "0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0."
-      "16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 "
-      "0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools'"
-      ",'Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b')"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-4.92887','MaxYLimReal','19.57031','YLabelReal','','MinYLimMa"
+      "g','0.00000','MaxYLimMag','19.57031','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
+      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
+      "es',1,'LineNames',{{'Memory1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal"
+      "','-4.92887','MaxYLimReal','19.57031','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','19.57031','LegendVisi"
+      "bility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803"
+      "922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.41176470588235"
+      "3 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019"
+      "608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('To"
+      "ols','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','201"
+      "8b')"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2061,20 +2062,20 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-5.01644','MaxYLimReal','0.88956','YLabelReal','','MinYLimMag"
-      "','0.00000','MaxYLimMag','5.01644','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
-      "Color',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
-      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313"
-      "72549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
-      " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines"
-      "',1,'LineNames',{{'Limited PD Controller'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct("
-      "'MinYLimReal','-5.01644','MaxYLimReal','0.88956','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','5.01644','"
-      "LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
-      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.4117"
-      "64705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83"
-      "1372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configu"
-      "ration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Vers"
-      "ion','2018b')),'Version','2018b','Position',[1 41 1280 607.333333333333])"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-25.85132','MaxYLimReal','52.87237','YLabelReal','','MinYLimM"
+      "ag','0.00000','MaxYLimMag','52.87237','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'A"
+      "xesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06"
+      "66666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8"
+      "31372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215"
+      "686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLi"
+      "nes',1,'LineNames',{{'Limited PD Controller'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',stru"
+      "ct('MinYLimReal','-25.85132','MaxYLimReal','52.87237','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','52.87"
+      "237','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor'"
+      ",[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 "
+      "0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686274509"
+      "8 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.C"
+      "onfiguration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true"
+      ",'Version','2018b')),'Version','2018b','Position',[1 41 1280 607.333333333333])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2580,26 +2581,29 @@ Stateflow {
     eml {
       isEML		      1
       script		      "% Input: mÃ¥ling y, pÃ¥drag u\n% Output: kalman filter: Estimert psi uten stÃ¸y og rudder bias b\n"
-      "function [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize\nif isempty(init_fla"
-      "g)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6   ]];\n    \n    R = 0"
-      ".02033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0        "
-      "]\n            [0      0      pi^2   0     0        ]\n            [0      0      0      1     0        ]\n     "
-      "       [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.9969267392"
-      "62672    0.100626789614164       0       0                    0                         ]\n        [-0.061582920"
-      "038110    1.011537233905485       0       0                    0                         ]\n        [0          "
-      "           0                       1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0         "
-      "            0                       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0        "
-      "             0                       0       0                    1                         ]];\n    \n    B = ["
-      "0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.04885096"
-      "7535938*10^-5   4.105548994630666*10^-4     0                          0                            0           "
-      "        ]\n        [ 0                         0                           -3.590283471015735*10^-7   -1.0769611"
-      "59999087*10^-5     0.100000000000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter ini"
-      "t av KF\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the ka"
-      "lman gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_"
-      " + L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formula holds for both optimal an"
-      "d suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_h"
-      "at + B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også fra [r"
-      "ad] til [deg]\npsi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\nend\n"
+      "function [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q_k P_\n\n% Initialize\nif isempty(init_f"
+      "lag)\n    \n    init_flag = 1;\n     \n    Q_k = [5.60269988328740e-09,8.42776627365644e-08,0,0,0;\n        8.42"
+      "776627365644e-08,1.68557181063284e-06,0,0,0;\n        0,0,2.32004646392527e-18,5.79922670073289e-17,-3.590283471"
+      "01574e-13;\n        0,0,5.79922670073289e-17,1.54628259912526e-15,-1.07696115999909e-11;\n        0,0,-3.5902834"
+      "7101574e-13,-1.07696115999909e-11,1.00000000000000e-07];\n    \n    R = 0.00017326;\n\n    P_0 =  [[1      0    "
+      "  0      0     0        ]\n            [0      0.013  0      0     0        ]\n            [0      0      pi^2  "
+      " 0     0        ]\n            [0      0      0      1     0        ]\n            [0      0      0      0     2"
+      ".5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164       0  "
+      "     0                    0                         ]\n        [-0.061582920038110    1.011537233905485       0 "
+      "      0                    0                         ]\n        [0                     0                       1"
+      "       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0                     0                       "
+      "0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0                     0                      "
+      " 0       0                    1                         ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2.153426"
+      "863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.105548994630666*10"
+      "^-4     0                          0                            0                   ]\n        [ 0              "
+      "           0                           -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000"
+      "   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter init av KF\n    \n%Omgjøring av input ["
+      "deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the kalman gain L\nL = P_*C.'*inv(C*P_*C.'"
+      " + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Upda"
+      "ting the error covariance matrix P\n% This formula holds for both optimal and suboptimal gain L\nP = (eye(5)- L*"
+      "C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A.' + Q_k;\n\n% "
+      "Oppdaterer output heading psi og rudder bias b\n% Konverterer også fra [rad] til [deg]\npsi = X_hat(3).*(180/pi)"
+      ";\nb = X_hat(5).*(180/pi);\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

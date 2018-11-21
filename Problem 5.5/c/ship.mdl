@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.67"
+    ComputedModelVersion    "1.69"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -82,8 +82,8 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
-	  ZoomFactor		  [1.3797629585198119]
-	  Offset		  [-94.8244565221753, 157.99762793637839]
+	  ZoomFactor		  [1.3776763080847816]
+	  Offset		  [-94.839875198793834, 157.99480638763055]
 	}
 	Object {
 	  $ObjectID		  6
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 16 10:25:14 2018"
-  RTWModifiedTimeStamp	  464220318
-  ModelVersionFormat	  "1.%<AutoIncrement:67>"
+  LastModifiedDate	  "Wed Nov 21 09:50:12 2018"
+  RTWModifiedTimeStamp	  464694393
+  ModelVersionFormat	  "1.%<AutoIncrement:69>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1439,7 +1439,7 @@ Model {
 	  SourceProductBaseCode	  "SL"
 	  ContentPreviewEnabled	  off
 	  Cov			  "[0.001]"
-	  Ts			  ".5"
+	  Ts			  ".1"
 	  seed			  "[23341]"
 	  VectorParams1D	  on
 	}
@@ -2044,16 +2044,16 @@ Model {
       "86274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 "
       "0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
       "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePro"
-      "pertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'psi_m','psi_est','psi_r'}},'ShowCo"
-      "ntent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-11.44619','MaxYLimReal','34.60513',"
-      "'YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','34.60513','LegendVisibility','On','XGrid',true,'YGrid',true"
-      ",'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922"
-      "],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784313725"
-      "49;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352941176"
-      "47 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedC"
-      "hannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools"
-      "','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')"
-      "),'Version','2018b','Location',[1 71.6666666666667 1281 679])"
+      "pertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'psi','psi_est','psi_r'}},'ShowCont"
+      "ent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-11.44619','MaxYLimReal','34.60513','Y"
+      "LabelReal','','MinYLimMag','0.00000','MaxYLimMag','34.60513','LegendVisibility','On','XGrid',true,'YGrid',true,'"
+      "PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
+      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+      " 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedCha"
+      "nnelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools',"
+      "'Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),"
+      "'Version','2018b','Location',[1 71.6666666666667 1281 679])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2464,6 +2464,9 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -2491,26 +2494,29 @@ Stateflow {
     eml {
       isEML		      1
       script		      "% Input: Måling y, pådrag u\n% Output: Estimert psi uten støy, rudder bias b\nfunction [psi, b] ="
-      " Kalman(y, u)\n\n%Lagring av variable\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize the KF with discr"
-      "etized matrices\n% and initial P_0 and X_0\nif isempty(init_flag)\n    \n    init_flag = 1;\n     \n    Q =  [[3"
-      "0      0      ]\n          [0      10^-6]];\n    \n    R = 0.02033;\n\n    P_0 =  [[1      0      0      0     0"
-      "        ]\n            [0      0.013  0      0     0        ]\n            [0      0      pi^2   0     0        "
-      "]\n            [0      0      0      1     0        ]\n            [0      0      0      0     2.5*10^-3]];\n   "
-      "     \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164       0       0          "
-      "          0                         ]\n        [-0.061582920038110    1.011537233905485       0       0         "
-      "           0                         ]\n        [0                     0                       1       0.0999310"
-      "08253684    -1.076961159999087*10^-5  ]\n        [0                     0                       0       0.998620"
-      "482470742    -2.153426863171962*10^-4  ]\n        [0                     0                       0       0      "
-      "              1                         ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 "
-      "0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.105548994630666*10^-4     0       "
-      "                   0                            0                   ]\n        [ 0                         0    "
-      "                       -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000   ]]';\n    \n "
-      "   X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter init av KF\n    \n%Omgjøring av input [deg] til [rad]\n"
-      "y = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the kalman gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% "
-      "[2] Updating the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Updating the error c"
-      "ovariance matrix P\n% This formula holds for both optimal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)"
-      "-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer ou"
-      "tput heading psi og rudder bias b\npsi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\nend"
+      " Kalman(y, u)\n\n%Lagring av variable\npersistent  init_flag A B C E X_ R Q_k P_\n\n% Initialize the KF with dis"
+      "cretized matrices\n% and initial P_0 and X_0\nif isempty(init_flag)\n    \n    init_flag = 1;\n     \n    Q_k = "
+      "[5.60269988328740e-09,8.42776627365644e-08,0,0,0;\n        8.42776627365644e-08,1.68557181063284e-06,0,0,0;\n   "
+      "     0,0,2.32004646392527e-18,5.79922670073289e-17,-3.59028347101574e-13;\n        0,0,5.79922670073289e-17,1.54"
+      "628259912526e-15,-1.07696115999909e-11;\n        0,0,-3.59028347101574e-13,-1.07696115999909e-11,1.0000000000000"
+      "0e-07];\n    \n    R = 0.00017326;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0."
+      "013  0      0     0        ]\n            [0      0      pi^2   0     0        ]\n            [0      0      0  "
+      "    1     0        ]\n            [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n "
+      "   \n    A = [[0.996926739262672    0.100626789614164       0       0                    0                      "
+      "   ]\n        [-0.061582920038110    1.011537233905485       0       0                    0                     "
+      "    ]\n        [0                     0                       1       0.099931008253684    -1.076961159999087*10"
+      "^-5  ]\n        [0                     0                       0       0.998620482470742    -2.153426863171962*1"
+      "0^-4  ]\n        [0                     0                       0       0                    1                  "
+      "       ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n"
+      "    \n    %E = [[2.048850967535938*10^-5   4.105548994630666*10^-4     0                          0             "
+      "               0                   ]\n    %    [ 0                         0                           -3.590283"
+      "471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend"
+      "\n%Kode som kjøres etter init av KF\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180"
+      ");\n\n% [1] Computing the kalman gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with t"
+      "he measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formu"
+      "la holds for both optimal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] "
+      "Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A.' + Q_k;\n\n% Oppdaterer output heading psi og rudder bias b\n"
+      "psi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
