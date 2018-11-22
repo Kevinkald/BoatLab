@@ -1,4 +1,4 @@
-filename = '5_5_d.mat';
+filename = '5_5_d_q_2_minus_10.mat';
 m = matfile(filename);
 filedata = m.ans;
 

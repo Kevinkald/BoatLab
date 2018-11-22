@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.70"
+    ComputedModelVersion    "1.75"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -90,7 +90,7 @@ Model {
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "109"
-	  Extents		  [1864.0, 789.0]
+	  Extents		  [1920.0, 1080.0]
 	  ZoomFactor		  [3.3691753165608462]
 	  Offset		  [-20.397507032107541, -30.06064549602084]
 	}
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 16 11:22:45 2018"
-  RTWModifiedTimeStamp	  464266039
-  ModelVersionFormat	  "1.%<AutoIncrement:70>"
+  LastModifiedDate	  "Thu Nov 22 18:34:45 2018"
+  RTWModifiedTimeStamp	  464812477
+  ModelVersionFormat	  "1.%<AutoIncrement:75>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -242,7 +242,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "500"
+	  StopTime		  "1000"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -1308,7 +1308,7 @@ Model {
       }
       Port {
 	PortNumber		1
-	Name			"psi_m"
+	Name			"y"
       }
       System {
 	Name			"Cargo ship"
@@ -1924,7 +1924,7 @@ Model {
       BlockType		      Memory
       Name		      "Memory"
       SID		      "158"
-      Position		      [110, 390, 140, 420]
+      Position		      [110, 385, 140, 415]
       ZOrder		      60
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1941,22 +1941,30 @@ Model {
       ZOrder		      61
       BlockMirror	      on
       NamePlacement	      "alternate"
+      Port {
+	PortNumber		1
+	Name			"psi_est"
+      }
     }
     Block {
       BlockType		      Memory
       Name		      "Memory2"
       SID		      "164"
-      Position		      [110, 460, 140, 490]
+      Position		      [110, 465, 140, 495]
       ZOrder		      64
       BlockMirror	      on
       NamePlacement	      "alternate"
+      Port {
+	PortNumber		1
+	Name			"psi_w"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "115"
       Ports		      [6, 1]
-      Position		      [695, 307, 700, 388]
+      Position		      [695, 322, 700, 403]
       ZOrder		      34
       ShowName		      off
       Inputs		      "6"
@@ -2021,13 +2029,17 @@ Model {
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"delta"
+      }
     }
     Block {
       BlockType		      ToFile
       Name		      "To File"
       SID		      "121"
       Ports		      [1]
-      Position		      [735, 330, 795, 360]
+      Position		      [735, 350, 795, 380]
       ZOrder		      30
       Filename		      "5_5_e.mat"
     }
@@ -2067,9 +2079,17 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       Port {
+	PortNumber		1
+	Name			"psi"
+      }
+      Port {
 	PortNumber		2
-	Name			"Bias"
+	Name			"b"
 	PropagatedSignals	"b"
+      }
+      Port {
+	PortNumber		3
+	Name			"psi_w"
       }
       System {
 	Name			"kalman\n"
@@ -2236,7 +2256,6 @@ Model {
       ZOrder		      45
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [0, -5]
       DstBlock		      "To File"
       DstPort		      1
     }
@@ -2255,9 +2274,9 @@ Model {
       DstPort		      2
     }
     Line {
-      Name		      "psi_m"
+      Name		      "y"
       ZOrder		      59
-      Labels		      [-1, 0]
+      Labels		      [1, 1]
       SrcBlock		      "Cargo ship"
       SrcPort		      1
       Points		      [44, 0]
@@ -2269,7 +2288,8 @@ Model {
       }
       Branch {
 	ZOrder			58
-	Points			[94, 0; 0, 60]
+	Labels			[3, 1]
+	Points			[94, 0; 0, 75]
 	DstBlock		"Mux"
 	DstPort			1
       }
@@ -2282,7 +2302,9 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "psi"
       ZOrder		      159
+      Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      1
       DstBlock		      "Memory"
@@ -2303,7 +2325,7 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "Bias"
+      Name		      "b"
       ZOrder		      160
       Labels		      [1, 0]
       SrcBlock		      "kalman\n"
@@ -2319,22 +2341,24 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "delta"
       ZOrder		      212
       SrcBlock		      "Sum1"
       SrcPort		      1
       Points		      [135, 0]
       Branch {
 	ZOrder			247
-	Points			[0, 90]
+	Points			[0, 100]
 	Branch {
 	  ZOrder		  260
-	  Points		  [0, 110]
+	  Labels		  [1, 1]
+	  Points		  [0, 100]
 	  DstBlock		  "Zero-Order\nHold"
 	  DstPort		  1
 	}
 	Branch {
 	  ZOrder		  256
-	  Points		  [280, 0]
+	  Labels		  [1, 1]
 	  DstBlock		  "Mux"
 	  DstPort		  4
 	}
@@ -2355,7 +2379,7 @@ Model {
       Branch {
 	ZOrder			252
 	Labels			[-1, 0]
-	Points			[0, 56; 644, 0; 0, -1]
+	Points			[0, 70]
 	DstBlock		"Mux"
 	DstPort			2
       }
@@ -2373,26 +2397,29 @@ Model {
       SrcPort		      1
       Points		      [-17, 0]
       Branch {
-	ZOrder			274
-	Points			[0, 5; -43, 0]
+	ZOrder			282
+	Points			[-43, 0]
 	DstBlock		"Sum"
 	DstPort			2
       }
       Branch {
 	ZOrder			254
-	Points			[0, -71; 339, 0; 0, 6]
+	Labels			[4, 1]
+	Points			[0, -66; 339, 0; 0, 21]
 	DstBlock		"Mux"
 	DstPort			3
       }
     }
     Line {
+      Name		      "psi_est"
       ZOrder		      250
       SrcBlock		      "Memory1"
       SrcPort		      1
       Points		      [-51, 0; 0, -92; 196, 0; 0, -39]
       Branch {
 	ZOrder			259
-	Points			[95, 0; 0, 61]
+	Labels			[3, 1]
+	Points			[95, 0; 0, 76]
 	DstBlock		"Mux"
 	DstPort			5
       }
@@ -2403,17 +2430,21 @@ Model {
       }
     }
     Line {
+      Name		      "psi_w"
       ZOrder		      272
+      Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      3
       DstBlock		      "Memory2"
       DstPort		      1
     }
     Line {
+      Name		      "psi_w"
       ZOrder		      273
+      Labels		      [5, 1]
       SrcBlock		      "Memory2"
       SrcPort		      1
-      Points		      [-9, 0; 0, 59; 372, 0; 0, -149]
+      Points		      [-9, 0; 0, 54; 372, 0; 0, -134]
       DstBlock		      "Mux"
       DstPort		      6
     }
@@ -2442,9 +2473,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -2472,26 +2500,29 @@ Stateflow {
     eml {
       isEML		      1
       script		      "% Input: mÃ¥ling y, pÃ¥drag u\n% Output: kalman filter: Estimert psi uten stÃ¸y og rudder bias b\n"
-      "function [psi, b, psi_w] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize\nif isempty(i"
-      "nit_flag)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6   ]];\n    \n  "
-      "  R = 0.02033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0 "
-      "       ]\n            [0      0      pi^2   0     0        ]\n            [0      0      0      1     0        ]"
-      "\n            [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996"
-      "926739262672    0.100626789614164       0       0                    0                         ]\n        [-0.06"
-      "1582920038110    1.011537233905485       0       0                    0                         ]\n        [0   "
-      "                  0                       1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0  "
-      "                   0                       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0 "
-      "                    0                       0       0                    1                         ]];\n    \n  "
-      "  B = [0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.0"
-      "48850967535938*10^-5   4.105548994630666*10^-4     0                          0                            0    "
-      "               ]\n        [ 0                         0                           -3.590283471015735*10^-7   -1."
-      "076961159999087*10^-5     0.100000000000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres et"
-      "ter init av KF\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing"
-      " the kalman gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_h"
-      "at = X_ + L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formula holds for both opt"
-      "imal and suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ "
-      "= A*X_hat + B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også"
-      " fra [rad] til [deg]\npsi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\npsi_w = X_hat(2).*(180/pi);\nend\n"
+      "function [psi, b, psi_w] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q_k P_\n\n% Initialize\nif isempty"
+      "(init_flag)\n    \n    init_flag = 1;\n     \n    Q_k = [1.68080996498622e-07,2.52832988209693e-06,0,0,0;\n     "
+      "   2.52832988209693e-06,5.05671543189852e-05,0,0,0;\n        0,0,2.32004646392527e-18,5.79922670073289e-17,-3.59"
+      "028347101574e-13;\n        0,0,5.79922670073289e-17,1.54628259912526e-15,-1.07696115999909e-11;\n        0,0,-3."
+      "59028347101574e-13,-1.07696115999909e-11,1.00000000000000e-07];\n    \n    R = 0.00017326;\n\n    P_0 =  [[1    "
+      "  0      0      0     0        ]\n            [0      0.013  0      0     0        ]\n            [0      0     "
+      " pi^2   0     0        ]\n            [0      0      0      1     0        ]\n            [0      0      0      "
+      "0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164   "
+      "    0       0                    0                         ]\n        [-0.061582920038110    1.011537233905485  "
+      "     0       0                    0                         ]\n        [0                     0                 "
+      "      1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0                     0                "
+      "       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0                     0               "
+      "        0       0                    1                         ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2"
+      ".153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.10554899463"
+      "0666*10^-4     0                          0                            0                   ]\n        [ 0       "
+      "                  0                           -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.10000000"
+      "0000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter init av KF\n    \n%Omgjøring av "
+      "input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the kalman gain L\nL = P_*C.'*inv(C"
+      "*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% ["
+      "3] Updating the error covariance matrix P\n% This formula holds for both optimal and suboptimal gain L\nP = (eye"
+      "(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A.' + Q_k"
+      ";\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også fra [rad] til [deg]\npsi = X_hat(3).*("
+      "180/pi);\nb = X_hat(5).*(180/pi);\npsi_w = X_hat(2).*(180/pi);\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }

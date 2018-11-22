@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.67"
+    ComputedModelVersion    "1.78"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -81,16 +81,16 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1864.0, 789.0]
-	  ZoomFactor		  [1.3796714206273037]
-	  Offset		  [-94.82519608576365, 160.26969160121754]
+	  Extents		  [1865.0, 790.0]
+	  ZoomFactor		  [1.3792932213099531]
+	  Offset		  [-95.0695818859042, 160.14000068094407]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "109"
-	  Extents		  [1864.0, 789.0]
+	  Extents		  [1920.0, 1080.0]
 	  ZoomFactor		  [3.3691753165608462]
 	  Offset		  [-20.397507032107541, -30.06064549602084]
 	}
@@ -114,7 +114,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAUwD///8AAAeAAAADaAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAUwD///8AAAeBAAADaQAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACp/////wAAAAAAAAAA/////wEAAAEu/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAHX/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAQy/////wAAAAAAAAAA/"
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 15 22:32:39 2018"
-  RTWModifiedTimeStamp	  464221897
-  ModelVersionFormat	  "1.%<AutoIncrement:67>"
+  LastModifiedDate	  "Thu Nov 22 18:29:36 2018"
+  RTWModifiedTimeStamp	  464812172
+  ModelVersionFormat	  "1.%<AutoIncrement:78>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -242,7 +242,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "500"
+	  StopTime		  "1000"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -1312,7 +1312,7 @@ Model {
       }
       Port {
 	PortNumber		1
-	Name			"psi_m"
+	Name			"y"
       }
       System {
 	Name			"Cargo ship"
@@ -1829,6 +1829,10 @@ Model {
       ZOrder		      26
       BackgroundColor	      "cyan"
       RequestExecContextInheritance off
+      Port {
+	PortNumber		1
+	Name			"delta"
+      }
       System {
 	Name			"Limited PD Controller"
 	Location		[-7, -7, 1288, 688]
@@ -1941,6 +1945,10 @@ Model {
       SID		      "159"
       Position		      [210, 435, 240, 465]
       ZOrder		      61
+      Port {
+	PortNumber		1
+	Name			"b"
+      }
     }
     Block {
       BlockType		      Mux
@@ -1957,7 +1965,7 @@ Model {
       Name		      "Mux1"
       SID		      "124"
       Ports		      [3, 1]
-      Position		      [605, 406, 610, 444]
+      Position		      [605, 376, 610, 414]
       ZOrder		      37
       ShowName		      off
       Inputs		      "3"
@@ -2000,24 +2008,25 @@ Model {
       Name		      "Scope"
       SID		      "160"
       Ports		      [1]
-      Position		      [690, 469, 720, 501]
+      Position		      [690, 434, 720, 466]
       ZOrder		      62
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-1.06735','MaxYLimReal','8.85557','YLabelReal','','MinYLimMag"
-      "','0.00000','MaxYLimMag','8.85557','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
-      "Color',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
-      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313"
-      "72549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
-      " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines"
-      "',1,'LineNames',{{'Memory1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal',"
-      "'-1.06735','MaxYLimReal','8.85557','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','8.85557','LegendVisibili"
-      "ty','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 "
-      "0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0."
-      "16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 "
-      "0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools'"
-      ",'Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b')"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-4.92887','MaxYLimReal','19.57031','YLabelReal','','MinYLimMa"
+      "g','0.00000','MaxYLimMag','19.57031','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
+      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
+      "es',1,'LineNames',{{'Memory1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal"
+      "','-4.92887','MaxYLimReal','19.57031','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','19.57031','LegendVisi"
+      "bility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803"
+      "922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.41176470588235"
+      "3 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019"
+      "608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('To"
+      "ols','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','201"
+      "8b')"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2026,7 +2035,7 @@ Model {
       Name		      "Scope1"
       SID		      "127"
       Ports		      [1]
-      Position		      [690, 409, 720, 441]
+      Position		      [690, 379, 720, 411]
       ZOrder		      40
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
@@ -2048,33 +2057,6 @@ Model {
       "hannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools"
       "','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')"
       "),'Version','2018b','Location',[1 71.6666666666667 1281 679])"
-      NumInputPorts	      "1"
-      Floating		      off
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope2"
-      SID		      "162"
-      Ports		      [1]
-      Position		      [285, 309, 315, 341]
-      ZOrder		      64
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-5.01644','MaxYLimReal','0.88956','YLabelReal','','MinYLimMag"
-      "','0.00000','MaxYLimMag','5.01644','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
-      "Color',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
-      "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313"
-      "72549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
-      " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines"
-      "',1,'LineNames',{{'Limited PD Controller'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct("
-      "'MinYLimReal','-5.01644','MaxYLimReal','0.88956','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','5.01644','"
-      "LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
-      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.4117"
-      "64705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83"
-      "1372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configu"
-      "ration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Vers"
-      "ion','2018b')),'Version','2018b','Position',[1 41 1280 607.333333333333])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2158,8 +2140,12 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       Port {
+	PortNumber		1
+	Name			"psi"
+      }
+      Port {
 	PortNumber		2
-	Name			"Bias"
+	Name			"b"
 	PropagatedSignals	"b"
       }
       System {
@@ -2358,7 +2344,7 @@ Model {
 	Branch {
 	  ZOrder		  173
 	  Labels		  [2, 1]
-	  Points		  [0, 100]
+	  Points		  [0, 70]
 	  DstBlock		  "Mux1"
 	  DstPort		  3
 	}
@@ -2371,7 +2357,7 @@ Model {
       }
     }
     Line {
-      Name		      "psi_m"
+      Name		      "y"
       ZOrder		      59
       Labels		      [-1, 0]
       SrcBlock		      "Cargo ship"
@@ -2379,7 +2365,7 @@ Model {
       Points		      [34, 0]
       Branch {
 	ZOrder			175
-	Points			[0, 165]
+	Points			[0, 135]
 	DstBlock		"Mux1"
 	DstPort			1
       }
@@ -2408,7 +2394,9 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "psi"
       ZOrder		      159
+      Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      1
       DstBlock		      "Memory"
@@ -2436,7 +2424,7 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "Bias"
+      Name		      "b"
       ZOrder		      160
       Labels		      [1, 0]
       SrcBlock		      "kalman\n"
@@ -2450,17 +2438,18 @@ Model {
       Labels		      [1, 0]
       SrcBlock		      "Memory"
       SrcPort		      1
-      Points		      [345, 0]
       DstBlock		      "Mux1"
       DstPort		      2
     }
     Line {
+      Name		      "b"
       ZOrder		      204
       SrcBlock		      "Memory1"
       SrcPort		      1
       Points		      [75, 0]
       Branch {
 	ZOrder			229
+	Labels			[1, 1]
 	DstBlock		"Sum1"
 	DstPort			2
       }
@@ -2469,7 +2458,6 @@ Model {
 	Points			[227, 0]
 	Branch {
 	  ZOrder		  227
-	  Points		  [0, 35]
 	  DstBlock		  "Scope"
 	  DstPort		  1
 	}
@@ -2509,21 +2497,13 @@ Model {
       }
     }
     Line {
+      Name		      "delta"
       ZOrder		      211
+      Labels		      [1, 1]
       SrcBlock		      "Limited PD Controller"
       SrcPort		      1
-      Points		      [31, 0]
-      Branch {
-	ZOrder			241
-	Points			[0, 55]
-	DstBlock		"Scope2"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			240
-	DstBlock		"Sum1"
-	DstPort			1
-      }
+      DstBlock		      "Sum1"
+      DstPort		      1
     }
   }
 }
@@ -2550,9 +2530,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -2580,26 +2557,29 @@ Stateflow {
     eml {
       isEML		      1
       script		      "% Input: mÃ¥ling y, pÃ¥drag u\n% Output: kalman filter: Estimert psi uten stÃ¸y og rudder bias b\n"
-      "function [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q P_\n\n% Initialize\nif isempty(init_fla"
-      "g)\n    \n    init_flag = 1;\n     \n    Q =  [[30      0      ]\n          [0      10^-6   ]];\n    \n    R = 0"
-      ".02033;\n\n    P_0 =  [[1      0      0      0     0        ]\n            [0      0.013  0      0     0        "
-      "]\n            [0      0      pi^2   0     0        ]\n            [0      0      0      1     0        ]\n     "
-      "       [0      0      0      0     2.5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.9969267392"
-      "62672    0.100626789614164       0       0                    0                         ]\n        [-0.061582920"
-      "038110    1.011537233905485       0       0                    0                         ]\n        [0          "
-      "           0                       1       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0         "
-      "            0                       0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0        "
-      "             0                       0       0                    1                         ]];\n    \n    B = ["
-      "0 0 1.076961159999087*10^-5 2.153426863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.04885096"
-      "7535938*10^-5   4.105548994630666*10^-4     0                          0                            0           "
-      "        ]\n        [ 0                         0                           -3.590283471015735*10^-7   -1.0769611"
-      "59999087*10^-5     0.100000000000000   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter ini"
-      "t av KF\n    \n%Omgjøring av input [deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the ka"
-      "lman gain L\nL = P_*C.'*inv(C*P_*C.' + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_"
-      " + L * (y - C*X_);\n    \n% [3] Updating the error covariance matrix P\n% This formula holds for both optimal an"
-      "d suboptimal gain L\nP = (eye(5)- L*C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_h"
-      "at + B*u;\nP_ = A*P*A.' + E*Q*E';\n\n% Oppdaterer output heading psi og rudder bias b\n% Konverterer også fra [r"
-      "ad] til [deg]\npsi = X_hat(3).*(180/pi);\nb = X_hat(5).*(180/pi);\nend\n"
+      "function [psi, b] = Kalman(y, u)\n\npersistent  init_flag A B C E X_ R Q_k P_\n\n% Initialize\nif isempty(init_f"
+      "lag)\n    \n    init_flag = 1;\n     \n    Q_k = [1.68080996498622e-07,2.52832988209693e-06,0,0,0;\n        2.52"
+      "832988209693e-06,5.05671543189852e-05,0,0,0;\n        0,0,2.32004646392527e-22,5.79922670073290e-21,-3.590283471"
+      "01574e-17;\n        0,0,5.79922670073289e-21,1.54628259912526e-19,-1.07696115999909e-15;\n        0,0,-3.5902834"
+      "7101574e-17,-1.07696115999909e-15,1.00000000000000e-11];\n    \n    R = 0.00017326;\n\n    P_0 =  [[1      0    "
+      "  0      0     0        ]\n            [0      0.013  0      0     0        ]\n            [0      0      pi^2  "
+      " 0     0        ]\n            [0      0      0      1     0        ]\n            [0      0      0      0     2"
+      ".5*10^-3]];\n        \n    X_0 = [0 0 0 0 0]';\n    \n    A = [[0.996926739262672    0.100626789614164       0  "
+      "     0                    0                         ]\n        [-0.061582920038110    1.011537233905485       0 "
+      "      0                    0                         ]\n        [0                     0                       1"
+      "       0.099931008253684    -1.076961159999087*10^-5  ]\n        [0                     0                       "
+      "0       0.998620482470742    -2.153426863171962*10^-4  ]\n        [0                     0                      "
+      " 0       0                    1                         ]];\n    \n    B = [0 0 1.076961159999087*10^-5 2.153426"
+      "863171962*10^-4 0]';\n    \n    C = [0 1 1 0 0];\n    \n    E = [[2.048850967535938*10^-5   4.105548994630666*10"
+      "^-4     0                          0                            0                   ]\n        [ 0              "
+      "           0                           -3.590283471015735*10^-7   -1.076961159999087*10^-5     0.100000000000000"
+      "   ]]';\n    \n    X_ = X_0;\n    P_ = P_0;\nend\n%Kode som kjøres etter init av KF\n    \n%Omgjøring av input ["
+      "deg] til [rad]\ny = y.*(pi/180);\nu = u.*(pi/180);\n\n% [1] Computing the kalman gain L\nL = P_*C.'*inv(C*P_*C.'"
+      " + R);\n    \n% [2] Updating the estimate with the measurement y\nX_hat = X_ + L * (y - C*X_);\n    \n% [3] Upda"
+      "ting the error covariance matrix P\n% This formula holds for both optimal and suboptimal gain L\nP = (eye(5)- L*"
+      "C) * P_ *(eye(5)-L*C).' + L*R*L.';\n    \n% [4] Projecting ahead\nX_ = A*X_hat + B*u;\nP_ = A*P*A.' + Q_k;\n\n% "
+      "Oppdaterer output heading psi og rudder bias b\n% Konverterer også fra [rad] til [deg]\npsi = X_hat(3).*(180/pi)"
+      ";\nb = X_hat(5).*(180/pi);\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
