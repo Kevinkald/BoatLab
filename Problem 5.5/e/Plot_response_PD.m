@@ -44,4 +44,4 @@ plot(time, psi_w_est, 'b');
 xlabel('time t [s]');
 ylabel('Angle [deg]');
 legend('$\psi_{w}$(t)', '$\hat{\psi}_{w}$(t)','Interpreter','Latex');
-xlim([100,500]);
+xlim([400,500]);

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.30"
+    ComputedModelVersion    "1.31"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -81,8 +81,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1864.0, 794.0]
-	ZoomFactor		[2.5539616138419432]
-	Offset			[189.51832011721598, 78.022727916271549]
+	ZoomFactor		[2.5550867917996936]
+	Offset			[189.52073407254437, 77.415782228576731]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 21 08:34:24 2018"
-  RTWModifiedTimeStamp	  464690010
-  ModelVersionFormat	  "1.%<AutoIncrement:30>"
+  LastModifiedDate	  "Thu Nov 22 18:15:00 2018"
+  RTWModifiedTimeStamp	  464811287
+  ModelVersionFormat	  "1.%<AutoIncrement:31>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1212,7 +1212,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "255"
+    ZoomFactor		    "256"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "49"
     Block {
@@ -1858,7 +1858,7 @@ Model {
       Ports		      [1]
       Position		      [610, 175, 670, 205]
       ZOrder		      3
-      Filename		      "5_3_d.mat"
+      Filename		      "5_5_b.mat"
     }
     Line {
       ZOrder		      1

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.73"
+    ComputedModelVersion    "1.75"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 21 17:05:33 2018"
-  RTWModifiedTimeStamp	  464720714
-  ModelVersionFormat	  "1.%<AutoIncrement:73>"
+  LastModifiedDate	  "Thu Nov 22 18:34:45 2018"
+  RTWModifiedTimeStamp	  464812477
+  ModelVersionFormat	  "1.%<AutoIncrement:75>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1308,7 +1308,7 @@ Model {
       }
       Port {
 	PortNumber		1
-	Name			"psi_m"
+	Name			"y"
       }
       System {
 	Name			"Cargo ship"
@@ -1924,7 +1924,7 @@ Model {
       BlockType		      Memory
       Name		      "Memory"
       SID		      "158"
-      Position		      [110, 390, 140, 420]
+      Position		      [110, 385, 140, 415]
       ZOrder		      60
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1941,22 +1941,30 @@ Model {
       ZOrder		      61
       BlockMirror	      on
       NamePlacement	      "alternate"
+      Port {
+	PortNumber		1
+	Name			"psi_est"
+      }
     }
     Block {
       BlockType		      Memory
       Name		      "Memory2"
       SID		      "164"
-      Position		      [110, 460, 140, 490]
+      Position		      [110, 465, 140, 495]
       ZOrder		      64
       BlockMirror	      on
       NamePlacement	      "alternate"
+      Port {
+	PortNumber		1
+	Name			"psi_w"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "115"
       Ports		      [6, 1]
-      Position		      [695, 307, 700, 388]
+      Position		      [695, 322, 700, 403]
       ZOrder		      34
       ShowName		      off
       Inputs		      "6"
@@ -2021,13 +2029,17 @@ Model {
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"delta"
+      }
     }
     Block {
       BlockType		      ToFile
       Name		      "To File"
       SID		      "121"
       Ports		      [1]
-      Position		      [735, 330, 795, 360]
+      Position		      [735, 350, 795, 380]
       ZOrder		      30
       Filename		      "5_5_e.mat"
     }
@@ -2067,9 +2079,17 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       Port {
+	PortNumber		1
+	Name			"psi"
+      }
+      Port {
 	PortNumber		2
-	Name			"Bias"
+	Name			"b"
 	PropagatedSignals	"b"
+      }
+      Port {
+	PortNumber		3
+	Name			"psi_w"
       }
       System {
 	Name			"kalman\n"
@@ -2236,7 +2256,6 @@ Model {
       ZOrder		      45
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [0, -5]
       DstBlock		      "To File"
       DstPort		      1
     }
@@ -2255,9 +2274,9 @@ Model {
       DstPort		      2
     }
     Line {
-      Name		      "psi_m"
+      Name		      "y"
       ZOrder		      59
-      Labels		      [-1, 0]
+      Labels		      [1, 1]
       SrcBlock		      "Cargo ship"
       SrcPort		      1
       Points		      [44, 0]
@@ -2269,7 +2288,8 @@ Model {
       }
       Branch {
 	ZOrder			58
-	Points			[94, 0; 0, 60]
+	Labels			[3, 1]
+	Points			[94, 0; 0, 75]
 	DstBlock		"Mux"
 	DstPort			1
       }
@@ -2282,7 +2302,9 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "psi"
       ZOrder		      159
+      Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      1
       DstBlock		      "Memory"
@@ -2303,7 +2325,7 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "Bias"
+      Name		      "b"
       ZOrder		      160
       Labels		      [1, 0]
       SrcBlock		      "kalman\n"
@@ -2319,22 +2341,24 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "delta"
       ZOrder		      212
       SrcBlock		      "Sum1"
       SrcPort		      1
       Points		      [135, 0]
       Branch {
 	ZOrder			247
-	Points			[0, 90]
+	Points			[0, 100]
 	Branch {
 	  ZOrder		  260
-	  Points		  [0, 110]
+	  Labels		  [1, 1]
+	  Points		  [0, 100]
 	  DstBlock		  "Zero-Order\nHold"
 	  DstPort		  1
 	}
 	Branch {
 	  ZOrder		  256
-	  Points		  [280, 0]
+	  Labels		  [1, 1]
 	  DstBlock		  "Mux"
 	  DstPort		  4
 	}
@@ -2355,7 +2379,7 @@ Model {
       Branch {
 	ZOrder			252
 	Labels			[-1, 0]
-	Points			[0, 56; 644, 0; 0, -1]
+	Points			[0, 70]
 	DstBlock		"Mux"
 	DstPort			2
       }
@@ -2373,26 +2397,29 @@ Model {
       SrcPort		      1
       Points		      [-17, 0]
       Branch {
-	ZOrder			274
-	Points			[0, 5; -43, 0]
+	ZOrder			282
+	Points			[-43, 0]
 	DstBlock		"Sum"
 	DstPort			2
       }
       Branch {
 	ZOrder			254
-	Points			[0, -71; 339, 0; 0, 6]
+	Labels			[4, 1]
+	Points			[0, -66; 339, 0; 0, 21]
 	DstBlock		"Mux"
 	DstPort			3
       }
     }
     Line {
+      Name		      "psi_est"
       ZOrder		      250
       SrcBlock		      "Memory1"
       SrcPort		      1
       Points		      [-51, 0; 0, -92; 196, 0; 0, -39]
       Branch {
 	ZOrder			259
-	Points			[95, 0; 0, 61]
+	Labels			[3, 1]
+	Points			[95, 0; 0, 76]
 	DstBlock		"Mux"
 	DstPort			5
       }
@@ -2403,17 +2430,21 @@ Model {
       }
     }
     Line {
+      Name		      "psi_w"
       ZOrder		      272
+      Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      3
       DstBlock		      "Memory2"
       DstPort		      1
     }
     Line {
+      Name		      "psi_w"
       ZOrder		      273
+      Labels		      [5, 1]
       SrcBlock		      "Memory2"
       SrcPort		      1
-      Points		      [-9, 0; 0, 59; 372, 0; 0, -149]
+      Points		      [-9, 0; 0, 54; 372, 0; 0, -134]
       DstBlock		      "Mux"
       DstPort		      6
     }
@@ -2442,9 +2473,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART

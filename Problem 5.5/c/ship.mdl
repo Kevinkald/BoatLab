@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.69"
+    ComputedModelVersion    "1.71"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -82,8 +82,8 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
-	  ZoomFactor		  [1.3776763080847816]
-	  Offset		  [-94.839875198793834, 157.99480638763055]
+	  ZoomFactor		  [1.3792923852936652]
+	  Offset		  [-95.069921933444164, 157.8710918462717]
 	}
 	Object {
 	  $ObjectID		  6
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 21 09:50:12 2018"
-  RTWModifiedTimeStamp	  464694393
-  ModelVersionFormat	  "1.%<AutoIncrement:69>"
+  LastModifiedDate	  "Thu Nov 22 18:27:56 2018"
+  RTWModifiedTimeStamp	  464811891
+  ModelVersionFormat	  "1.%<AutoIncrement:71>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1312,7 +1312,7 @@ Model {
       }
       Port {
 	PortNumber		1
-	Name			"psi"
+	Name			"y"
       }
       System {
 	Name			"Cargo ship"
@@ -2091,7 +2091,7 @@ Model {
       Ports		      [1]
       Position		      [735, 320, 795, 350]
       ZOrder		      30
-      Filename		      "5_3_d.mat"
+      Filename		      "5_5_c.mat"
     }
     Block {
       BlockType		      ZeroOrderHold
@@ -2100,6 +2100,10 @@ Model {
       Position		      [-45, 435, -10, 465]
       ZOrder		      41
       SampleTime	      "0.1"
+      Port {
+	PortNumber		1
+	Name			"delta"
+      }
     }
     Block {
       BlockType		      ZeroOrderHold
@@ -2108,6 +2112,10 @@ Model {
       Position		      [-45, 380, -10, 410]
       ZOrder		      42
       SampleTime	      "0.1"
+      Port {
+	PortNumber		1
+	Name			"y"
+      }
     }
     Block {
       BlockType		      SubSystem
@@ -2123,8 +2131,12 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       Port {
+	PortNumber		1
+	Name			"psi"
+      }
+      Port {
 	PortNumber		2
-	Name			"Bias"
+	Name			"b"
 	PropagatedSignals	"b"
       }
       System {
@@ -2335,9 +2347,9 @@ Model {
       }
     }
     Line {
-      Name		      "psi"
+      Name		      "y"
       ZOrder		      59
-      Labels		      [-1, 0]
+      Labels		      [1, 1]
       SrcBlock		      "Cargo ship"
       SrcPort		      1
       Points		      [34, 0]
@@ -2368,7 +2380,9 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "psi"
       ZOrder		      159
+      Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      1
       DstBlock		      "Memory"
@@ -2382,23 +2396,27 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "delta"
       ZOrder		      162
+      Labels		      [1, 1]
       SrcBlock		      "Zero-Order\nHold"
       SrcPort		      1
       DstBlock		      "kalman\n"
       DstPort		      2
     }
     Line {
+      Name		      "y"
       ZOrder		      163
+      Labels		      [1, 1]
       SrcBlock		      "Zero-Order\nHold1"
       SrcPort		      1
       DstBlock		      "kalman\n"
       DstPort		      1
     }
     Line {
-      Name		      "Bias"
+      Name		      "b"
       ZOrder		      160
-      Labels		      [1, 0]
+      Labels		      [1, 1]
       SrcBlock		      "kalman\n"
       SrcPort		      2
       DstBlock		      "Memory1"
@@ -2410,8 +2428,18 @@ Model {
       Labels		      [1, 0]
       SrcBlock		      "Memory"
       SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      2
+      Points		      [297, 0]
+      Branch {
+	ZOrder			217
+	Points			[0, -50]
+	DstBlock		"Mux"
+	DstPort			3
+      }
+      Branch {
+	ZOrder			216
+	DstBlock		"Mux1"
+	DstPort			2
+      }
     }
     Line {
       Name		      "delta"
@@ -2464,9 +2492,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
