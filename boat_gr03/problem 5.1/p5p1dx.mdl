@@ -1,12 +1,12 @@
 Model {
-  Name			  "p5p1c"
+  Name			  "p5p1dx"
   Version		  9.2
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.27"
+    ComputedModelVersion    "1.29"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -20,13 +20,13 @@ Model {
     NumExternalFileReferences 2
     ExternalFileReference {
       Reference		      "simulink/Sources/Band-Limited\nWhite Noise"
-      Path		      "p5p1c/Cargo ship/Measurement noise"
+      Path		      "p5p1dx/Cargo ship/Measurement noise"
       SID		      "11"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
       Reference		      "simulink/Sinks/XY Graph"
-      Path		      "p5p1c/North-East"
+      Path		      "p5p1dx/North-East"
       SID		      "29"
       Type		      "LIBRARY_BLOCK"
     }
@@ -56,7 +56,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [8.0, 8.0, 1295.0, 695.0]
+      Location		      [-7.0, -7.0, 1295.0, 695.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -80,9 +80,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1241.0, 514.0]
-	ZoomFactor		[2.5553839406986869]
-	Offset			[194.56824622057206, 87.427827360337034]
+	Extents			[1864.0, 794.0]
+	ZoomFactor		[2.6099898874994878]
+	Offset			[204.63599454271724, 89.594753974226393]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -95,17 +95,17 @@ Model {
 	UserData		""
 	Floating		[0]
 	DockPosition		"Right"
-	Width			[640]
-	Height			[480]
+	Width			[426]
+	Height			[320]
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAOQD///8AAAT/AAACOwAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAUwD///8AAAeAAAADaAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
+      "////wEAAACp/////wAAAAAAAAAA/////wEAAAEu/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAHX/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAQy/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
@@ -114,11 +114,11 @@ Model {
   Creator		  "markh"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Flemmen"
+  LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 23 20:50:41 2018"
-  RTWModifiedTimeStamp	  464907038
-  ModelVersionFormat	  "1.%<AutoIncrement:27>"
+  LastModifiedDate	  "Fri Nov 23 22:22:35 2018"
+  RTWModifiedTimeStamp	  464912551
+  ModelVersionFormat	  "1.%<AutoIncrement:29>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -175,11 +175,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "p5p1c"
+    model_		    "p5p1dx"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "p5p1c"
+      Cell		      "p5p1dx"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -230,7 +230,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "3000"
+	  StopTime		  "5000"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -1124,17 +1124,13 @@ Model {
       DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
     }
     Block {
-      BlockType		      Sin
-      SineType		      "Time based"
-      TimeSource	      "Use simulation time"
-      Amplitude		      "1"
-      Bias		      "0"
-      Frequency		      "1"
-      Phase		      "0"
-      Samples		      "10"
-      Offset		      "0"
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
       SampleTime	      "-1"
       VectorParams1D	      on
+      ZeroCross		      on
     }
     Block {
       BlockType		      SubSystem
@@ -1201,8 +1197,8 @@ Model {
     }
   }
   System {
-    Name		    "p5p1c"
-    Location		    [8, 8, 1303, 703]
+    Name		    "p5p1dx"
+    Location		    [-7, -7, 1288, 688]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1217,9 +1213,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "256"
+    ZoomFactor		    "261"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "46"
+    SIDHighWatermark	    "47"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1245,7 +1241,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "noise"
 	    Prompt		    "measurement noise"
-	    Value		    "on"
+	    Value		    "off"
 	  }
 	  Object {
 	    $ObjectID		    23
@@ -1259,7 +1255,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "on"
+	    Value		    "off"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -1820,13 +1816,12 @@ Model {
       Floating		      off
     }
     Block {
-      BlockType		      Sin
-      Name		      "Sine Wave"
-      SID		      "46"
-      Ports		      [0, 1]
-      Position		      [210, 195, 240, 225]
-      ZOrder		      14
-      Frequency		      "0.005"
+      BlockType		      Step
+      Name		      "Step"
+      SID		      "47"
+      Position		      [205, 195, 235, 225]
+      ZOrder		      15
+      Time		      "0"
       SampleTime	      "0"
     }
     Block {
@@ -1836,7 +1831,7 @@ Model {
       Ports		      [1]
       Position		      [615, 175, 675, 205]
       ZOrder		      3
-      Filename		      "5_1_c.mat"
+      Filename		      "5_1_d.mat"
     }
     Line {
       ZOrder		      1
@@ -1869,8 +1864,8 @@ Model {
       }
     }
     Line {
-      ZOrder		      52
-      SrcBlock		      "Sine Wave"
+      ZOrder		      58
+      SrcBlock		      "Step"
       SrcPort		      1
       DstBlock		      "Cargo ship"
       DstPort		      1

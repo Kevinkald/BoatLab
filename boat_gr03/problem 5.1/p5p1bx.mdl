@@ -1,5 +1,5 @@
 Model {
-  Name			  "p5p1d_"
+  Name			  "p5p1bx"
   Version		  9.2
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
@@ -20,13 +20,13 @@ Model {
     NumExternalFileReferences 2
     ExternalFileReference {
       Reference		      "simulink/Sources/Band-Limited\nWhite Noise"
-      Path		      "p5p1d_/Cargo ship/Measurement noise"
+      Path		      "p5p1bx/Cargo ship/Measurement noise"
       SID		      "11"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
       Reference		      "simulink/Sinks/XY Graph"
-      Path		      "p5p1d_/North-East"
+      Path		      "p5p1bx/North-East"
       SID		      "29"
       Type		      "LIBRARY_BLOCK"
     }
@@ -56,7 +56,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [8.0, 8.0, 1295.0, 695.0]
+      Location		      [-7.0, -7.0, 1295.0, 695.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -80,9 +80,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1241.0, 514.0]
+	Extents			[1864.0, 794.0]
 	ZoomFactor		[2.5553839406986869]
-	Offset			[194.56824622057206, 87.427827360337034]
+	Offset			[194.568246220572, 87.427827360337034]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -95,17 +95,17 @@ Model {
 	UserData		""
 	Floating		[0]
 	DockPosition		"Right"
-	Width			[640]
-	Height			[480]
+	Width			[426]
+	Height			[320]
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAOQD///8AAAT/AAACOwAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAUwD///8AAAeAAAADaAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
+      "////wEAAACp/////wAAAAAAAAAA/////wEAAAEu/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAHX/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAQy/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
@@ -114,10 +114,10 @@ Model {
   Creator		  "markh"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Flemmen"
+  LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 23 21:08:45 2018"
-  RTWModifiedTimeStamp	  464908110
+  LastModifiedDate	  "Fri Nov 23 22:17:30 2018"
+  RTWModifiedTimeStamp	  464912246
   ModelVersionFormat	  "1.%<AutoIncrement:27>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -175,11 +175,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "p5p1d_"
+    model_		    "p5p1bx"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "p5p1d_"
+      Cell		      "p5p1bx"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -230,7 +230,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "3000"
+	  StopTime		  "6000"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -1201,8 +1201,8 @@ Model {
     }
   }
   System {
-    Name		    "p5p1d_"
-    Location		    [8, 8, 1303, 703]
+    Name		    "p5p1bx"
+    Location		    [-7, -7, 1288, 688]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1836,7 +1836,7 @@ Model {
       Ports		      [1]
       Position		      [615, 175, 675, 205]
       ZOrder		      3
-      Filename		      "5_1_d.mat"
+      Filename		      "5_1_b.mat"
     }
     Line {
       ZOrder		      1

@@ -1,12 +1,12 @@
 Model {
-  Name			  "p5p1bx"
+  Name			  "p5p1cx"
   Version		  9.2
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.26"
+    ComputedModelVersion    "1.28"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -20,13 +20,13 @@ Model {
     NumExternalFileReferences 2
     ExternalFileReference {
       Reference		      "simulink/Sources/Band-Limited\nWhite Noise"
-      Path		      "p5p1bx/Cargo ship/Measurement noise"
+      Path		      "p5p1cx/Cargo ship/Measurement noise"
       SID		      "11"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
       Reference		      "simulink/Sinks/XY Graph"
-      Path		      "p5p1bx/North-East"
+      Path		      "p5p1cx/North-East"
       SID		      "29"
       Type		      "LIBRARY_BLOCK"
     }
@@ -82,7 +82,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1864.0, 794.0]
 	ZoomFactor		[2.5553839406986869]
-	Offset			[194.56824622057204, 87.427827360337034]
+	Offset			[194.56824622057212, 87.427827360337062]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 23 15:34:13 2018"
-  RTWModifiedTimeStamp	  464887720
-  ModelVersionFormat	  "1.%<AutoIncrement:26>"
+  LastModifiedDate	  "Fri Nov 23 22:19:31 2018"
+  RTWModifiedTimeStamp	  464912369
+  ModelVersionFormat	  "1.%<AutoIncrement:28>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -175,11 +175,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "p5p1bx"
+    model_		    "p5p1cx"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "p5p1bx"
+      Cell		      "p5p1cx"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -230,7 +230,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "3000"
+	  StopTime		  "6000"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
@@ -1201,7 +1201,7 @@ Model {
     }
   }
   System {
-    Name		    "p5p1bx"
+    Name		    "p5p1cx"
     Location		    [-7, -7, 1288, 688]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1245,7 +1245,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "noise"
 	    Prompt		    "measurement noise"
-	    Value		    "off"
+	    Value		    "on"
 	  }
 	  Object {
 	    $ObjectID		    23
@@ -1259,7 +1259,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "off"
+	    Value		    "on"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -1836,7 +1836,7 @@ Model {
       Ports		      [1]
       Position		      [615, 175, 675, 205]
       ZOrder		      3
-      Filename		      "5_1_b.mat"
+      Filename		      "5_1_c.mat"
     }
     Line {
       ZOrder		      1

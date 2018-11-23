@@ -1,4 +1,5 @@
-sim('p5p1d_.mdl')
+%Running the simulation
+sim('p5p1dx.mdl')
 
 %Opening the data from file
 filename1 = '5_1_d.mat';
@@ -23,3 +24,5 @@ legend('The boat response','The model response');
 xlabel('time t [s]');
 ylabel('Heading \psi [deg]');
 xlim([0 5000]);
+
+delete 5_1_d.mat;

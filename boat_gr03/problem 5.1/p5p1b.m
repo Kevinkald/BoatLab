@@ -1,5 +1,6 @@
+%Running the simulation
+sim('p5p1bx.mdl')
 
-sim('p5p1b_.mdl')
 %Opening the data from file
 filename1 = '5_1_b.mat';
 m1 = matfile(filename1);
@@ -21,3 +22,5 @@ line([0 6000],[y_mean y_mean],'LineStyle','--','color','red');
 legend('H(j0.05)','Mean');
 xlabel('time t [s]');
 ylabel('H(j0.05)');
+
+delete 5_1_b.mat;
