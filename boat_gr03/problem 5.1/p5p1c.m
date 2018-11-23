@@ -1,5 +1,7 @@
+
+sim('p5p1c.mdl')
 %Opening the data from file
-filename1 = '5_1_b.mat';
+filename1 = '5_1_c.mat';
 m1 = matfile(filename1);
 array = m1.ans;
 
