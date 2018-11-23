@@ -1,5 +1,5 @@
 
-sim('p5p1bx.mdl')
+sim('p5p1b_.mdl')
 %Opening the data from file
 filename1 = '5_1_b.mat';
 m1 = matfile(filename1);
