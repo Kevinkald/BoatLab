@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Opening the wave data from file
-filename1 = '../../wave.mat';
+filename1 = '../Common Files/wave.mat';
 m1 = matfile(filename1);
 filedata = m1.psi_w;
 
@@ -11,6 +11,7 @@ filedata = m1.psi_w;
 psi_w = filedata(2,:).*(pi/180);
 
 %Calculating the PSD, pxx[power/Hz] with frequencies f[Hz]
+%using a window of size 4096 and sample frequency fs
 fs = 10;
 [pxx, f] = pwelch(psi_w,4096,[],[],fs);
 
@@ -53,6 +54,7 @@ filedata = m1.psi_w;
 psi_w = filedata(2,:).*(pi/180);
 
 %Calculating the PSD, pxx[power/Hz] with frequencies f[Hz]
+%using a window of size 4096 and sample frequency fs
 fs = 10;
 [pxx, f] = pwelch(psi_w,4096,[],[],fs);
 
@@ -89,6 +91,7 @@ filedata = m1.psi_w;
 psi_w = filedata(2,:).*(pi/180);
 
 %Calculating the PSD, pxx[power/Hz] with frequencies f[Hz]
+%using a window of size 4096 and sample frequency fs
 fs = 10;
 [pxx, f] = pwelch(psi_w,4096,[],[],fs);
 
@@ -103,7 +106,7 @@ p_xx = pxx./(2*pi);
 omega_0 = omega(idx);
 sigma = sqrt(peak);
 
-%Least square method to estimate lambda
+%Least squares method to estimate lambda
 fun = @(lambda,omega)(omega.^2 * (2*lambda*omega_0*sigma).^2)./((omega_0.^2-omega.^2).^2+4*omega*lambda.^2*omega_0.^2);
 lambda = lsqcurvefit(fun, 0.1, omega, p_xx);
 
@@ -122,4 +125,3 @@ xlabel('frequency \omega [rad/s]');
 ylabel('Power spectral density [power s/rad]');
 legend('S_{\psi_w}(\omega)','P_{\psi_w}(\omega)');
 hold on;
-
