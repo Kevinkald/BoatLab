@@ -21,6 +21,7 @@ omega = f.*2*pi;
 p_xx = pxx./(2*pi);
 
 %plotting the PSD
+figure;
 plot(omega,p_xx);
 xlim([0 2*pi]);
 xlabel('Angular frequency \omega [rad/s]');
@@ -30,11 +31,6 @@ legend('S_{\psi_\omega}(\omega)');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % b
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Opening the wave data from file
-filename1 = '../../wave.mat';
-m1 = matfile(filename1);
-psi_w = m1.psi_w;
 
 %Defining the tf for wave response model
 s = tf('s');
@@ -75,7 +71,9 @@ legend('S_{\psi_\omega}(\omega)');
 
 %Finding the modal peak frequency omega_0 and intensity sigma
 [peak, idx] = max(p_xx);
+disp("The modal peak frequency:")
 omega_0 = omega(idx)
+disp("The intensity sigma:")
 sigma = sqrt(peak)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,14 +100,15 @@ p_xx = pxx./(2*pi);
 
 %Finding the modal peak frequency omega_0 and intensity sigma
 [peak, idx] = max(p_xx);
-omega_0 = omega(idx)
-sigma = sqrt(peak)
+omega_0 = omega(idx);
+sigma = sqrt(peak);
 
 %Least square method to estimate lambda
 fun = @(lambda,omega)(omega.^2 * (2*lambda*omega_0*sigma).^2)./((omega_0.^2-omega.^2).^2+4*omega*lambda.^2*omega_0.^2);
 lambda = lsqcurvefit(fun, 0.1, omega, p_xx);
 
 %plotting the estimated PSD
+figure;
 plot(omega,p_xx);
 hold on;
 
@@ -124,6 +123,3 @@ ylabel('Power spectral density [power s/rad]');
 legend('S_{\psi_w}(\omega)','P_{\psi_w}(\omega)');
 hold on;
 
-[peak, idx] = max(P_ww);
-omega_0 = omega(idx)
-sigma = sqrt(peak)

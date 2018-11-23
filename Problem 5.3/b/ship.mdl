@@ -1,12 +1,12 @@
 Model {
-  Name			  "ship"
+  Name			  "p5p3b_"
   Version		  9.2
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.30"
+    ComputedModelVersion    "1.31"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -20,13 +20,13 @@ Model {
     NumExternalFileReferences 2
     ExternalFileReference {
       Reference		      "simulink/Sources/Band-Limited\nWhite Noise"
-      Path		      "ship/Cargo ship/Measurement noise"
+      Path		      "p5p3b_/Cargo ship/Measurement noise"
       SID		      "11"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
       Reference		      "simulink/Sinks/XY Graph"
-      Path		      "ship/North-East"
+      Path		      "p5p3b_/North-East"
       SID		      "29"
       Type		      "LIBRARY_BLOCK"
     }
@@ -78,11 +78,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"42"
 	Extents			[1882.0, 885.0]
-	ZoomFactor		[2.0]
-	Offset			[-139.93905070118666, 12.801779935275022]
+	ZoomFactor		[5.6999999999999993]
+	Offset			[16.431811951754355, -29.543859649122808]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -116,9 +116,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Flemmen"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 23 09:45:47 2018"
-  RTWModifiedTimeStamp	  464866961
-  ModelVersionFormat	  "1.%<AutoIncrement:30>"
+  LastModifiedDate	  "Fri Nov 23 21:58:11 2018"
+  RTWModifiedTimeStamp	  464909547
+  ModelVersionFormat	  "1.%<AutoIncrement:31>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -175,11 +175,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "ship"
+    model_		    "p5p3b_"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "ship"
+      Cell		      "p5p3b_"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1213,9 +1213,9 @@ Model {
     }
   }
   System {
-    Name		    "ship"
+    Name		    "p5p3b_"
     Location		    [-8, -8, 1928, 1058]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
     ExecutionDomainType	    "Deduce"
@@ -1793,8 +1793,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Limited PD Controller"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
+	Location		[-8, -8, 1928, 1058]
+	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
 	ExecutionDomainType	"Deduce"
@@ -1833,7 +1833,7 @@ Model {
 	  Name			  "Max rudder angle"
 	  SID			  "46"
 	  Ports			  [1, 1]
-	  Position		  [240, 25, 270, 55]
+	  Position		  [250, 25, 280, 55]
 	  ZOrder		  15
 	  InputPortMap		  "u0"
 	  UpperLimit		  "45"
@@ -1843,7 +1843,7 @@ Model {
 	  BlockType		  TransferFcn
 	  Name			  "Transfer fcn"
 	  SID			  "40"
-	  Position		  [140, 22, 200, 58]
+	  Position		  [135, 17, 230, 63]
 	  ZOrder		  10
 	  Numerator		  "[Td 1]"
 	  Denominator		  "[Tf 1]"

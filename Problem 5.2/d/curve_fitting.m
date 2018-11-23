@@ -26,12 +26,14 @@ fun = @(lambda,omega)(omega.^2 * (2*lambda*omega_0*sigma).^2)./((omega_0.^2-omeg
 lambda = lsqcurvefit(fun, 0.1, omega, p_xx);
 
 %plotting the estimated PSD
+figure;
 plot(omega,p_xx);
 hold on;
 
 %plotting the PSD using LSQ method
 K_w = 2*lambda*omega_0*sigma;
 P_ww = (omega.^2 * (2*lambda*omega_0*sigma).^2)./((omega_0.^2-omega.^2).^2+4*omega*lambda.^2*omega_0.^2);
+
 plot(omega, P_ww);
 xlim([0 2*pi]);
 grid on;
