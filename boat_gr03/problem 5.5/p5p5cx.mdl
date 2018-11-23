@@ -1,12 +1,12 @@
 Model {
-  Name			  "ship"
+  Name			  "p5p5cx"
   Version		  9.2
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.74"
+    ComputedModelVersion    "1.73"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -20,13 +20,13 @@ Model {
     NumExternalFileReferences 2
     ExternalFileReference {
       Reference		      "simulink/Sources/Band-Limited\nWhite Noise"
-      Path		      "ship/Cargo ship/Measurement noise"
+      Path		      "p5p5cx/Cargo ship/Measurement noise"
       SID		      "91"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
       Reference		      "simulink/Sinks/XY Graph"
-      Path		      "ship/North-East"
+      Path		      "p5p5cx/North-East"
       SID		      "116"
       Type		      "LIBRARY_BLOCK"
     }
@@ -82,8 +82,8 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1864.0, 789.0]
-	  ZoomFactor		  [1.5834255699399769]
-	  Offset		  [-112.31147232226721, 188.65840980101723]
+	  ZoomFactor		  [1.5838819671028326]
+	  Offset		  [-112.19840239282473, 188.66095751401966]
 	}
 	Object {
 	  $ObjectID		  6
@@ -128,9 +128,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Kevin K. Kaldvansvik"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 23 21:16:06 2018"
-  RTWModifiedTimeStamp	  464908552
-  ModelVersionFormat	  "1.%<AutoIncrement:74>"
+  LastModifiedDate	  "Fri Nov 23 21:18:37 2018"
+  RTWModifiedTimeStamp	  464908708
+  ModelVersionFormat	  "1.%<AutoIncrement:73>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -187,11 +187,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "ship"
+    model_		    "p5p5cx"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "ship"
+      Cell		      "p5p5cx"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1147,6 +1147,10 @@ Model {
       RndMeth		      "Floor"
     }
     Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+    }
+    Block {
       BlockType		      Step
       Time		      "1"
       Before		      "0"
@@ -1227,7 +1231,7 @@ Model {
     }
   }
   System {
-    Name		    "ship"
+    Name		    "p5p5cx"
     Location		    [-7, -7, 1288, 688]
     Open		    on
     PortBlocksUseCompactNotation off
@@ -1245,7 +1249,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "158"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "160"
+    SIDHighWatermark	    "161"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -1914,10 +1918,6 @@ Model {
       SID		      "158"
       Position		      [210, 380, 240, 410]
       ZOrder		      60
-      Port {
-	PortNumber		1
-	Name			"psi_est"
-      }
     }
     Block {
       BlockType		      Memory
@@ -1944,6 +1944,60 @@ Model {
       ymin		      "-5000"
       ymax		      "5000"
       st		      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "160"
+      Ports		      [1]
+      Position		      [290, 434, 320, 466]
+      ZOrder		      62
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-2.46149','MaxYLimReal','14.64556','YLabelReal','','MinYLimMa"
+      "g','0.00000','MaxYLimMag','14.64556','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
+      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
+      "es',1,'LineNames',{{'Gain2'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal',"
+      "'-2.46149','MaxYLimReal','14.64556','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','14.64556','LegendVisibi"
+      "lity','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
+      "2 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 "
+      "0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83137254901960"
+      "8 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tool"
+      "s','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b"
+      "')"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      SID		      "161"
+      Ports		      [1]
+      Position		      [290, 379, 320, 411]
+      ZOrder		      63
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-2.46149','MaxYLimReal','14.64556','YLabelReal','','MinYLimMa"
+      "g','0.00000','MaxYLimMag','14.64556','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
+      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
+      "es',1,'LineNames',{{'Gain2'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal',"
+      "'-2.46149','MaxYLimReal','14.64556','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','14.64556','LegendVisibi"
+      "lity','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
+      "2 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 "
+      "0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83137254901960"
+      "8 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tool"
+      "s','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b"
+      "')"
+      NumInputPorts	      "1"
+      Floating		      off
     }
     Block {
       BlockType		      Step
@@ -2067,7 +2121,7 @@ Model {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
 	  SID			  "149::24"
-	  Tag			  "Stateflow S-Function ship 2"
+	  Tag			  "Stateflow S-Function p5p5cx 2"
 	  Ports			  [2, 3]
 	  Position		  [180, 100, 230, 180]
 	  ZOrder		  15
@@ -2263,6 +2317,20 @@ Model {
 	DstPort			1
       }
     }
+    Line {
+      ZOrder		      212
+      SrcBlock		      "Memory1"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      241
+      SrcBlock		      "Memory"
+      SrcPort		      1
+      DstBlock		      "Scope1"
+      DstPort		      1
+    }
   }
 }
 #Finite State Machines
@@ -2273,7 +2341,7 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "ship"
+    name		    "p5p5cx"
     created		    "07-Nov-2018 15:54:16"
     isLibrary		    0
     sfVersion		    80000014

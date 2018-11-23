@@ -15,7 +15,7 @@ plot(time,psi_r,'b');
 xlim([0, 500]);
 xlabel('time t [s]');
 ylabel('Angle [deg]');
-legend('\psi(t)','\psi_r(t)');
+legend('y(t)','\psi_r(t)');
 
 subplot(1,2,2);
 plot(time,rudder,'r');
