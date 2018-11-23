@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.71"
+    ComputedModelVersion    "1.72"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -56,7 +56,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, -7.0, 1295.0, 695.0]
+      Location		      [8.0, 8.0, 1295.0, 695.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -81,9 +81,9 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1864.0, 789.0]
+	  Extents		  [1241.0, 511.0]
 	  ZoomFactor		  [1.3792923852936652]
-	  Offset		  [-95.069921933444164, 157.8710918462717]
+	  Offset		  [-95.06992193344422, 157.87109184627167]
 	}
 	Object {
 	  $ObjectID		  6
@@ -92,7 +92,7 @@ Model {
 	  LoadSaveID		  "109"
 	  Extents		  [1920.0, 1080.0]
 	  ZoomFactor		  [3.3691753165608462]
-	  Offset		  [-20.397507032107541, -30.06064549602084]
+	  Offset		  [-20.397507032107512, -30.06064549602084]
 	}
 	PropName		"EditorsInfo"
       }
@@ -107,17 +107,17 @@ Model {
 	UserData		""
 	Floating		[0]
 	DockPosition		"Right"
-	Width			[426]
-	Height			[320]
+	Width			[640]
+	Height			[480]
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAUwD///8AAAeAAAADaAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAOQD///8AAAT/AAACOwAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAACp/////wAAAAAAAAAA/////wEAAAEu/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAHX/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAQy/////wAAAAAAAAAA/"
+      "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
@@ -126,11 +126,11 @@ Model {
   Creator		  "markh"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Kevin K. Kaldvansvik"
+  LastModifiedBy	  "Flemmen"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 22 18:27:56 2018"
-  RTWModifiedTimeStamp	  464811891
-  ModelVersionFormat	  "1.%<AutoIncrement:71>"
+  LastModifiedDate	  "Fri Nov 23 11:39:42 2018"
+  RTWModifiedTimeStamp	  464873698
+  ModelVersionFormat	  "1.%<AutoIncrement:72>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1248,7 +1248,7 @@ Model {
   }
   System {
     Name		    "ship"
-    Location		    [-7, -7, 1288, 688]
+    Location		    [8, 8, 1303, 703]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1835,7 +1835,7 @@ Model {
       }
       System {
 	Name			"Limited PD Controller"
-	Location		[-7, -7, 1288, 688]
+	Location		[8, 8, 1303, 703]
 	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
@@ -1986,19 +1986,6 @@ Model {
       ymin		      "-5000"
       ymax		      "5000"
       st		      "-1"
-    }
-    Block {
-      BlockType		      Saturate
-      Name		      "Saturation"
-      SID		      "117"
-      Ports		      [1, 1]
-      Position		      [450, 185, 480, 215]
-      ZOrder		      33
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      InputPortMap	      "u0"
-      UpperLimit	      "35"
-      LowerLimit	      "-35"
     }
     Block {
       BlockType		      Scope
@@ -2301,23 +2288,6 @@ Model {
       DstPort		      2
     }
     Line {
-      ZOrder		      51
-      SrcBlock		      "Saturation"
-      SrcPort		      1
-      Points		      [-400, 0]
-      Branch {
-	ZOrder			91
-	Points			[-130, 0; 0, 195]
-	DstBlock		"Zero-Order\nHold1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			90
-	DstBlock		"Sum"
-	DstPort			1
-      }
-    }
-    Line {
       Name		      "psi_r"
       ZOrder		      54
       Labels		      [-1, 0]
@@ -2354,15 +2324,24 @@ Model {
       SrcPort		      1
       Points		      [34, 0]
       Branch {
+	ZOrder			223
+	Points			[0, -50; -514, 0]
+	Branch {
+	  ZOrder		  91
+	  Points		  [-130, 0; 0, 195]
+	  DstBlock		  "Zero-Order\nHold1"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  90
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+      }
+      Branch {
 	ZOrder			174
 	Points			[104, 0; 0, 75]
 	DstBlock		"Mux"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			55
-	Points			[0, -50]
-	DstBlock		"Saturation"
 	DstPort			1
       }
       Branch {

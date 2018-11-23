@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.29"
+    ComputedModelVersion    "1.30"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -56,7 +56,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, -7.0, 1295.0, 695.0]
+      Location		      [8.0, 8.0, 1295.0, 695.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -80,9 +80,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1864.0, 794.0]
+	Extents			[1241.0, 514.0]
 	ZoomFactor		[1.6625612003323154]
-	Offset			[-43.420742645264227, 49.80786523000495]
+	Offset			[-43.420742645264227, 49.807865230004921]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -95,17 +95,17 @@ Model {
 	UserData		""
 	Floating		[0]
 	DockPosition		"Right"
-	Width			[426]
-	Height			[320]
+	Width			[640]
+	Height			[480]
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAUwD///8AAAeAAAADaAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAOQD///8AAAT/AAACOwAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAACp/////wAAAAAAAAAA/////wEAAAEu/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAHX/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAQy/////wAAAAAAAAAA/"
+      "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAL9/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
@@ -114,11 +114,11 @@ Model {
   Creator		  "markh"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Kevin K. Kaldvansvik"
+  LastModifiedBy	  "Flemmen"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 16 09:05:50 2018"
-  RTWModifiedTimeStamp	  464222705
-  ModelVersionFormat	  "1.%<AutoIncrement:29>"
+  LastModifiedDate	  "Fri Nov 23 09:47:34 2018"
+  RTWModifiedTimeStamp	  464867189
+  ModelVersionFormat	  "1.%<AutoIncrement:30>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
@@ -1214,7 +1214,7 @@ Model {
   }
   System {
     Name		    "ship"
-    Location		    [-7, -7, 1288, 688]
+    Location		    [8, 8, 1303, 703]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1917,19 +1917,6 @@ Model {
       st		      "-1"
     }
     Block {
-      BlockType		      Saturate
-      Name		      "Saturation"
-      SID		      "37"
-      Ports		      [1, 1]
-      Position		      [175, 125, 205, 155]
-      ZOrder		      7
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      InputPortMap	      "u0"
-      UpperLimit	      "35"
-      LowerLimit	      "-35"
-    }
-    Block {
       BlockType		      Scope
       Name		      "Scope"
       SID		      "30"
@@ -2010,33 +1997,6 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      3
-      SrcBlock		      "Cargo ship"
-      SrcPort		      1
-      Points		      [44, 0]
-      Branch {
-	ZOrder			14
-	Points			[66, 0]
-	Branch {
-	  ZOrder		  29
-	  Points		  [65, 0]
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  28
-	  DstBlock		  "Scope"
-	  DstPort		  1
-	}
-      }
-      Branch {
-	ZOrder			13
-	Points			[0, -50]
-	DstBlock		"Saturation"
-	DstPort			1
-      }
-    }
-    Line {
       Name		      "psi_r"
       ZOrder		      11
       Labels		      [1, 1]
@@ -2056,12 +2016,31 @@ Model {
       }
     }
     Line {
-      ZOrder		      18
-      SrcBlock		      "Saturation"
+      ZOrder		      3
+      SrcBlock		      "Cargo ship"
       SrcPort		      1
-      Points		      [-110, 0]
-      DstBlock		      "Sum"
-      DstPort		      1
+      Points		      [44, 0]
+      Branch {
+	ZOrder			48
+	Points			[0, -50; -379, 0]
+	DstBlock		"Sum"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			14
+	Points			[66, 0]
+	Branch {
+	  ZOrder		  29
+	  Points		  [65, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  28
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+      }
     }
     Line {
       ZOrder		      25
