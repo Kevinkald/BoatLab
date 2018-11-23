@@ -1,5 +1,5 @@
 %Init PD controller
-T = 72.4391; Kpd = 0.8427; 
+Kpd = 0.8427; T = 72.4391;
 Td = T; Tf = 8.391;
 
 %Starting simulation
